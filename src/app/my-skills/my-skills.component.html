@@ -1,0 +1,40 @@
+<div class="skills-section">
+    <div class="skills-container">
+        <div class="skill" *ngFor="let skill of skills">
+            <img [src]="'assets/img/myskills/' + skill.imagePath" [alt]="skill.text" />
+            <span>{{ skill.text }}</span>
+        </div>
+        <div class="skill">
+            <img src="assets/img/myskills/materialdesign.png" alt="">
+            <span>Material</span>
+            <span>Design</span>
+        </div>
+    </div>
+
+    <div class="desription-container">
+        <div class="description-header">
+            <h2>My skills</h2>
+            <div class="purple-line"></div>
+        </div>
+        <div class="description">
+            <div>
+                <p>Show that you have used a variety of front-end</p>
+                <p>technologies in your projects</p>
+            </div>
+            <div class="looking-section">
+                <p>Looking for</p>
+                <div>
+                    <p style="color: #9747FF">another skill</p>
+                    <p>?</p>
+                </div>
+            </div>
+            <div>
+                <p>Reveal enthusiasm for learning new technologies</p>
+                <p>and frameworks.</p>
+            </div>
+            <button>Get in touch</button>
+        </div>
+
+
+    </div>
+</div>
