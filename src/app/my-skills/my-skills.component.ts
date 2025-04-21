@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-my-skills',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatDialogModule,],
   templateUrl: './my-skills.component.html',
   styleUrl: './my-skills.component.scss'
 })
@@ -45,10 +46,8 @@ export class MySkillsComponent {
     {
       imagePath: 'scrum.png',
       text: 'Scrum',
-    },
-    // {
-    //   imagePath: 'materialdesign.png',
-    //   text: 'Material Design',
-    // }
+    }
   ];
+
+  constructor(private dialog: MatDialog) {}
 }

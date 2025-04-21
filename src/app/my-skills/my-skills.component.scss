@@ -5,20 +5,23 @@
     justify-content: space-between;
     max-width: 1440px;
     width: 100%;
-    margin: 100px 0;
+    margin: 168px 0;
 }
 
 .skills-container {
+    position: relative;
     max-width: 664px;
     width: 100%;
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
     flex-wrap: wrap;
     gap: 40px 88px;
     margin-left: 100px;
 }
 
 .skill {
+    z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,11 +30,124 @@
     width: 88px;
     padding-top: 12px;
 
+    >img {
+        transition: transform 0.3s ease;
+
+        &:hover {
+            cursor: pointer;
+            transform: translateY(-10px);
+        }
+    }
+
     >span {
         color: white;
         font-weight: 700;
         line-height: 120%;
     }
+}
+
+.skill-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-weight: 700;
+    line-height: 120%;
+}
+
+.skill-learning {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 88px;
+    padding-top: 12px;
+
+    &:hover {
+        >img {
+            transition: filter 0.3s ease;
+            cursor: pointer;
+            filter: brightness(0) invert(1);
+        }
+
+        >div {
+            transition: filter 0.3s ease;
+            cursor: pointer;
+            filter: brightness(0) invert(1);
+        }
+
+        >mat-dialog-content {
+            transition: opacity 0.5s ease, visibility 0.3s ease;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.skill-learning-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #9747FF;
+    font-weight: 700;
+    line-height: 120%;
+}
+
+mat-dialog-content {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: -120px;
+    left: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+    width: 196px;
+    height: 128px;
+    border-radius: 20px;
+
+    >p {
+        color: black;
+        padding: 0px 16px;
+    }
+
+    >div {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+
+        >div {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+
+            >p {
+                color: black;
+                font-weight: 700;
+            }
+
+            >.vector {
+                position: absolute;
+                bottom: -28px;
+                left: -4px;
+            }
+        }
+    }
+}
+
+.shadow {
+    position: absolute;
+    left: -648px;
+    bottom: -712px;
 }
 
 .desription-container {
@@ -105,7 +221,6 @@ button {
 
 
     &:hover {
-        transition: all 300ms ease-out;
         transform: scale(1.1);
         background-color: #9747FF;
         cursor: pointer;
