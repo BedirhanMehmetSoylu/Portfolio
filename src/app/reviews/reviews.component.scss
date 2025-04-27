@@ -1,0 +1,87 @@
+.reviews-section {
+    max-width: 1440px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    gap: 48px;
+    padding-bottom: 120px;
+}
+
+.review-container {
+    width: 850px;
+
+    height: 272px;
+    border: 4px solid #70E61C;
+    border-radius: 32px;
+    position: relative;
+    padding: 48px 96px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    >img {
+        position: absolute;
+        top: -36px;
+        left: -67px;
+    }
+
+    >p {
+        font-size: 20px;
+        line-height: 120%;
+        color: white;
+        font-family: 'Montserrat';
+    }
+}
+
+.reviewer-name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+
+    >p {
+        color: white;
+        font-family: 'Montserrat';
+        font-size: 18px;
+    }
+}
+
+.purple-line {
+    border: 1px solid rgb(151, 71, 255);
+    flex-grow: 1; /* <-- DAS ist der Trick! */
+}
+
+.reviewer-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+}
+
+.purple-circle {
+    width: 272px;
+    height: 272px;
+    border: 4px solid #9747FF;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    >img {
+        position: absolute;
+        width: 260%; /* <-- MEHR ZOOM */
+        height: 120%; /* <-- optional etwas mehr Höhe */
+        object-fit: cover;
+        transform: rotate(90deg) translateX(20%);
+    }
+}
+
+
+.purple-line-short {
+    border: 2px solid rgb(151, 71, 255);
+    width: 104px;
+}

@@ -50,15 +50,24 @@ h2 {
 }
 
 .projects-container {
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 48px;
-    padding-left: 100px;
+    padding-left: 136px;
     padding-top: 48px;
+    padding-bottom: 120px;
+}
+
+.shadow {
+    position: absolute;
+    left: -264px;
+    top: 30%;
 }
 
 .project {
+    z-index: 1;
     display: flex;
     flex-direction: row;
     align-items: center;
