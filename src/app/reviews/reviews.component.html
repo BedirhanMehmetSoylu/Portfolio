@@ -1,20 +1,38 @@
 <div class="reviews-section">
-    <div class="review-container">
-        <img src="assets/img/reviews/quotation_marks.png" alt="">
+    <div class="reviews-section-top">
+        <div class="review-container">
+            <img src="assets/img/reviews/quotation_marks.png" alt="">
 
-        <p>Michael really kept the team together with his great organization and clear communication. We wouldn't have got this far without his commitment.</p>
+            <p>{{ reviews[currentIndex].text }}</p>
 
-        <div class="reviewer-name">
-            <div class="purple-line"></div>
-            <p>V. Schuster - Team Partner</p>
+            <div class="reviewer-name">
+                <div class="purple-line"></div>
+                <p>{{ reviews[currentIndex].name }}</p>
+            </div>
+        </div>
+
+        <div class="reviewer-container">
+            <div class="purple-circle">
+                <img [attr.style]="reviews[currentIndex].style"  src="assets/img/reviews/{{ reviews[currentIndex].image }}" alt="">
+            </div>
+
+            <div class="purple-line-short"></div>
         </div>
     </div>
 
-    <div class="reviewer-container">
-        <div class="purple-circle">
-            <img src="assets/img/reviews/reviewer.png" alt="">
+    <div class="reviews-section-bottom">
+        <div>
+            <img src="assets/img/reviews/arrow_back.png" alt="" (click)="previousReview()">
+            
+            <div *ngFor="let review of reviews; let i = index">
+                <div 
+                  class="purple-point" 
+                  [ngStyle]="{ 'background-color': currentIndex === i ? '#70E61C' : '#9747FF' }">
+                </div>
+            </div>
+
+            <img src="assets/img/reviews/arrow_forward.png" alt="" (click)="nextReview()">
         </div>
 
-        <div class="purple-line-short"></div>
     </div>
 </div>
