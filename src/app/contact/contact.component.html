@@ -24,7 +24,7 @@
             <div class="textarea-container">
                 <textarea name="message" placeholder="Your message" ngModel required>
                 </textarea>
-                <img src="assets/img/resize.png" alt="">
+                <img src="assets/img/contacts/resize.png" alt="">
             </div>
             <div class="privacy-policy-checking">
                 <input type="checkbox" name="privacy" ngModel required />
@@ -36,8 +36,14 @@
             </div>
 
             <button type="submit">Send message :)</button>
+
+            <div class="scroll-up-section">
+                <img (click)="scrollToSection('hero')" src="assets/img/contacts/arrow_up.png" alt="">
+            </div>
+
         </form>
     </div>
 
-    <img class="shadow" src="assets/img/contact_shadow.png" alt="">
+    <img class="shadow" src="assets/img/contacts/contact_shadow.png" alt="">
+
 </div>

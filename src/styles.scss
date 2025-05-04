@@ -79,13 +79,15 @@ body {
     background-color: #141D2F;
     width: 100%;
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     overflow-x: hidden;
 }
 
 app-root {
     width: 100%;
     max-width: 1440px;
+    overflow-x: clip;
 }
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -13,4 +13,11 @@ export class ContactComponent {
   onSubmit(form: any) {
     console.log('Formularwerte:', form.value);
   }
+
+  scrollToSection(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }

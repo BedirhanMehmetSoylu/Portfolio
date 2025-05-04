@@ -6,6 +6,7 @@
     align-items: center;
     padding-bottom: 88px;
     position: relative;
+    overflow: hidden;
 }
 
 .contact-headline {
@@ -42,6 +43,7 @@
     justify-content: space-between;
     gap: 8px;
     padding: 0 88px;
+    z-index: 2;
 }
 
 .contact-description {
@@ -203,6 +205,25 @@ form {
     left: 1px;
     top: -5px;
     font-size: 16px;
+}
+
+.scroll-up-section {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 16px;
+
+    >img {
+        border: 2px solid #FFFFFF;
+        border-radius: 41px;
+        padding: 3px;
+        transition: filter 0.15s;
+        margin-right: 8px;
+
+        &:hover {
+            filter: brightness(0) saturate(100%) invert(72%) sepia(93%) saturate(374%) hue-rotate(54deg) brightness(93%) contrast(89%);
+        }
+    }
 }
 
 .shadow {
