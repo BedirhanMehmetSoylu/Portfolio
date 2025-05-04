@@ -5,6 +5,7 @@
     flex-direction: column;
     align-items: center;
     padding-bottom: 88px;
+    position: relative;
 }
 
 .contact-headline {
@@ -122,6 +123,7 @@ form {
 .textarea-container {
     position: relative;
     width: 100%;
+
     >textarea {
         position: relative;
         width: 100%;
@@ -135,7 +137,7 @@ form {
         resize: vertical;
         overflow: auto;
     }
-    
+
     textarea::-webkit-resizer {
         background-color: transparent;
     }
@@ -192,14 +194,19 @@ form {
     border-radius: 4px;
     position: relative;
     cursor: pointer;
-  }
-  
-  .privacy-policy-checking input[type="checkbox"]:checked::after {
+}
+
+.privacy-policy-checking input[type="checkbox"]:checked::after {
     content: '✔';
     color: #70E61C;
     position: absolute;
     left: 1px;
     top: -5px;
     font-size: 16px;
-  }
-  
+}
+
+.shadow {
+    position: absolute;
+    bottom: -436px;
+    left: -416px;
+}
