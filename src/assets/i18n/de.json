@@ -1,0 +1,15 @@
+{
+    "NAV": {
+        "ABOUT": "Über mich",
+        "SKILLS": "Fähigkeiten",
+        "PORTFOLIO": "Portfolio"
+    },
+    "HERO": {
+        "IAM": "Ich bin",
+        "IAM_HEIGHT": "0px",
+        "PROFESSION": "FRONTEND ENTWICKLER",
+        "LETS_TALK": "Lass reden!",
+        "LETS_TALK_FONT_SIZE": "18px",
+        "SCROLL_DOWN": "Runterscrollen"
+    }
+}

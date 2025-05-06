@@ -55,7 +55,6 @@
     right: 64px;
 
     >button {
-        width: 165px;
         height: 58px;
         padding-top: 15px;
         padding-right: 30px;
@@ -140,7 +139,8 @@
         }
     }
 
-    a {
+    p {
+        cursor: pointer;
         text-decoration: none;
         color: white;
         font-size: 23px;

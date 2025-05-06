@@ -1,4 +1,4 @@
-<div class="navbar">
+<!-- <div class="navbar">
     <img (click)="scrollToSection('hero')" src="assets/img/logo.png" alt="">
     <div class="navbar-right">
         <div class="link-container">
@@ -11,4 +11,19 @@
             <button>EN</button>
         </div>
     </div>
-</div>
+</div> -->
+
+<div class="navbar">
+    <img (click)="scrollToSection('hero')" src="assets/img/logo.png" alt="">
+    <div class="navbar-right">
+      <div class="link-container">
+        <a href="#about">{{ 'NAV.ABOUT' | translate }}</a>
+        <a href="#skills">{{ 'NAV.SKILLS' | translate }}</a>
+        <a href="#portfolio">{{ 'NAV.PORTFOLIO' | translate }}</a>
+      </div>
+      <div class="language-btn-container">
+        <button (click)="switchLang('de')">DE</button>
+        <button (click)="switchLang('en')">EN</button>
+      </div>
+    </div>
+  </div>  
