@@ -11,5 +11,23 @@
         "LETS_TALK": "Let's talk!",
         "LETS_TALK_FONT_SIZE": "22px",
         "SCROLL_DOWN": "Scroll down"
+    },
+    "ABOUTME": {
+        "DESCRIPTION": "I enjoy creating something from nothing and letting my creativity shape the path to the result.",
+        "LOCATION": "Based in Hanover, I’m open to remote work and would consider relocating depending on the location.",
+        "LEARNING": "I’m a curious and eager-to-learn developer who is highly motivated to grow continuously – professionally by working with modern technologies and personally through new challenges in team settings and everyday project work.",
+        "SOLUTIONS": "I thrive in collaborative environments, communicate openly, and approach challenges with a balance of analytical thinking and creativity."
+    },
+    "MYSKILLS": {
+        "HEADLINE": "My Skills",
+        "DESCRIPTION": "During my training to become a front-end developer, I built strong skills in HTML, CSS, JavaScript, and TypeScript.",
+        "DESCRIPTION_SKILLS": "I work with Angular, Firebase, and Git, and have initial experience with REST APIs, Material Design, and agile methods like Scrum.",
+        "LOOKING": "Looking for",
+        "ANOTHER": "another skill",
+        "LEARNING_SKILLS": "My goal is to continuously expand my knowledge, learn new technologies, and contribute to building modern web applications.",
+        "BUTTON": "Get in touch",
+        "CONTINUALLY": "Continually",
+        "LEARNING": "learning",
+        "INTEREST": "I have a special interest in learning"
     }
 }

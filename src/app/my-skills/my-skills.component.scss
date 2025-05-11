@@ -1,12 +1,13 @@
 .skills-section {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     max-width: 1440px;
     width: 100%;
     padding-top: 168px;
     padding-bottom: 48px;
+    gap: 32px;
 }
 
 .skills-container {
@@ -138,7 +139,7 @@ mat-dialog-content {
 
             >.vector {
                 position: absolute;
-                bottom: -28px;
+                bottom: -27px;
                 left: -4px;
             }
         }
@@ -155,7 +156,7 @@ mat-dialog-content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 400px;
+    gap: 40px;
 }
 
 .description-header {
@@ -189,6 +190,12 @@ h2 {
     padding-right: 100px;
 }
 
+.first-description {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
 p {
     color: white;
     line-height: 120%;
@@ -208,6 +215,7 @@ p {
 button {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 200px;
     height: 58px;
     border-radius: 10px;

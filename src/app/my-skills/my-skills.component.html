@@ -14,11 +14,11 @@
         <div class="skill-learning">
             <img src="assets/img/myskills/learning.svg" alt="">
             <div class="skill-learning-text-container">
-                <span>Continually</span>
-                <span>learning</span>
+                <span>{{ 'MYSKILLS.CONTINUALLY' | translate }}</span>
+                <span>{{ 'MYSKILLS.LEARNING' | translate }}</span>
             </div>
             <mat-dialog-content>
-                <p>I have a special interest in learning</p>
+                <p>{{ 'MYSKILLS.INTEREST' | translate }}</p>
                 <div>
                     <div>
                         <img src="assets/img/myskills/react.png" alt="">
@@ -37,28 +37,26 @@
 
     <div class="desription-container">
         <div class="description-header">
-            <h2>My skills</h2>
+            <h2>{{ 'MYSKILLS.HEADLINE' | translate }}</h2>
             <div class="purple-line"></div>
         </div>
         <div class="description">
-            <div>
-                <p>Show that you have used a variety of front-end</p>
-                <p>technologies in your projects</p>
+            <div class="first-description">
+                <p>{{ 'MYSKILLS.DESCRIPTION' | translate }}</p>
+                <p>{{ 'MYSKILLS.DESCRIPTION_SKILLS' | translate }}</p>
             </div>
             <div class="looking-section">
-                <p>Looking for</p>
+                <p>{{ 'MYSKILLS.LOOKING' | translate }}</p>
                 <div>
-                    <p style="color: #9747FF">another skill</p>
+                    <p style="color: #9747FF">{{ 'MYSKILLS.ANOTHER' | translate }}</p>
                     <p>?</p>
                 </div>
             </div>
             <div>
-                <p>Reveal enthusiasm for learning new technologies</p>
-                <p>and frameworks.</p>
+                <p>{{ 'MYSKILLS.LEARNING_SKILLS' | translate }}</p>
             </div>
-            <button>Get in touch</button>
+            <button (click)="scrollToSection('contact')">{{ 'MYSKILLS.BUTTON' | translate }}</button>
         </div>
-
-
     </div>
+
 </div>

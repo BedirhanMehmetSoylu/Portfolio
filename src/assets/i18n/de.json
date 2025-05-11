@@ -11,5 +11,23 @@
         "LETS_TALK": "Lass reden!",
         "LETS_TALK_FONT_SIZE": "18px",
         "SCROLL_DOWN": "Runterscrollen"
+    },
+    "ABOUTME": {
+        "DESCRIPTION": "Ich liebe es, aus dem Nichts etwas Neues zu erschaffen und dabei meiner Kreativität freien Lauf zu lassen.",
+        "LOCATION": "Aktuell lebe ich in Hannover und bin offen für Remote-Arbeit – ein Umzug kommt je nach Standort in Frage.",
+        "LEARNING": "Ich bin ein neugieriger und lernfreudiger Entwickler, der sich mit großer Motivation stetig weiterbildet – fachlich durch den Umgang mit modernen Technologien und persönlich durch neue Herausforderungen im Team und im Projektalltag.",
+        "SOLUTIONS": "Ich arbeite gerne im Team, kommuniziere offen und finde Lösungen durch eine gute Balance aus analytischem Denken und Kreativität."
+    },
+    "MYSKILLS": {
+        "HEADLINE": "Fähigkeiten",
+        "DESCRIPTION": "Während meiner Ausbildung zum Frontend-Entwickler habe ich fundierte Kenntnisse in HTML, CSS, JavaScript und TypeScript aufgebaut.",
+        "DESCRIPTION_SKILLS": "Ich arbeite mit Angular, Firebase und Git und habe erste Erfahrungen mit REST-APIs, Material Design und agilen Methoden wie Scrum gesammelt.",
+        "LOOKING": "Suchen Sie noch",
+        "ANOTHER": "eine Fähigkeit",
+        "LEARNING_SKILLS": "Mein Ziel ist es, mein Wissen kontinuierlich zu erweitern, neue Technologien zu lernen und zur Entwicklung moderner Webanwendungen beizutragen.",
+        "BUTTON": "Kontakt",
+        "CONTINUALLY": "Kontinuierlich",
+        "LEARNING": "am lernen",
+        "INTEREST": "Ich habe ein Interesse daran dies zu lernen"
     }
 }
