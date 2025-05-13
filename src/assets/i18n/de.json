@@ -50,5 +50,8 @@
         "POLICY_TWO": "Datenschutzerklärung",
         "POLICY_THREE": "gelesen und stimme der Verarbeitung meiner Daten wie darin beschrieben zu.",
         "BUTTON": "Nachricht senden :)"
+    },
+    "FOOTER": {
+        "LEGAL": "Impressum"
     }
 }

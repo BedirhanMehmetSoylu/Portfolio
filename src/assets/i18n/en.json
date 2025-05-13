@@ -50,5 +50,8 @@
         "POLICY_TWO": "privacy policy",
         "POLICY_THREE": "and agree to the processing of my data as outlined.",
         "BUTTON": "Send message :)"
+    },
+    "FOOTER": {
+        "LEGAL": "Legal Notice"
     }
 }
