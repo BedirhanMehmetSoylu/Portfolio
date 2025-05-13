@@ -1,18 +1,3 @@
-<!-- <div class="navbar">
-    <img (click)="scrollToSection('hero')" src="assets/img/logo.png" alt="">
-    <div class="navbar-right">
-        <div class="link-container">
-            <a href="#about">About me</a>
-            <a href="#skills">Skills</a>
-            <a href="#portfolio">Portfolio</a>
-        </div>
-        <div class="language-btn-container">
-            <button>DE</button>
-            <button>EN</button>
-        </div>
-    </div>
-</div> -->
-
 <div class="navbar">
     <img (click)="scrollToSection('hero')" src="assets/img/logo.png" alt="">
     <div class="navbar-right">
@@ -22,8 +7,8 @@
         <a href="#portfolio">{{ 'NAV.PORTFOLIO' | translate }}</a>
       </div>
       <div class="language-btn-container">
-        <button (click)="switchLang('de')">DE</button>
-        <button (click)="switchLang('en')">EN</button>
+        <button [ngClass]="{'active-lang': currentLang === 'de'}" (click)="switchLang('de')">DE</button>
+        <button [ngClass]="{'active-lang': currentLang === 'en'}" (click)="switchLang('en')">EN</button>
       </div>
     </div>
   </div>  

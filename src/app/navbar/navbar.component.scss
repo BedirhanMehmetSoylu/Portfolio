@@ -24,6 +24,7 @@ span {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     transition: color 300ms ease;
+
     &:hover {
         cursor: pointer;
         color: #70E61C;
@@ -73,13 +74,18 @@ span {
         display: flex;
         align-items: center;
         justify-content: center;
-        cursor: pointer;
         transition: border 200ms ease;
         transition: background-color 200ms ease;
 
-        &:hover {
+        &:not(.active-lang):hover {
             border: 1px solid #7C28BD;
             background-color: #7C28BD;
+            cursor: pointer;
         }
     }
+}
+
+.language-btn-container button.active-lang {
+    background-color: #70E61C;
+    font-weight: 700;
 }

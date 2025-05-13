@@ -1,22 +1,3 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-navbar',
-//   standalone: true,
-//   imports: [],
-//   templateUrl: './navbar.component.html',
-//   styleUrl: './navbar.component.scss'
-// })
-// export class NavbarComponent {
-//   scrollToSection(sectionId: string) {
-//     const element = document.getElementById(sectionId);
-//     if (element) {
-//       element.scrollIntoView({ behavior: 'smooth' });
-//     }
-//   }
-// }
-
-
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
@@ -29,17 +10,22 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
+
 export class NavbarComponent {
+  currentLang: string = 'en';
+
   constructor(private translate: TranslateService) {
     translate.addLangs(['en', 'de']);
     translate.setDefaultLang('en');
 
     const savedLang = localStorage.getItem('lang');
     const langToUse = savedLang || 'en';
+    this.currentLang = langToUse;
     translate.use(langToUse);
   }
 
   switchLang(lang: string) {
+    this.currentLang = lang;
     this.translate.use(lang);
     localStorage.setItem('lang', lang);
   }
