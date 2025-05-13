@@ -1,4 +1,4 @@
-<div class="contact-section">
+<!-- <div class="contact-section">
     <div class="contact-headline">
         <div class="purple-line"></div>
         <h2>Contact</h2>
@@ -46,4 +46,48 @@
 
     <img class="shadow" src="assets/img/contacts/contact_shadow.png" alt="">
 
+</div> -->
+
+<div class="contact-section">
+    <div class="contact-headline">
+        <div class="purple-line"></div>
+        <h2>{{ 'CONTACT.TITLE' | translate }}</h2>
+        <div class="transparent-line"></div>
+    </div>
+
+    <div class="contact-bottom">
+        <div class="contact-description">
+            <p class="description-top-line">{{ 'CONTACT.SOLVE' | translate }}</p>
+            <p>{{ 'CONTACT.EXPLAIN_INTERESTS' | translate }}</p>
+            <p>{{ 'CONTACT.NEED' | translate }} <span>{{ 'CONTACT.CONTACT_ME' | translate }}</span></p>
+        </div>
+
+        <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+            <input name="name" placeholder="{{ 'CONTACT.NAME' | translate }}" ngModel required />
+
+            <input name="email" placeholder="{{ 'CONTACT.EMAIL' | translate }}" ngModel email />
+
+            <div class="textarea-container">
+                <textarea name="message" placeholder="{{ 'CONTACT.MESSAGE' | translate }}" ngModel required></textarea>
+                <img src="assets/img/contacts/resize.png" alt="">
+            </div>
+
+            <div class="privacy-policy-checking">
+                <input type="checkbox" name="privacy" ngModel required />
+                <div>
+                    <p>{{ 'CONTACT.POLICY_ONE' | translate }} <a href="">{{ 'CONTACT.POLICY_TWO' | translate }}</a> {{ 'CONTACT.POLICY_THREE' | translate }}</p>
+                </div>
+            </div>
+
+            <button type="submit">{{ 'CONTACT.BUTTON' | translate }}</button>
+
+            <div class="scroll-up-section">
+                <img (click)="scrollToSection('hero')" src="assets/img/contacts/arrow_up.png" alt="">
+            </div>
+        </form>
+    </div>
+
+    <img class="shadow" src="assets/img/contacts/contact_shadow.png" alt="">
 </div>
+
+<!-- <p>Ich habe die Datenschutzerklärung gelesen und stimme der Verarbeitung meiner Daten wie darin beschrieben zu.</p> -->

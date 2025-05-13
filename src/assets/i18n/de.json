@@ -29,5 +29,26 @@
         "CONTINUALLY": "Kontinuierlich",
         "LEARNING": "am lernen",
         "INTEREST": "Ich habe ein Interesse daran dies zu lernen"
+    },
+    "PORTFOLIO": {
+        "DESCRIPTION": "Hier findest du eine Auswahl meiner Arbeiten – interagiere mit den Projekten, um meine Fähigkeiten in Aktion zu sehen.",
+        "JOIN": "Ein Task-Manager inspiriert vom Kanban-System. Aufgaben können per Drag-and-Drop erstellt, organisiert sowie Nutzer:innen und Kategorien zugewiesen werden.",
+        "EL_POLLO_LOCO": "Ein einfaches Jump-and-Run-Spiel auf objektorientierter Basis. Hilf Pepe, Münzen und Salsa-Flaschen zu sammeln, um gegen das Killerhuhn zu kämpfen.",
+        "POKEDEX": "Basierend auf der PokéAPI – eine einfache Bibliothek zur Anzeige und Kategorisierung von Pokémon-Informationen.",
+        "LIVE": "Live test"
+    },
+    "CONTACT": {
+        "TITLE": "Kontakt",
+        "SOLVE": "Ein Problem zu lösen?",
+        "EXPLAIN_INTERESTS": "Als ausgebildeter Softwareentwickler mit Schwerpunkt auf Frontend und Backend bringe ich fundierte Kenntnisse in HTML, CSS, JavaScript, Angular, Node.js und relationalen Datenbanken mit. Ich suche eine Festanstellung, in der ich meine Fähigkeiten einbringen und mich kontinuierlich weiterentwickeln kann – motiviert, lernbereit und bereit, echten Mehrwert zu schaffen.",
+        "NEED": "Sie suchen einen Frontend-Entwickler?",
+        "CONTACT_ME": "Kontaktieren Sie mich!",
+        "NAME": "Ihr Name",
+        "EMAIL": "Ihre E-Mail-Adresse",
+        "MESSAGE": "Ihre Nachricht",
+        "POLICY_ONE": "Ich habe die",
+        "POLICY_TWO": "Datenschutzerklärung",
+        "POLICY_THREE": "gelesen und stimme der Verarbeitung meiner Daten wie darin beschrieben zu.",
+        "BUTTON": "Nachricht senden :)"
     }
 }
