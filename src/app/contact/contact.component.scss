@@ -109,6 +109,17 @@ form {
         border-radius: 10px;
         font-size: 23px;
     }
+
+    button.ready {
+        background-color: #70E61C;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #9747FF;
+            transform: scale(1.05);
+        }
+    }
 }
 
 .textarea-container {
@@ -215,6 +226,7 @@ form {
 
         &:hover {
             filter: brightness(0) saturate(100%) invert(72%) sepia(93%) saturate(374%) hue-rotate(54deg) brightness(93%) contrast(89%);
+            cursor: pointer;
         }
     }
 }
