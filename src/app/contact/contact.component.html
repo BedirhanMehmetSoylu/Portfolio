@@ -12,7 +12,7 @@
             <p>{{ 'CONTACT.NEED' | translate }} <span>{{ 'CONTACT.CONTACT_ME' | translate }}</span></p>
         </div>
 
-        <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+        <!-- <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
             <input name="name" placeholder="{{ 'CONTACT.NAME' | translate }}" ngModel required />
 
             <input name="email" placeholder="{{ 'CONTACT.EMAIL' | translate }}" ngModel required="" email />
@@ -30,12 +30,65 @@
                 </div>
             </div>
 
-            <button type="submit" [disabled]="!privacy.value" [ngClass]="{ 'ready': privacy.value }">{{ 'CONTACT.BUTTON' | translate }}</button>
+            <button type="submit" [disabled]="!myForm.form.valid || !privacy.value" [ngClass]="{ 'ready': myForm.form.valid && privacy.value }">{{ 'CONTACT.BUTTON' | translate }}</button>
 
             <div class="scroll-up-section">
                 <img (click)="scrollToSection('hero')" src="assets/img/contacts/arrow_up.png" alt="">
             </div>
+        </form> -->
+
+        <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+
+            <div class="form-group">
+                <input name="name" placeholder="{{ 'CONTACT.NAME' | translate }}" ngModel required #name="ngModel"
+                    [class.invalid]="name.invalid && name.touched" />
+                <div class="error" *ngIf="name.invalid && name.touched">
+                    {{ 'CONTACT.REQUIRED_NAME' | translate }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input name="email" placeholder="{{ 'CONTACT.EMAIL' | translate }}" ngModel required email
+                    #email="ngModel" [class.invalid]="email.invalid && email.touched" />
+                <div class="error" *ngIf="email.invalid && email.touched">
+                    {{ 'CONTACT.REQUIRED_EMAIL' | translate }}
+                </div>
+            </div>
+
+            <div class="form-group textarea-container">
+                <textarea name="message" placeholder="{{ 'CONTACT.MESSAGE' | translate }}" ngModel required
+                    #message="ngModel" [class.invalid]="message.invalid && message.touched"></textarea>
+                <img src="assets/img/contacts/resize.png" alt="">
+                <div class="error" *ngIf="message.invalid && message.touched">
+                    {{ 'CONTACT.REQUIRED_MESSAGE' | translate }}
+                </div>
+            </div>
+
+            <!-- PRIVACY -->
+            <div class="privacy-policy-checking">
+                <input type="checkbox" name="privacy" ngModel required #privacy="ngModel" />
+                <div>
+                    <p>
+                        {{ 'CONTACT.POLICY_ONE' | translate }}
+                        <a href="">{{ 'CONTACT.POLICY_TWO' | translate }}</a>
+                        {{ 'CONTACT.POLICY_THREE' | translate }}
+                    </p>
+                </div>
+            </div>
+
+            <!-- BUTTON -->
+            <button type="submit" [disabled]="!myForm.form.valid || !privacy.value"
+                [ngClass]="{ 'ready': myForm.form.valid && privacy.value }">
+                {{ 'CONTACT.BUTTON' | translate }}
+            </button>
+
+            <!-- SCROLL UP -->
+            <div class="scroll-up-section">
+                <img (click)="scrollToSection('hero')" src="assets/img/contacts/arrow_up.png" alt="">
+            </div>
         </form>
+
+
     </div>
 
     <img class="shadow" src="assets/img/contacts/contact_shadow.png" alt="">

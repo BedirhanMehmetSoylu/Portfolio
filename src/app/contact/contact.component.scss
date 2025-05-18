@@ -76,30 +76,6 @@ form {
     width: 100%;
     gap: 32px;
 
-    >input {
-        width: 100%;
-        background-color: transparent;
-        border: 1px solid #9747FF;
-        color: white;
-        font-size: 16px;
-        border-radius: 10px;
-        padding: 15px 25px;
-    }
-
-    >input::placeholder {
-        color: white;
-        opacity: 1;
-        font-size: 16px;
-    }
-
-    >input:hover {
-        border-color: #70E61C;
-    }
-
-    >input:focus {
-        outline: #9747FF;
-    }
-
     >button {
         box-shadow: 4px 4px 4px 0px #00000040;
         background-color: #B6B6B6;
@@ -119,6 +95,34 @@ form {
             background-color: #9747FF;
             transform: scale(1.05);
         }
+    }
+}
+
+.form-group {
+    width: 100%;
+
+    >input {
+        width: 100%;
+        background-color: #141D2F;
+        border: 1px solid #9747FF;
+        color: white;
+        font-size: 16px;
+        border-radius: 10px;
+        padding: 15px 25px;
+    }
+
+    >input::placeholder {
+        color: white;
+        opacity: 1;
+        font-size: 16px;
+    }
+
+    >input:hover {
+        border-color: #70E61C;
+    }
+
+    >input:focus {
+        outline: #9747FF;
     }
 }
 
@@ -235,4 +239,25 @@ form {
     position: absolute;
     bottom: -436px;
     left: -416px;
+}
+
+input.invalid,
+textarea.invalid {
+    border-color: #e74c3c !important;
+    outline: none;
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #141D2F inset !important;
+    -webkit-text-fill-color: white !important;
+    transition: background-color 9999s ease-out, color 9999s ease-out;
 }

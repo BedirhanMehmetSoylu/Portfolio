@@ -49,7 +49,10 @@
         "POLICY_ONE": "I've read the",
         "POLICY_TWO": "privacy policy",
         "POLICY_THREE": "and agree to the processing of my data as outlined.",
-        "BUTTON": "Send message :)"
+        "BUTTON": "Send message :)",
+        "REQUIRED_NAME": "Your name is required",
+        "REQUIRED_EMAIL": "Your email is required",
+        "REQUIRED_MESSAGE": "Your message is empty"
     },
     "FOOTER": {
         "LEGAL": "Legal Notice"
