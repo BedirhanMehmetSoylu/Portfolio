@@ -17,9 +17,11 @@
             <div class="form-group">
                 <div class="input-wrapper">
                     <input name="name" placeholder="{{ 'CONTACT.NAME' | translate }}" ngModel required #name="ngModel"
-                        [class.invalid]="name.invalid && name.touched" />
-                    <img *ngIf="name.invalid && name.touched" src="assets/img/contacts/invalid.png" class="error-icon"
-                        alt="Fehler" />
+                        [class.invalid]="name.invalid && name.touched" [class.valid]="name.valid && name.touched" />
+                    <img *ngIf="name.invalid && name.touched" src="assets/img/contacts/invalid.png" class="validation-icon"
+                        alt="invalid" />
+                    <img *ngIf="name.valid && name.touched" src="assets/img/contacts/valid.png" alt="valid"
+                        class="validation-icon">
                 </div>
                 <p class="error" *ngIf="name.invalid && name.touched">{{ 'CONTACT.REQUIRED_NAME' | translate }}</p>
             </div>
@@ -27,9 +29,12 @@
             <div class="form-group">
                 <div class="input-wrapper">
                     <input name="email" placeholder="{{ 'CONTACT.EMAIL' | translate }}" ngModel required email
-                        #email="ngModel" [class.invalid]="email.invalid && email.touched" />
-                    <img *ngIf="email.invalid && email.touched" src="assets/img/contacts/invalid.png" class="error-icon"
+                        #email="ngModel" [class.invalid]="email.invalid && email.touched"
+                        [class.valid]="email.valid && email.touched" />
+                    <img *ngIf="email.invalid && email.touched" src="assets/img/contacts/invalid.png" class="validation-icon"
                         alt="Fehler" />
+                    <img *ngIf="email.valid && email.touched" src="assets/img/contacts/valid.png" alt="valid"
+                        class="validation-icon">
                 </div>
                 <p class="error" *ngIf="email.invalid && email.touched">{{ 'CONTACT.REQUIRED_EMAIL' | translate }}</p>
             </div>
@@ -38,13 +43,17 @@
                 <div class="textarea-wrapper">
                     <div class="textarea-container">
                         <textarea name="message" placeholder="{{ 'CONTACT.MESSAGE' | translate }}" ngModel required
-                            #message="ngModel" [class.invalid]="message.invalid && message.touched"></textarea>
+                            #message="ngModel" [class.invalid]="message.invalid && message.touched"
+                            [class.valid]="message.valid && message.touched"></textarea>
                         <img src="assets/img/contacts/resize.png" alt="">
                     </div>
                     <img *ngIf="message.invalid && message.touched" src="assets/img/contacts/invalid.png"
-                        class="error-icon-message" alt="Fehler" />
+                        class="validation-icon-message" alt="Fehler" />
+                    <img *ngIf="message.valid && message.touched" src="assets/img/contacts/valid.png" alt="valid"
+                        class="validation-icon-message">
                 </div>
-                <p class="error" *ngIf="message.invalid && message.touched">{{ 'CONTACT.REQUIRED_MESSAGE' | translate }}</p>
+                <p class="error" *ngIf="message.invalid && message.touched">{{ 'CONTACT.REQUIRED_MESSAGE' | translate }}
+                </p>
             </div>
 
             <div class="privacy-policy-checking">

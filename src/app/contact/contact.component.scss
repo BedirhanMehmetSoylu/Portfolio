@@ -143,7 +143,7 @@ form {
     }
 }
 
-.error-icon {
+.validation-icon {
     position: absolute;
     right: 25px;
     top: 50%;
@@ -200,7 +200,7 @@ form {
     position: relative;
 }
 
-.error-icon-message {
+.validation-icon-message {
     position: absolute;
     right: 25px;
     top: 26px;
@@ -284,6 +284,11 @@ form {
 input.invalid,
 textarea.invalid {
     border-color: #e61c40 !important;
+}
+
+input.valid,
+textarea.valid {
+  border-color: #70e61c !important;
 }
 
 .error {
