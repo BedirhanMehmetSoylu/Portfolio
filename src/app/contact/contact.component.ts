@@ -13,6 +13,8 @@ import emailjs from 'emailjs-com';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
+  submitted = false;
+
   scrollToSection(sectionId: string) {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -21,8 +23,11 @@ export class ContactComponent {
   }
 
   onSubmit(form: NgForm) {
-    if (form.invalid) {
-      alert("Bitte alle Pflichtfelder ausfüllen und Datenschutz bestätigen.");
+    this.submitted = true;
+
+    console.log(this.submitted);
+
+    if (form.invalid || !form.value.privacy) {
       return;
     }
 
@@ -33,26 +38,28 @@ export class ContactComponent {
     };
 
     this.sendEmail(formData);
+
+    this.submitted = false;
   }
 
   sendEmail(formData: any) {
-  const serviceID = 'service_53udtyv';
-  const templateID = 'template_t0lar7o';
-  const userID = 'L2X7IfJE1sjU3NQOw';
+    const serviceID = 'service_53udtyv';
+    const templateID = 'template_t0lar7o';
+    const userID = 'L2X7IfJE1sjU3NQOw';
 
-  const templateParams = {
-    from_name: formData.name,
-    from_email: formData.email,
-    message: formData.message,
-  };
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message,
+    };
 
-  emailjs.send(serviceID, templateID, templateParams, userID)
-    .then(() => {
-      alert('Nachricht wurde erfolgreich gesendet!');
-    }, (error) => {
-      console.error('E-Mail Fehler:', error);
-      alert('Beim Senden der Nachricht ist ein Fehler aufgetreten.');
-    });
-}
+    emailjs.send(serviceID, templateID, templateParams, userID)
+      .then(() => {
+        alert('Nachricht wurde erfolgreich gesendet!');
+      }, (error) => {
+        console.error('E-Mail Fehler:', error);
+        alert('Beim Senden der Nachricht ist ein Fehler aufgetreten.');
+      });
+  }
 
 }

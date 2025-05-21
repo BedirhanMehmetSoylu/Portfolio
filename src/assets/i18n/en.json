@@ -52,7 +52,8 @@
         "BUTTON": "Send message :)",
         "REQUIRED_NAME": "Your name is required",
         "REQUIRED_EMAIL": "Your email is required",
-        "REQUIRED_MESSAGE": "Your message is empty"
+        "REQUIRED_MESSAGE": "Your message is empty",
+        "REQUIRED_POLICY": "Please accept the privacy policy"
     },
     "FOOTER": {
         "LEGAL": "Legal Notice"

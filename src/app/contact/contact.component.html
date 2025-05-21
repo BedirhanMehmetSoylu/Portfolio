@@ -18,8 +18,8 @@
                 <div class="input-wrapper">
                     <input name="name" placeholder="{{ 'CONTACT.NAME' | translate }}" ngModel required #name="ngModel"
                         [class.invalid]="name.invalid && name.touched" [class.valid]="name.valid && name.touched" />
-                    <img *ngIf="name.invalid && name.touched" src="assets/img/contacts/invalid.png" class="validation-icon"
-                        alt="invalid" />
+                    <img *ngIf="name.invalid && name.touched" src="assets/img/contacts/invalid.png"
+                        class="validation-icon" alt="invalid" />
                     <img *ngIf="name.valid && name.touched" src="assets/img/contacts/valid.png" alt="valid"
                         class="validation-icon">
                 </div>
@@ -31,8 +31,8 @@
                     <input name="email" placeholder="{{ 'CONTACT.EMAIL' | translate }}" ngModel required email
                         #email="ngModel" [class.invalid]="email.invalid && email.touched"
                         [class.valid]="email.valid && email.touched" />
-                    <img *ngIf="email.invalid && email.touched" src="assets/img/contacts/invalid.png" class="validation-icon"
-                        alt="Fehler" />
+                    <img *ngIf="email.invalid && email.touched" src="assets/img/contacts/invalid.png"
+                        class="validation-icon" alt="Fehler" />
                     <img *ngIf="email.valid && email.touched" src="assets/img/contacts/valid.png" alt="valid"
                         class="validation-icon">
                 </div>
@@ -55,19 +55,22 @@
                 <p class="error" *ngIf="message.invalid && message.touched">{{ 'CONTACT.REQUIRED_MESSAGE' | translate }}
                 </p>
             </div>
-
-            <div class="privacy-policy-checking">
-                <input type="checkbox" name="privacy" ngModel required #privacy="ngModel" />
-                <div>
-                    <p>
-                        {{ 'CONTACT.POLICY_ONE' | translate }}
-                        <a href="">{{ 'CONTACT.POLICY_TWO' | translate }}</a>
-                        {{ 'CONTACT.POLICY_THREE' | translate }}
-                    </p>
+            <div class="privacy">
+                <div class="privacy-policy-checking">
+                    <input type="checkbox" name="privacy" ngModel required #privacy="ngModel" />
+                    <div>
+                        <p>
+                            {{ 'CONTACT.POLICY_ONE' | translate }}
+                            <a href="">{{ 'CONTACT.POLICY_TWO' | translate }}</a>
+                            {{ 'CONTACT.POLICY_THREE' | translate }}
+                        </p>
+                    </div>
                 </div>
+                <p class="error" *ngIf="submitted && !privacy.value">{{ 'CONTACT.REQUIRED_POLICY' | translate }}</p>
             </div>
 
-            <button type="submit" [disabled]="!myForm.form.valid || !privacy.value"
+
+            <button type="submit"
                 [ngClass]="{ 'ready': myForm.form.valid && privacy.value }">
                 {{ 'CONTACT.BUTTON' | translate }}
             </button>
