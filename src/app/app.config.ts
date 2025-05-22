@@ -1,21 +1,9 @@
-// import { ApplicationConfig } from '@angular/core';
-// import { provideRouter } from '@angular/router';
-
-// import { routes } from './app.routes';
-// import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-
-// export const appConfig: ApplicationConfig = {
-//   providers: [provideRouter(routes), provideAnimationsAsync()]
-// };
-
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-
 import { HttpClient } from '@angular/common/http';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
@@ -29,7 +17,6 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideAnimationsAsync(),
-
     // HTTP-Client für Übersetzungen
     provideHttpClient(withInterceptorsFromDi()),
 

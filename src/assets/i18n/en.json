@@ -53,7 +53,8 @@
         "REQUIRED_NAME": "Your name is required",
         "REQUIRED_EMAIL": "Your email is required",
         "REQUIRED_MESSAGE": "Your message is empty",
-        "REQUIRED_POLICY": "Please accept the privacy policy"
+        "REQUIRED_POLICY": "Please accept the privacy policy",
+        "SUCCESS": "The email was sent successfully!"
     },
     "FOOTER": {
         "LEGAL": "Legal Notice"

@@ -74,29 +74,7 @@ form {
     align-items: center;
     max-width: 617px;
     width: 100%;
-    // gap: 32px;
     gap: 8px;
-
-    >button {
-        box-shadow: 4px 4px 4px 0px #00000040;
-        background-color: #B6B6B6;
-        padding: 15px 30px;
-        color: white;
-        border: none;
-        border-radius: 10px;
-        font-size: 23px;
-    }
-
-    button.ready {
-        background-color: #70E61C;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-
-        &:hover {
-            cursor: pointer;
-            background-color: #9747FF;
-            transform: scale(1.05);
-        }
-    }
 }
 
 .form-group {
@@ -295,13 +273,47 @@ textarea.invalid {
 
 input.valid,
 textarea.valid {
-  border-color: #70e61c !important;
+    border-color: #70e61c !important;
 }
 
 .error {
     color: #e61c40;
     font-size: 14px;
     line-height: 120%;
+}
+
+.form-submit-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    height: 91px;
+
+    >button {
+        box-shadow: 4px 4px 4px 0px #00000040;
+        background-color: #B6B6B6;
+        padding: 15px 30px;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 23px;
+    }
+
+    button.ready {
+        background-color: #70E61C;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #9747FF;
+            transform: scale(1.05);
+        }
+    }
+}
+
+.success-message {
+    color: #70e61c;
+    font-size: 15px;
 }
 
 input:-webkit-autofill,

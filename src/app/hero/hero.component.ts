@@ -42,4 +42,8 @@ export class HeroComponent {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }
+
+  openExternalLink(url: string): void {
+    window.open(url, '_blank');
+  }
 }

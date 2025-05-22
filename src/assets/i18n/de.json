@@ -53,7 +53,8 @@
         "REQUIRED_NAME": "Dein Name ist erforderlich",
         "REQUIRED_EMAIL": "Deine E-Mail ist erforderlich",
         "REQUIRED_MESSAGE": "Deine Nachricht darf nicht leer sein",
-        "REQUIRED_POLICY": "Bitte akzeptiere die Datenschutzerklärung"
+        "REQUIRED_POLICY": "Bitte akzeptiere die Datenschutzerklärung",
+        "SUCCESS": "Die E-Mail wurde erfolgreich versendet!"
     },
     "FOOTER": {
         "LEGAL": "Impressum"

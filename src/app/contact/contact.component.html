@@ -12,7 +12,7 @@
             <p>{{ 'CONTACT.NEED' | translate }} <span>{{ 'CONTACT.CONTACT_ME' | translate }}</span></p>
         </div>
 
-        <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+        <!-- <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
 
             <div class="form-group">
                 <div class="input-wrapper">
@@ -30,7 +30,7 @@
                 <div class="input-wrapper">
                     <input name="email" placeholder="{{ 'CONTACT.EMAIL' | translate }}" ngModel required email
                         #email="ngModel" [class.invalid]="email.invalid && email.touched"
-                        [class.valid]="email.valid && email.touched" />
+                        [class.valid]="email.valid && email.touched" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"/>
                     <img *ngIf="email.invalid && email.touched" src="assets/img/contacts/invalid.png"
                         class="validation-icon" alt="Fehler" />
                     <img *ngIf="email.valid && email.touched" src="assets/img/contacts/valid.png" alt="valid"
@@ -74,6 +74,89 @@
                 [ngClass]="{ 'ready': myForm.form.valid && privacy.value }">
                 {{ 'CONTACT.BUTTON' | translate }}
             </button>
+
+            <div class="scroll-up-section">
+                <img (click)="scrollToSection('hero')" src="assets/img/contacts/arrow_up.png" alt="">
+            </div>
+        </form> -->
+
+        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+
+            <div class="form-group">
+                <div class="input-wrapper">
+
+                    <input name="name" placeholder="{{ 'CONTACT.NAME' | translate }}" [(ngModel)]="contactData.name"
+                        #name="ngModel" [class.invalid]="name.invalid && name.touched"
+                        [class.valid]="name.valid && name.touched" required />
+
+
+                    <img *ngIf="name.invalid && name.touched" src="assets/img/contacts/invalid.png"
+                        class="validation-icon" alt="invalid" />
+                    <img *ngIf="name.valid && name.touched" src="assets/img/contacts/valid.png" alt="valid"
+                        class="validation-icon">
+                </div>
+                <p class="error" *ngIf="name.invalid && name.touched">{{ 'CONTACT.REQUIRED_NAME' | translate }}</p>
+            </div>
+
+            <div class="form-group">
+                <div class="input-wrapper">
+
+                    <input name="email" placeholder="{{ 'CONTACT.EMAIL' | translate }}" [(ngModel)]="contactData.email"
+                        #email="ngModel" [class.invalid]="email.invalid && email.touched"
+                        [class.valid]="email.valid && email.touched"
+                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required />
+
+
+                    <img *ngIf="email.invalid && email.touched" src="assets/img/contacts/invalid.png"
+                        class="validation-icon" alt="Fehler" />
+                    <img *ngIf="email.valid && email.touched" src="assets/img/contacts/valid.png" alt="valid"
+                        class="validation-icon">
+                </div>
+                <p class="error" *ngIf="email.invalid && email.touched">{{ 'CONTACT.REQUIRED_EMAIL' | translate }}</p>
+            </div>
+
+            <div class="form-group-textarea">
+                <div class="textarea-wrapper">
+                    <div class="textarea-container">
+
+                        <textarea name="message" placeholder="{{ 'CONTACT.MESSAGE' | translate }}"
+                            [(ngModel)]="contactData.message" required #message="ngModel"
+                            [class.invalid]="message.invalid && message.touched"
+                            [class.valid]="message.valid && message.touched"></textarea>
+
+
+                        <img src="assets/img/contacts/resize.png" alt="">
+                    </div>
+                    <img *ngIf="message.invalid && message.touched" src="assets/img/contacts/invalid.png"
+                        class="validation-icon-message" alt="Fehler" />
+                    <img *ngIf="message.valid && message.touched" src="assets/img/contacts/valid.png" alt="valid"
+                        class="validation-icon-message">
+                </div>
+                <p class="error" *ngIf="message.invalid && message.touched">{{ 'CONTACT.REQUIRED_MESSAGE' | translate }}
+                </p>
+            </div>
+            <div class="privacy">
+                <div class="privacy-policy-checking">
+                    <input type="checkbox" name="privacy" ngModel required #privacy="ngModel" />
+                    <div>
+                        <p>
+                            {{ 'CONTACT.POLICY_ONE' | translate }}
+                            <a href="">{{ 'CONTACT.POLICY_TWO' | translate }}</a>
+                            {{ 'CONTACT.POLICY_THREE' | translate }}
+                        </p>
+                    </div>
+                </div>
+                <p class="error" *ngIf="submitted && !privacy.value">{{ 'CONTACT.REQUIRED_POLICY' | translate }}</p>
+            </div>
+
+            <div class="form-submit-section">
+                <button type="submit" [ngClass]="{ 'ready': contactForm.form.valid && privacy.value }">
+                    {{ 'CONTACT.BUTTON' | translate }}
+                </button>
+
+                <p *ngIf="success" class="success-message">{{ 'CONTACT.SUCCESS' | translate }}</p>
+            </div>
+
 
             <div class="scroll-up-section">
                 <img (click)="scrollToSection('hero')" src="assets/img/contacts/arrow_up.png" alt="">
