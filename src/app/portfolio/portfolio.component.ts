@@ -10,5 +10,7 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './portfolio.component.scss'
 })
 export class PortfolioComponent {
-
+  openExternalLink(url: string): void {
+    window.open(url, '_blank');
+  }
 }
