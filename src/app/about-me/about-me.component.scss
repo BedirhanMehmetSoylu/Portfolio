@@ -6,7 +6,6 @@
     flex-direction: row;
     justify-content: space-between;
     padding-left: 100px;
-    // margin-top: 48px;
     padding-top: 88px;
     position: relative;
 }
@@ -95,5 +94,6 @@ p {
 .shadow {
     position: absolute;
     right: -440px;
-    top: -176px;
+    top: -256px;
+    z-index: 2;
 }
