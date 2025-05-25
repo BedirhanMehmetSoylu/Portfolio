@@ -97,3 +97,9 @@ p {
     top: -256px;
     z-index: 2;
 }
+
+@media (max-width: 1380px) {
+    .green-line {
+        width: 112px;
+    }
+}
