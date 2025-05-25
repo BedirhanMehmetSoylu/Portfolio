@@ -3,6 +3,18 @@
     <img class="shadow" src="assets/img/hero/hero-shadows.png" alt="">
     <img class="person" src="assets/img/hero/me.png" alt="">
     <img class="background" src="assets/img/hero/hero-background.png" alt="">
+    <div class="hero-right-mobile">
+      <div class="name-container">
+        <p [style.height]="iamHeight">{{ 'HERO.IAM' | translate }}</p>
+        <div>
+          <p class="name">Bedirhan Soylu</p>
+          <p class="profession">{{ 'HERO.PROFESSION' | translate }}</p>
+        </div>
+      </div>
+      <button (click)="scrollToSection('contact')" [style.fontSize]="buttonFontSize">
+        {{ 'HERO.LETS_TALK' | translate }}
+      </button>
+    </div>
   </div>
 
   <div class="hero-right">

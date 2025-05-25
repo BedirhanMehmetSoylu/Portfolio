@@ -7,10 +7,6 @@
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    // background-image: url('../../assets/img/hero/hero-background.png');
-    // background-repeat: no-repeat;
-    // background-position: center 258px;
-    // background-size: 100vw;
 }
 
 .hero-left {
@@ -19,7 +15,6 @@
     position: relative;
     width: fit-content;
     margin-left: 0;
-    // padding-top: 120px;
 }
 
 .background {
@@ -53,16 +48,44 @@
     gap: 40px;
     color: white;
     position: absolute;
-    top: 336px;
+    top: 312px;
     right: 96px;
     z-index: 3;
 
     >button {
         height: 58px;
-        padding-top: 15px;
-        padding-right: 34px;
-        padding-bottom: 15px;
-        padding-left: 34px;
+        padding: 15px 34px;
+        gap: 10px;
+        border-radius: 10px;
+        border: none;
+        background-color: #70E61C;
+        color: white;
+        font-size: 22px;
+        display: flex;
+        align-items: center;
+        box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        transition: all 300ms ease-out;
+
+        &:hover {
+            transform: scale(1.1);
+            background-color: #9747FF;
+            cursor: pointer;
+        }
+    }
+}
+
+.hero-right-mobile {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    color: white;
+    position: absolute;
+    z-index: 3;
+
+    >button {
+        height: 58px;
+        padding: 15px 34px;
         gap: 10px;
         border-radius: 10px;
         border: none;
@@ -170,5 +193,78 @@
 
     >img {
         transform: rotate(270deg);
+    }
+}
+
+@media (max-width: 1500px) {
+    .name {
+        font-size: 80px !important;
+    }
+
+    .name-container p {
+        font-size: 62px;
+    }
+
+    .profession {
+        font-size: 58px !important;
+    }
+
+
+}
+
+@media (max-width: 1456px) {
+    .background {
+        width: 1440px;
+        top: 392px;
+    }
+}
+
+@media (max-width: 1370px) {
+    .hero-right {
+        right: 56px;
+    }
+}
+
+@media (max-width: 1340px) {
+    .shadow {
+        width: 744px;
+        height: 710px;
+        left: -76px;
+    }
+
+    .person {
+        width: 560px;
+        top: 152px;
+    }
+
+    .background {
+        top: 330px;
+    }
+}
+
+@media (max-width: 1260px) {
+    .hero-right {
+        display: none;
+    }
+
+    .hero-right-mobile {
+        display: flex;
+        width: 100%;
+        bottom: 0;
+        padding-right: 48px;
+    }
+
+    .hero-left {
+        width: 100%;
+    }
+}
+
+@media (max-width: 980px) {
+    .scroll-down {
+        display: none;
+    }
+
+    .hero-bottom {
+        padding-bottom: 88px;
     }
 }
