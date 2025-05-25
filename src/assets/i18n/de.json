@@ -37,6 +37,11 @@
         "POKEDEX": "Basierend auf der PokéAPI – eine einfache Bibliothek zur Anzeige und Kategorisierung von Pokémon-Informationen.",
         "LIVE": "Live test"
     },
+    "REVIEWS": {
+        "FIRST": "Michael hat das Team wirklich mit seiner großartigen Organisation und klaren Kommunikation zusammengehalten. Ohne sein Engagement wären wir nicht so weit gekommen.",
+        "SECOND": "Michi war ein großartiger Teamkollege bei DA. Sein positives Engagement und seine Bereitschaft, Verantwortung zu übernehmen, haben wesentlich dazu beigetragen, dass wir unsere Ziele erreicht haben.",
+        "THIRD": "Es war eine große Freude, mit Michael zusammenzuarbeiten. Er versteht es, Teammitglieder zu motivieren und zu fördern, damit sie ihre beste Arbeit leisten – und bringt stets neue Ideen ins Brainstorming ein. Er war immer präsent und ansprechbar, wenn es um das Wohlbefinden der Teammitglieder ging, und half anderen mit einem tollen Sinn für Humor."
+    },
     "CONTACT": {
         "TITLE": "Kontakt",
         "SOLVE": "Ein Problem zu lösen?",
