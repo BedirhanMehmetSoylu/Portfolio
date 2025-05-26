@@ -1,0 +1,21 @@
+<div class="mobile-menu-overlay">
+    <div class="mobile-menu-content">
+        <a href="#about" (click)="closeMenu()" [ngClass]="{ 'active-link': activeSection === 'about' }">{{ 'NAV.ABOUT' |
+            translate }}</a>
+
+        <a href="#skills" (click)="closeMenu()" [ngClass]="{ 'active-link': activeSection === 'skills' }">{{
+            'MYSKILLS.HEADLINE' | translate }}</a>
+
+        <a href="#portfolio" (click)="closeMenu()" [ngClass]="{ 'active-link': activeSection === 'portfolio' }">{{
+            'NAV.PORTFOLIO' | translate }}</a>
+
+        <a href="#contact" (click)="closeMenu()" [ngClass]="{ 'active-link': activeSection === 'contact' }">{{
+            'CONTACT.TITLE' | translate }}</a>
+
+        <div class="language-btn-container">
+            <p [ngClass]="{'active-lang': currentLang === 'en'}" (click)="switchLang('en')">EN</p>
+            <p class="separator">/</p>
+            <p [ngClass]="{'active-lang': currentLang === 'de'}" (click)="switchLang('de')">DE</p>
+        </div>
+    </div>
+</div>

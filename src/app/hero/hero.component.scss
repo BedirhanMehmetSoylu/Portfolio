@@ -268,3 +268,29 @@
         padding-bottom: 88px;
     }
 }
+
+@media (max-width: 820px) {
+    .hero-right-mobile {
+        bottom: 64px;
+    }
+
+    .name-container p {
+        font-size: 43px;
+    }
+
+    .name {
+        font-size: 56px !important;
+    }
+
+    .profession {
+        font-size: 41px !important;
+    }
+
+    .hero-bottom {
+        padding-bottom: 64px;
+    }
+}
+
+@media (max-width: 780px) {
+    
+}

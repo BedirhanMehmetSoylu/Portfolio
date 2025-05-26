@@ -9,13 +9,13 @@
     justify-content: space-between;
     align-items: center;
     padding: 37px 100px;
+}
 
-    >img {
-        width: 160px;
+.logo {
+    width: 160px;
 
-        &:hover {
-            cursor: pointer;
-        }
+    &:hover {
+        cursor: pointer;
     }
 }
 
@@ -89,4 +89,30 @@ span {
 .language-btn-container button.active-lang {
     background-color: #70E61C;
     font-weight: 700;
+}
+
+.burger-icon {
+    display: none;
+    position: fixed;
+    z-index: 1100; // höher als das mobile Menü
+    right: 54px;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+}
+
+
+@media (max-width: 1100px) {
+    .navbar {
+        padding: 37px 54px;
+    }
+}
+
+@media (max-width: 900px) {
+    .navbar-right {
+        display: none;
+    }
+
+    .burger-icon {
+        display: flex;
+    }
 }

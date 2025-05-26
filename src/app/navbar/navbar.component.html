@@ -1,14 +1,18 @@
 <div class="navbar">
-    <img (click)="scrollToSection('hero')" src="assets/img/logo.png" alt="">
-    <div class="navbar-right">
-      <div class="link-container">
-        <a href="#about">{{ 'NAV.ABOUT' | translate }}</a>
-        <a href="#skills">{{ 'NAV.SKILLS' | translate }}</a>
-        <a href="#portfolio">{{ 'NAV.PORTFOLIO' | translate }}</a>
-      </div>
-      <div class="language-btn-container">
-        <button [ngClass]="{'active-lang': currentLang === 'de'}" (click)="switchLang('de')">DE</button>
-        <button [ngClass]="{'active-lang': currentLang === 'en'}" (click)="switchLang('en')">EN</button>
-      </div>
+  <img class="logo" (click)="scrollToSection('hero')" src="assets/img/logo.png" alt="">
+  <div class="navbar-right">
+    <div class="link-container">
+      <a href="#about">{{ 'NAV.ABOUT' | translate }}</a>
+      <a href="#skills">{{ 'NAV.SKILLS' | translate }}</a>
+      <a href="#portfolio">{{ 'NAV.PORTFOLIO' | translate }}</a>
     </div>
-  </div>  
+    <div class="language-btn-container">
+      <button [ngClass]="{'active-lang': currentLang === 'de'}" (click)="switchLang('de')">DE</button>
+      <button [ngClass]="{'active-lang': currentLang === 'en'}" (click)="switchLang('en')">EN</button>
+    </div>
+  </div>
+  <img class="burger-icon" [src]="currentBurgerImage" alt="Burger Icon" (click)="toggleMenu()" />
+  <app-mobile-menu *ngIf="isOpen" [currentLang]="currentLang" [activeSection]="activeSection" (switchLangEvent)="switchLang($event)"
+    (close)="toggleMenu()">
+  </app-mobile-menu>
+</div>
