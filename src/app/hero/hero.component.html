@@ -4,8 +4,8 @@
     <img class="person" src="assets/img/hero/me.png" alt="">
     <img class="background" src="assets/img/hero/hero-background.png" alt="">
     <div class="hero-right-mobile">
-      <div class="name-container">
-        <p [style.height]="iamHeight">{{ 'HERO.IAM' | translate }}</p>
+      <div [class.padding-reset]="translate.currentLang === 'de'" class="name-container">
+        <p class="i-am">{{ 'HERO.IAM' | translate }}</p>
         <div>
           <p class="name">Bedirhan Soylu</p>
           <p class="profession">{{ 'HERO.PROFESSION' | translate }}</p>
@@ -19,7 +19,7 @@
 
   <div class="hero-right">
     <div class="name-container">
-      <p [style.height]="iamHeight">{{ 'HERO.IAM' | translate }}</p>
+      <p>{{ 'HERO.IAM' | translate }}</p>
       <div>
         <p class="name">Bedirhan Soylu</p>
         <p class="profession">{{ 'HERO.PROFESSION' | translate }}</p>

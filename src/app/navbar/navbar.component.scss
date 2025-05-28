@@ -116,3 +116,31 @@ span {
         display: flex;
     }
 }
+
+@media (max-width: 450px) {
+    .navbar {
+        padding: 37px 28px;
+    }
+
+    .burger-icon {
+        right: 28px;
+        width: 30px;
+        height: 27px;
+    }
+}
+
+@media (max-width: 365px) {
+    .logo {
+        width: 136px;
+    }
+
+    .burger-icon {
+        width: 27px;
+        height: 23px;
+        right: 16px;
+    }
+
+    .navbar {
+        padding: 28px 16px;
+    }
+}

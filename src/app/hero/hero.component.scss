@@ -106,13 +106,19 @@
 }
 
 .name-container {
+    position: relative;
     display: flex;
     align-items: center;
 
     >p {
-        transform: rotate(270deg);
-        font-size: 64px;
-        height: 64px;
+        position: absolute;
+        left: -48px;
+        top: 93%;
+        transform: rotate(-90deg) translateY(-50%);
+        transform-origin: left top;
+        font-size: 66px;
+        height: auto;
+        white-space: nowrap;
     }
 
     >div {
@@ -196,6 +202,10 @@
     }
 }
 
+.padding-reset {
+  padding-left: 0px !important;
+}
+
 @media (max-width: 1500px) {
     .name {
         font-size: 80px !important;
@@ -208,8 +218,6 @@
     .profession {
         font-size: 58px !important;
     }
-
-
 }
 
 @media (max-width: 1456px) {
@@ -251,11 +259,18 @@
         display: flex;
         width: 100%;
         bottom: 0;
-        padding-right: 48px;
     }
 
     .hero-left {
         width: 100%;
+    }
+
+    .i-am {
+        left: 48px !important;
+    }
+
+    .name-container {
+        padding-left: 93px;
     }
 }
 
@@ -291,6 +306,207 @@
     }
 }
 
-@media (max-width: 780px) {
-    
+@media (max-width: 800px) {
+    .socials p {
+        display: none;
+    }
+
+    .person {
+        width: 480px;
+        top: 112px;
+    }
+
+    .background {
+        top: 192px;
+    }
+
+    .shadow {
+        left: -102px;
+        top: 148px;
+        width: 674px;
+    }
+
+    .hero-right-mobile {
+        bottom: 208px;
+    }
+
+    .line {
+        width: 154px;
+    }
+}
+
+@media (max-width: 667px) {
+    .name-container {
+        font-size: 40px;
+    }
+
+    .name {
+        font-size: 50px !important;
+    }
+
+    .profession {
+        font-size: 36px !important;
+    }
+
+    .hero-bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .socials {
+        width: 100%;
+        position: relative;
+        justify-content: center;
+    }
+
+    .socials .line {
+        position: absolute;
+        left: 0;
+        height: 2px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: calc(50% - ((30px + 32px) * 1.5));
+    }
+}
+
+@media (max-width: 548px) {
+    .person {
+        width: 410px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .shadow {
+        top: 130px;
+        left: 45%;
+        transform: translateX(-50%);
+    }
+
+    .background {
+        top: 120px;
+    }
+
+    .name {
+        font-size: 44px !important;
+    }
+
+    .profession {
+        font-size: 32px !important;
+    }
+
+    .hero-right-mobile {
+        padding-right: 0px;
+    }
+
+    .hero-right-mobile button {
+        font-size: 16px !important;
+        padding: 15px 30px;
+        height: 49px;
+    }
+}
+
+@media (max-width: 480px) {
+    .name {
+        font-size: 39px !important;
+    }
+
+    .profession {
+        font-size: 28px !important;
+    }
+
+    .hero-right-mobile {
+        bottom: 328px;
+        gap: 32px;
+    }
+
+    .i-am {
+        font-size: 30px !important;
+        left: 8px !important;
+    }
+
+    .name-container {
+        padding-left: 30px;
+    }
+}
+
+@media (max-width: 410px) {
+     .hero-bottom {
+        padding-bottom: 32px;
+     }
+}
+
+@media (max-width: 380px) {
+    .person {
+        width: 304px;
+        top: 96px;
+    }
+
+    .shadow {
+        width: 545px;
+        top: 80px;
+    }
+
+    .background {
+        top: -18px;
+    }
+
+    .hero-right-mobile {
+        bottom: 508px;
+        gap: 22px;
+    }
+
+    .name {
+        font-size: 32px !important;
+    }
+
+    .profession {
+        font-size: 23px !important;
+    }
+
+    .i-am {
+        font-size: 25px !important;
+        left: 12px !important;
+    }
+}
+
+@media (max-width: 365px) {
+    .person {
+        top: 72px;
+        width: 272px;
+    }
+
+    .background {
+        top: -76px;
+    }
+
+    .shadow {
+        top: 64px;
+    }
+
+    .hero-right-mobile {
+        gap: 16px;
+        bottom: 590px;
+
+        >button {
+            height: 40px;
+            padding: 15px 24px;
+        }
+    }
+
+    .name {
+        font-size: 28px !important;
+    }
+
+    .profession {
+        font-size: 20px !important;
+    }
+
+    .i-am {
+        font-size: 22px !important;
+    }
+
+    .socials img {
+        width: 24px;
+        height: 24px;
+    }
 }

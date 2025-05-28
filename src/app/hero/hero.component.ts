@@ -13,7 +13,7 @@ export class HeroComponent {
   iamHeight: string = 'auto';
   buttonFontSize: string = '16px';
 
-  constructor(private translate: TranslateService) {
+  constructor(public translate: TranslateService) {
     this.loadTranslationHeight();
     this.loadButtonFontSize();
 

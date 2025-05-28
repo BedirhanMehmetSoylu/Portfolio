@@ -5,8 +5,7 @@
         "PORTFOLIO": "Portfolio"
     },
     "HERO": {
-        "IAM": "Ich bin",
-        "IAM_HEIGHT": "0px",
+        "IAM": "",
         "PROFESSION": "FRONTEND ENTWICKLER",
         "LETS_TALK": "Lass reden!",
         "LETS_TALK_FONT_SIZE": "18px",
