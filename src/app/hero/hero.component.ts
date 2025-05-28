@@ -7,26 +7,18 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule, TranslateModule],
   templateUrl: './hero.component.html',
-  styleUrl: './hero.component.scss'
+  styleUrls: ['./hero.component.scss', './hero.component.responsive.scss']
 })
 export class HeroComponent {
   iamHeight: string = 'auto';
   buttonFontSize: string = '16px';
 
   constructor(public translate: TranslateService) {
-    this.loadTranslationHeight();
     this.loadButtonFontSize();
 
-    // Sprache wechseln = Höhe neu laden
+    // Sprache wechseln
     this.translate.onLangChange.subscribe(() => {
-      this.loadTranslationHeight();
       this.loadButtonFontSize();
-    });
-  }
-
-  loadTranslationHeight() {
-    this.translate.get('HERO.IAM_HEIGHT').subscribe((height: string) => {
-      this.iamHeight = height || 'auto';
     });
   }
 

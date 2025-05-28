@@ -15,6 +15,7 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    z-index: 3;
 
     >div {
         display: flex;
@@ -98,8 +99,130 @@ p {
     z-index: 2;
 }
 
+// about-me.component.scss
+:host {
+  scroll-margin-top: 80px;
+}
+
 @media (max-width: 1380px) {
     .green-line {
         width: 112px;
+    }
+}
+
+@media (max-width: 1260px) {
+    .about-me-section {
+        padding-left: 48px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .selfie {
+        width: 368px;
+        height: 368px;
+    }
+}
+
+@media (max-width: 1070px) {
+    h1 {
+        font-size: 72px;
+    }
+
+    .about-me-info-container {
+        width: 400px;
+    }
+    
+    .about-me-section {
+        padding-top: 48px;
+    }
+}
+
+@media (max-width: 980px) {
+    .selfie-container {
+        display: none;
+    }
+
+    .about-me-info-container {
+        width: 520px;
+    }
+}
+
+@media (max-width: 700px) {
+    .shadow {
+        width: 572px;
+        right: -365px;
+        top: -120px;
+    }
+}
+
+@media (max-width: 667px) {
+    .about-me-section {
+        padding-left: 24px;
+        padding-right: 24px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 424px) {
+    h1 {
+        font-size: 45px;
+    }
+
+    .about-me-section {
+        padding-top: 24px;
+    }
+
+    .shadow {
+        height: 593px;
+        top: -150px;
+    }
+
+    .about-me-info-container {
+        gap: 24px;
+
+        >p {
+            padding-top: 8px;
+        }
+
+        >div {
+
+            >div {
+                gap: 16px;
+            }
+        }
+    }
+}
+
+@media (max-width: 390px) {
+    .shadow {
+        height: unset;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .about-me-info-container {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 350px) {
+    .about-me-section {
+        padding-top: 8px;
+    }
+
+    .about-me-info-container {
+        >p {
+            font-size: 14px;
+            padding-top: 0px;
+        }
+
+        >div {
+            gap: 16px;
+            >div p {
+                font-size: 14px;
+            }
+        }
     }
 }
