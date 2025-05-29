@@ -45,6 +45,40 @@
                 <p>{{ 'MYSKILLS.DESCRIPTION' | translate }}</p>
                 <p>{{ 'MYSKILLS.DESCRIPTION_SKILLS' | translate }}</p>
             </div>
+            <div class="skills-container moved-skills">
+                <div class="skill" *ngFor="let skill of skills">
+                    <img [src]="'assets/img/myskills/' + skill.imagePath" [alt]="skill.text" />
+                    <span>{{ skill.text }}</span>
+                </div>
+                <div class="skill">
+                    <img src="assets/img/myskills/materialdesign.png" alt="">
+                    <div class="skill-text-container">
+                        <span>Material</span>
+                        <span>Design</span>
+                    </div>
+                </div>
+                <div class="skill-learning">
+                    <img src="assets/img/myskills/learning.svg" alt="">
+                    <div class="skill-learning-text-container">
+                        <span>{{ 'MYSKILLS.CONTINUALLY' | translate }}</span>
+                        <span>{{ 'MYSKILLS.LEARNING' | translate }}</span>
+                    </div>
+                    <mat-dialog-content>
+                        <p>{{ 'MYSKILLS.INTEREST' | translate }}</p>
+                        <div>
+                            <div>
+                                <img src="assets/img/myskills/react.png" alt="">
+                                <p>React</p>
+                                <img class="vector" src="assets/img/myskills/vector_dialog.png" alt="">
+                            </div>
+                            <div>
+                                <img src="assets/img/myskills/vue_js.png" alt="">
+                                <p>Vue Js</p>
+                            </div>
+                        </div>
+                    </mat-dialog-content>
+                </div>
+            </div>
             <div class="looking-section">
                 <p>{{ 'MYSKILLS.LOOKING' | translate }}</p>
                 <div>
@@ -57,6 +91,7 @@
             </div>
             <button (click)="scrollToSection('contact')">{{ 'MYSKILLS.BUTTON' | translate }}</button>
         </div>
+        <img class="shadow-mobile" src="assets/img/myskills/shadow.png" alt="">
     </div>
 
 </div>

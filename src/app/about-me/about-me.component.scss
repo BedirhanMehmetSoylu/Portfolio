@@ -99,7 +99,6 @@ p {
     z-index: 2;
 }
 
-// about-me.component.scss
 :host {
   scroll-margin-top: 80px;
 }
@@ -182,6 +181,7 @@ p {
 
         >p {
             padding-top: 8px;
+            padding-right: 24px;
         }
 
         >div {
