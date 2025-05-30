@@ -32,7 +32,7 @@
     "PORTFOLIO": {
         "DESCRIPTION": "Explore a selection of my work here - Interact with projects to see my skills in action.",
         "JOIN": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
-        "EL_POLLO_LOCO": "A simple Jump-and-Run game based on an object-oriented approach. Help Pepe to find coins and salsa bottles to fight against the killer chicken.Live testGithub",
+        "EL_POLLO_LOCO": "A simple Jump-and-Run game based on an object-oriented approach. Help Pepe to find coins and salsa bottles to fight against the killer chicken.",
         "POKEDEX": "Based on the PokéAPI a simple library that provides and catalogues pokemon information.",
         "LIVE": "Live test"
     },

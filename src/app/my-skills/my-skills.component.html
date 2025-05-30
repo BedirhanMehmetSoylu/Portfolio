@@ -23,7 +23,7 @@
                     <div>
                         <img src="assets/img/myskills/react.png" alt="">
                         <p>React</p>
-                        <img class="vector" src="assets/img/myskills/vector_dialog.png" alt="">
+                        <img [class.german-vector-bottom]="translate.currentLang === 'de'" class="vector" src="assets/img/myskills/vector_dialog.png" alt="">
                     </div>
                     <div>
                         <img src="assets/img/myskills/vue_js.png" alt="">
@@ -35,9 +35,9 @@
         <img class="shadow" src="assets/img/myskills/shadow.png" alt="">
     </div>
 
-    <div class="desription-container">
+    <div class="description-container">
         <div class="description-header">
-            <h2>{{ 'MYSKILLS.HEADLINE' | translate }}</h2>
+            <h2 [class.german-big-title]="translate.currentLang === 'de'">{{ 'MYSKILLS.HEADLINE' | translate }}</h2>
             <div class="purple-line"></div>
         </div>
         <div class="description">
@@ -50,7 +50,7 @@
                     <img [src]="'assets/img/myskills/' + skill.imagePath" [alt]="skill.text" />
                     <span>{{ skill.text }}</span>
                 </div>
-                <div class="skill">
+                <div class="skill padd-0">
                     <img src="assets/img/myskills/materialdesign.png" alt="">
                     <div class="skill-text-container">
                         <span>Material</span>
@@ -69,7 +69,7 @@
                             <div>
                                 <img src="assets/img/myskills/react.png" alt="">
                                 <p>React</p>
-                                <img class="vector" src="assets/img/myskills/vector_dialog.png" alt="">
+                                <img [class.german-vector-bottom]="translate.currentLang === 'de'" class="vector" src="assets/img/myskills/vector_dialog.png" alt="">
                             </div>
                             <div>
                                 <img src="assets/img/myskills/vue_js.png" alt="">
@@ -80,14 +80,16 @@
                 </div>
             </div>
             <div class="looking-section">
-                <p>{{ 'MYSKILLS.LOOKING' | translate }}</p>
-                <div>
-                    <p style="color: #9747FF">{{ 'MYSKILLS.ANOTHER' | translate }}</p>
-                    <p>?</p>
+                <div class="looking-container" [class.german-looking-text]="translate.currentLang === 'de'">
+                    <p>{{ 'MYSKILLS.LOOKING' | translate }}</p>
+                    <div>
+                        <p style="color: #9747FF">{{ 'MYSKILLS.ANOTHER' | translate }}</p>
+                        <p>?</p>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <p>{{ 'MYSKILLS.LEARNING_SKILLS' | translate }}</p>
+                <div>
+                    <p>{{ 'MYSKILLS.LEARNING_SKILLS' | translate }}</p>
+                </div>
             </div>
             <button (click)="scrollToSection('contact')">{{ 'MYSKILLS.BUTTON' | translate }}</button>
         </div>

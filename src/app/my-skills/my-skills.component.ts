@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-my-skills',
@@ -50,7 +50,7 @@ export class MySkillsComponent {
     }
   ];
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, public translate: TranslateService) {}
 
   scrollToSection(sectionId: string) {
     const element = document.getElementById(sectionId);

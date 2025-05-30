@@ -150,6 +150,10 @@ mat-dialog-content {
     }
 }
 
+.german-vector-bottom {
+    bottom: -17px !important;
+}
+
 .shadow {
     position: absolute;
     left: -648px;
@@ -163,7 +167,7 @@ mat-dialog-content {
     bottom: -560px;
 }
 
-.desription-container {
+.description-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -181,7 +185,7 @@ mat-dialog-content {
 h2 {
     color: white;
     font-size: 90px;
-    line-height: 100%;
+    line-height: 120%;
 }
 
 .purple-line {
@@ -200,6 +204,7 @@ h2 {
     width: 100%;
     gap: 24px;
     padding-right: 100px;
+    z-index: 1;
 }
 
 .first-description {
@@ -214,6 +219,13 @@ p {
 }
 
 .looking-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+}
+
+.looking-container {
     display: flex;
     font-size: 32px;
     font-weight: 700;
@@ -247,10 +259,6 @@ button {
     }
 }
 
-// :host {
-//   scroll-margin-top: 80px;
-// }
-
 @media (max-width: 1400px) {
     .skills-section {
         gap: 64px;
@@ -259,6 +267,16 @@ button {
     .skills-container {
         max-width: 440px;
         margin-left: 80px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .german-big-title {
+        font-size: 72px;
+    }
+
+    .german-looking-text {
+        font-size: 26px;
     }
 }
 
@@ -275,8 +293,12 @@ button {
         width: 48px;
     }
 
-    .looking-section {
-        font-size: 24px;
+    .looking-container {
+        font-size: 28px;
+    }
+
+    .german-looking-text {
+        font-size: 26px;
     }
 
     .skills-container {
@@ -324,7 +346,7 @@ button {
         display: block;
     }
 
-    .desription-container {
+    .description-container {
         position: relative;
         width: 100%;
         align-items: flex-end;
@@ -337,5 +359,152 @@ button {
     .shadow {
         left: -632px;
         bottom: -648px;
+    }
+}
+
+@media (max-width: 900px) {
+    .skills-section {
+        padding-top: 120px;
+    }
+}
+
+@media (max-width: 710px) {
+    .description {
+        padding-left: 48px;
+    }
+
+    .description-container {
+        gap: 32px;
+    }
+}
+
+@media (max-width: 670px) {
+    .moved-skills {
+        max-width: 328px;
+        justify-content: center;
+        gap: 22px 32px;
+    }
+
+    .skill {
+        gap: 12px;
+
+        >img {
+            height: 48px;
+        }
+
+        >span {
+            font-size: 14px;
+        }
+    }
+
+    .skill-text-container {
+        font-size: 14px;
+    }
+
+    .padd-0 {
+        padding-top: 0px !important;
+    }
+
+    .skill-learning {
+        gap: 12px;
+        padding-top: 0px;
+
+        >img {
+            height: 48px;
+        }
+    }
+
+    .skill-learning-text-container {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 560px) {
+    .german-big-title {
+        font-size: 45px;
+    }
+
+    .german-looking-text {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 476px) {
+    h2 {
+        font-size: 45px;
+    }
+
+    .looking-container {
+        font-size: 24px;
+        padding-top: 8px;
+    }
+
+    .german-looking-text {
+        font-size: 22px;
+    }
+
+    .purple-line {
+        width: 24px;
+    }
+
+    .description {
+        padding-right: 34px;
+        padding-left: 12px;
+    }
+
+    .shadow-mobile {
+        width: 504px;
+        left: -361px;
+        bottom: -64px;
+    }
+}
+
+@media (max-width: 430px) {
+    .description {
+        padding-left: 0px;
+        padding-right: 0px;
+        align-items: center;
+    }
+
+    .first-description {
+        padding-right: 34px;
+        padding-left: 12px;
+    }
+
+    .looking-section {
+        padding-right: 34px;
+        padding-left: 12px;
+    }
+}
+
+@media (max-width: 425px) {
+    .german-looking-text {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 390px) {
+    .purple-line {
+        width: 20px;
+    }
+
+    .first-description {
+        padding-right: 30px;
+        padding-left: 12px;
+    }
+
+    .looking-section {
+        padding-right: 30px;
+        padding-left: 8px;
+    }
+
+    .german-looking-text {
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 375px) {
+    .german-looking-text {
+        font-size: 18px;
     }
 }
