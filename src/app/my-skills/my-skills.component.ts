@@ -8,7 +8,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule, MatDialogModule, TranslateModule],
   templateUrl: './my-skills.component.html',
-  styleUrl: './my-skills.component.scss'
+  styleUrls: ['./my-skills.component.scss', './my-skills.component.responsive.scss']
 })
 export class MySkillsComponent {
   skills = [
@@ -50,7 +50,7 @@ export class MySkillsComponent {
     }
   ];
 
-  constructor(private dialog: MatDialog, public translate: TranslateService) {}
+  constructor(private dialog: MatDialog, public translate: TranslateService) { }
 
   scrollToSection(sectionId: string) {
     const element = document.getElementById(sectionId);
