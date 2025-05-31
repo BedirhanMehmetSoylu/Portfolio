@@ -141,3 +141,162 @@
         padding: 24px 40px;
     }
 }
+
+@media (max-width: 1200px) {
+    .review-container {
+        max-width: 640px;
+        padding: 24px;
+    }
+
+    .reviewer-name {
+        padding-right: 40px;
+    }
+}
+
+@media (max-width: 1170px) {
+    .reviews-section-top {
+        flex-direction: column-reverse;
+    }
+
+    .review-container {
+        max-width: 850px;
+        padding: 24px 40px;
+    }
+
+    .reviewer-container {
+        width: 100%;
+        justify-content: center;
+        /* Kreis zentrieren */
+    }
+
+    .purple-circle {
+        position: relative;
+        z-index: 2;
+    }
+
+    .purple-line-short {
+        position: absolute;
+        left: 50%;
+        // transform: translateX(136px);
+        top: 50%;
+        transform: translate(136px, -50%);
+        height: 4px;
+        width: calc(50% - 136px);
+        background-color: rgb(151, 71, 255);
+        border: none;
+        z-index: 1;
+    }
+}
+
+@media (max-width: 1070px) {
+    .review-container {
+        max-width: 768px;
+    }
+}
+
+@media (max-width: 980px) {
+    .review-container {
+        max-width: 656px;
+
+        >img {
+            top: -36px;
+            left: -18px;
+            height: 48px;
+        }
+    }
+}
+
+@media (max-width: 759px) {
+    .reviews-section {
+        gap: 32px;
+    }
+
+    .reviews-section-top {
+        gap: 32px;
+    }
+
+    .purple-circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .purple-line-short {
+        transform: translate(100px, -50%);
+        width: calc(50% - 100px);
+    }
+
+    .review-container {
+        max-width: unset;
+        width: unset;
+        margin: 0px 40px;
+        padding: 24px;
+
+        >p {
+            font-size: 18px;
+        }
+    }
+
+    .shadow {
+        width: 800px;
+        top: -488px;
+        right: -480px;
+    }
+}
+
+@media (max-width: 659px) {
+    .review-container {
+        padding: 16px;
+    }
+
+}
+
+@media (max-width: 544px) {
+    .review-container {
+        margin: 0px 24px;
+
+        >p {
+            font-size: 16px;
+        }
+    }
+
+    .reviewer-name {
+        >p {
+            font-size: 16px;
+        }
+    }
+
+    .shadow {
+        width: 560px;
+        top: -295px;
+        right: -376px;
+    }
+}
+
+@media (max-width: 410px) {
+    .purple-circle {
+        width: 144px;
+        height: 144px;
+    }
+
+    .purple-line-short {
+        transform: translate(72px, -50%);
+        width: calc(50% - 72px);
+    }
+
+    .reviewer-name {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .purple-line {
+        flex-grow: unset;
+        width: 55px;
+    }
+
+    .shadow {
+        width: 480px;
+        top: -264px;
+        right: -319px;
+    }
+}
