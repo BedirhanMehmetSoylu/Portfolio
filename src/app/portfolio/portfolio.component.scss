@@ -309,4 +309,43 @@ h2 {
     h2 {
         font-size: 45px;
     }
+
+    .portfolio-section {
+        padding-top: 72px;
+    }
+
+    :host {
+        scroll-margin-top: 64px;
+    }
+}
+
+@media (max-width: 373px) {
+    :host {
+        scroll-margin-top: 40px;
+    }
+
+    .section-description {
+        margin-top: 24px;
+    }
+
+    .laptop-container {
+
+        >img {
+            height: 256px;
+        }
+    }
+
+    .project-description {
+        margin-top: 0px;
+    }
+
+    .live-test-btn {
+        width: 128px;
+        font-size: 19px;
+    }
+
+    .github-btn {
+        width: 128px;
+        font-size: 19px;
+    }
 }
