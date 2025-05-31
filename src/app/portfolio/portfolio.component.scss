@@ -77,7 +77,6 @@ h2 {
 
 .laptop-container {
     width: 620px;
-    // width: 584px;
     height: 339px;
     display: flex;
     justify-content: center;
@@ -86,6 +85,14 @@ h2 {
     >img {
         height: 412px;
     }
+}
+
+.mobile {
+    display: none;
+}
+
+.desktop {
+    display: flex;
 }
 
 .project-description {
@@ -162,7 +169,8 @@ h2 {
     line-height: 120%;
     border: none;
     border-radius: 10px;
-    padding: 15px 30px;
+    width: 152px;
+    height: 58px;
 
     &:hover {
         cursor: pointer;
@@ -177,10 +185,128 @@ h2 {
     line-height: 120%;
     border: 1px solid #70E61C;
     border-radius: 10px;
-    padding: 15px 30px;
+    width: 152px;
+    height: 58px;
 
     &:hover {
         cursor: pointer;
         background-color: #70E61C;
+    }
+}
+
+@media (max-width: 1288px) {
+    .laptop-container {
+        width: 424px;
+
+        >img {
+            height: 356px;
+        }
+    }
+}
+
+@media (max-width: 1070px) {
+    h2 {
+        font-size: 72px;
+    }
+}
+
+@media (max-width: 1020px) {
+    .projects-container {
+        padding-top: 0px;
+    }
+
+    .project {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .project-description {
+        align-items: center;
+        text-align: center;
+    }
+
+    .project-description-to-right {
+        align-items: center;
+        text-align: center;
+    }
+
+    .laptop-container {
+        height: unset;
+    }
+
+    .mobile {
+        display: flex;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+    .shadow {
+        left: -172px;
+        width: 568px;
+    }
+}
+
+@media (max-width: 765px) {
+    .section-description {
+        padding: 0px 24px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 730px) {
+    .portfolio-headline {
+        gap: 24px;
+    }
+
+    .purple-line-short {
+        width: 64px;
+    }
+}
+
+@media (max-width: 550px) {
+    .purple-line-short {
+        width: 48px;
+    }
+
+    .laptop-container {
+        width: unset;
+
+        >img {
+            height: 280px;
+        }
+    }
+
+    .project-description {
+        padding: 0px 24px;
+
+        >div {
+            gap: 10px;
+            width: 100%;
+            justify-content: space-between;
+        }
+    }
+
+    .project-description-to-right {
+        padding: 0px 24px;
+
+        >div {
+            gap: 10px;
+            width: 100%;
+            justify-content: space-between;
+        }
+    }
+
+    .shadow {
+        width: 348px;
+        left: 40px;
+        top: 26%;
+    }
+}
+
+@media (max-width: 430px) {
+    h2 {
+        font-size: 45px;
     }
 }
