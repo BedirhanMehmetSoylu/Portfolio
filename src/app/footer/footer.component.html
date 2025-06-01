@@ -3,7 +3,7 @@
         <div class="footer-left">
             <img (click)="scrollToSection('hero')" src="assets/img/logo.png" alt="">
             
-            <div class="link-wrapper">
+            <div class="link-wrapper d-block">
                 <a href="">{{ 'FOOTER.LEGAL' | translate }}</a>
                 <div class="underline"></div>
             </div>
@@ -16,5 +16,11 @@
             <img (click)="scrollToSection('contact')" src="assets/img/hero/email.png" alt="">
             <img src="assets/img/hero/linkedin.png" alt="" (click)="openExternalLink('https://www.linkedin.com/in/bedirhan-soylu-65b703367/')">
         </div>
+
+        <div class="link-wrapper d-none">
+                <a href="">{{ 'FOOTER.LEGAL' | translate }}</a>
+                <div class="underline"></div>
+        </div>
+
     </div>
 </footer>

@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
   standalone: true,
   imports: [CommonModule, FormsModule, TranslateModule],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+  styleUrls: ['./contact.component.scss', './contact.component.responsive.scss']
 })
 export class ContactComponent {
   submitted = false;

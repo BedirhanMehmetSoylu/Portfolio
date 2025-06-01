@@ -75,3 +75,61 @@ footer {
         }
     }
 }
+
+.d-block {
+    display: block;
+}
+
+.d-none {
+    display: none;
+}
+
+@media (max-width: 1380px) {
+    .footer-section {
+        padding: 0 64px;
+    }
+}
+
+@media (max-width: 1070px) {
+    .footer-section {
+        padding: 0 48px;
+    }
+
+    .footer-right {
+        gap: 32px;
+    }
+}
+
+@media (max-width: 900px) {
+    footer {
+        height: unset;
+    }
+
+    .footer-section {
+        flex-direction: column;
+        padding: 66px 0px;
+        gap: 24px;
+    }
+
+    .footer-left {
+        >img {
+            padding-bottom: 16px;
+        }
+    }
+
+    .d-block {
+        display: none;
+    }
+
+    .d-none {
+        display: block;
+    }
+}
+
+@media (max-width: 374px) {
+    .footer-section {
+        >p {
+            font-size: 20px;
+        }
+    }
+}
