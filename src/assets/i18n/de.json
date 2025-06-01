@@ -62,5 +62,35 @@
     },
     "FOOTER": {
         "LEGAL": "Impressum"
+    },
+    "LEGAL_NOTICE": {
+        "TITLE": "Impressum",
+        "NAME": "Bedirhan Mehmet Soylu",
+        "ADDRESS": {
+            "STREET": "Bergkammstraße 8",
+            "ZIP": "30453",
+            "CITY": "Hannover",
+            "COUNTRY": "Deutschland"
+        },
+        "CONTACT": {
+            "TITLE": "Kontakt",
+            "PHONE": "Telefon: 0175 6086292",
+            "EMAIL": "E-Mail: bedirhanmehmetsoylu@gmail.com"
+        },
+        "RESPONSIBLE": {
+            "TITLE": "Redaktionell verantwortlich",
+            "TEXT": "Inhaltlich verantwortliche Person:"
+        },
+        "EU_DISPUTE": {
+            "TITLE": "EU-Streitschlichtung",
+            "TEXT": "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:",
+            "LINK_TEXT": "https://ec.europa.eu/consumers/odr/",
+            "NOTE": "Unsere E-Mail-Adresse finden Sie oben im Impressum."
+        },
+        "CONSUMER_DISPUTE": {
+            "TITLE": "Verbraucherstreitbeilegung/Universalschlichtungsstelle",
+            "TEXT": "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."
+        },
+        "SOURCE": "Quelle:"
     }
 }

@@ -5,11 +5,12 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NgForm } from '@angular/forms';
 import emailjs from 'emailjs-com';
 import { HttpClient } from '@angular/common/http';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, TranslateModule],
+  imports: [CommonModule, FormsModule, TranslateModule, RouterModule],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss', './contact.component.responsive.scss']
 })
@@ -26,6 +27,8 @@ export class ContactComponent {
   }
 
   mailTest = true;
+
+  constructor(private router: Router) { }
 
   scrollToSection(sectionId: string) {
     const element = document.getElementById(sectionId);
@@ -110,5 +113,4 @@ export class ContactComponent {
       }, 3000);
     }
   }
-
 }

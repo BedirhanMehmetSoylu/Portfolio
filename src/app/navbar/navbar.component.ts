@@ -3,6 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { MobileMenuComponent } from '../mobile-menu/mobile-menu.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -28,7 +29,7 @@ export class NavbarComponent {
     return this.imageSequence[this.imageIndex];
   }
 
-  constructor(private translate: TranslateService) {
+  constructor(private router: Router, private translate: TranslateService) {
     translate.addLangs(['en', 'de']);
     translate.setDefaultLang('en');
 
@@ -46,6 +47,10 @@ export class NavbarComponent {
 
   scrollToSection(id: string) {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  goHome() {
+    this.router.navigate(['/']);
   }
 
   toggleMenu(): void {

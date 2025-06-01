@@ -1,0 +1,77 @@
+.legal-notice-section {
+    padding: 0px 100px;
+    margin-top: 109px;
+    margin-bottom: 32px;
+    color: white;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-height: calc(100vh - 431px);
+
+    >div {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+}
+
+h1 {
+    font-size: 90px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+a {
+    color: white;
+    word-wrap: break-word;       /* alt, aber noch hilfreich */
+    overflow-wrap: break-word;   /* moderne Alternative */
+    word-break: break-word;      /* falls lange Wörter vorhanden */
+    white-space: normal;         /* sicherstellen, dass kein nowrap aktiv ist */
+}
+
+@media (max-width: 1400px) {
+    .legal-notice-section {
+        gap: 16px;
+        padding: 0px 48px;
+    }
+
+    h1 {
+        font-size: 72px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 1020px) {
+    .legal-notice-section {
+        >div {
+            gap: 0px;
+        }
+    }
+}
+
+@media (max-width: 667px) {
+    .legal-notice-section {
+        padding: 0px 24px;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 370px) {
+    .legal-notice-section {
+        padding: 0px 16px;
+        margin-top: 80px;
+    }
+}

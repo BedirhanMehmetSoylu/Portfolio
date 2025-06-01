@@ -1,10 +1,10 @@
 <footer>
     <div class="footer-section">
         <div class="footer-left">
-            <img (click)="scrollToSection('hero')" src="assets/img/logo.png" alt="">
+            <img (click)="scrollToSection('hero')" (click)="goHome()" src="assets/img/logo.png" alt="">
             
             <div class="link-wrapper d-block">
-                <a href="">{{ 'FOOTER.LEGAL' | translate }}</a>
+                <a routerLink="/legal-notice">{{ 'FOOTER.LEGAL' | translate }}</a>
                 <div class="underline"></div>
             </div>
         </div>
@@ -18,7 +18,7 @@
         </div>
 
         <div class="link-wrapper d-none">
-                <a href="">{{ 'FOOTER.LEGAL' | translate }}</a>
+                <a routerLink="/legal-notice">{{ 'FOOTER.LEGAL' | translate }}</a>
                 <div class="underline"></div>
         </div>
 
