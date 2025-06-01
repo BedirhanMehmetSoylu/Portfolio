@@ -13,19 +13,19 @@ export class ReviewsComponent {
   reviews = [
     {
       text: 'REVIEWS.FIRST',
-      name: "V. Schuster - Team Partner",
+      name: "L. Eckert - Team Partner",
       image: "reviewer.png",
       style: 'position: absolute; width: 260%; height: 120%; object-fit: cover; transform: rotate(90deg) translateX(20%);'
     },
     {
       text: "REVIEWS.SECOND",
-      name: "E. Eichinger - Team Partner",
+      name: "A. Hess - Team Partner",
       image: "reviewer_2.jpg",
       style: 'position: absolute; width: 160%; height: 210%; object-fit: cover; transform: translateX(-3%) translateY(15%);'
     },
     {
       text: "REVIEWS.THIRD",
-      name: "I. Nuber - Frontend Engineer",
+      name: "M. Tosyali - Team Partner",
       image: "reviewer_3.jpg",
       style: 'position: absolute; width: 190%; height: 290%; object-fit: cover; transform: translateX(7%) translateY(30%);'
     }

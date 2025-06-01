@@ -272,6 +272,20 @@
     }
 }
 
+@media (max-width: 435px) {
+    .reviewer-name {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding-right: 0;
+    }
+
+    .purple-line {
+        flex-grow: unset;
+        width: 55px;
+    }
+}
+
 @media (max-width: 410px) {
     .purple-circle {
         width: 144px;
@@ -281,17 +295,6 @@
     .purple-line-short {
         transform: translate(72px, -50%);
         width: calc(50% - 72px);
-    }
-
-    .reviewer-name {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
-
-    .purple-line {
-        flex-grow: unset;
-        width: 55px;
     }
 
     .shadow {
