@@ -30,11 +30,6 @@ a {
 }
 
 @media (max-width: 1400px) {
-    .legal-notice-section {
-        gap: 16px;
-        padding: 0px 48px;
-    }
-
     h1 {
         font-size: 72px;
     }
@@ -43,6 +38,14 @@ a {
         font-size: 28px;
     }
 }
+
+@media (max-width: 1100px) {
+    .legal-notice-section {
+        gap: 16px;
+        padding: 0px 48px;
+    }
+}
+
 
 @media (max-width: 1020px) {
     .legal-notice-section {
@@ -53,10 +56,6 @@ a {
 }
 
 @media (max-width: 667px) {
-    .legal-notice-section {
-        padding: 0px 24px;
-    }
-
     h1 {
         font-size: 45px;
     }
@@ -66,7 +65,13 @@ a {
     }
 }
 
-@media (max-width: 370px) {
+@media (max-width: 450px) {
+    .legal-notice-section {
+        padding: 0px 24px;
+    }
+}
+
+@media (max-width: 365px) {
     .legal-notice-section {
         padding: 0px 16px;
         margin-top: 80px;
