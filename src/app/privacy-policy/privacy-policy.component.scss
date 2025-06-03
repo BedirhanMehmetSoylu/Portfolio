@@ -1,4 +1,47 @@
 .privacy-policy-section {
-    height: calc(100vh - 290px);
-    padding-top: 120px;
+    padding: 0px 100px;
+    margin-top: 109px;
+    margin-bottom: 32px;
+    color: white;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-height: calc(100vh - 431px);
+    word-break: break-word;
+}
+
+a {
+    color: white !important;
+}
+
+:host ::ng-deep a {
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+@media (max-width: 1100px) {
+    .privacy-policy-section {
+        padding: 0px 54px;
+    }
+}
+
+@media (max-width: 668px) {
+    .privacy-policy-section {
+        padding: 0px 54px;
+    }
+}
+
+@media (max-width: 450px) {
+    .privacy-policy-section {
+        padding: 0px 28px;
+    }
+}
+
+@media (max-width: 365px) {
+    .privacy-policy-section {
+        padding: 0px 16px;
+    }
 }

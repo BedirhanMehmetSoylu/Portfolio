@@ -136,6 +136,10 @@
         font-size: 50px !important;
     }
 
+    .name-container p {
+        font-size: 39px;
+    }
+
     .profession {
         font-size: 36px !important;
     }
@@ -159,6 +163,10 @@
         transform: translateY(-50%);
         width: calc(50% - ((30px + 32px) * 1.5));
     }
+
+    .i-am {
+        left: 64px !important;
+    }
 }
 
 @media (max-width: 548px) {
@@ -180,6 +188,10 @@
 
     .name {
         font-size: 44px !important;
+    }
+
+    .name-container p {
+        font-size: 35px;
     }
 
     .profession {

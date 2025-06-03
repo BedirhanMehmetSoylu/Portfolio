@@ -92,5 +92,86 @@
             "TEXT": "We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board."
         },
         "SOURCE": "Source:"
+    },
+    "PRIVACY_POLICY": {
+        "TITLE": "Privacy Policy",
+        "PRIVACY_GLANCE": {
+            "TITLE": "1. Privacy at a Glance",
+            "GENERAL_INFO_TITLE": "General Information",
+            "GENERAL_INFO_TEXT": "The following information provides a simple overview of what happens to your personal data when you visit this website. Personal data is any data that can be used to personally identify you. Detailed information on the subject of data protection can be found in our privacy policy listed below this text.",
+            "DATA_COLLECTION_TITLE": "Data Collection on This Website",
+            "RESPONSIBLE_TITLE": "Who is responsible for data collection on this website?",
+            "RESPONSIBLE_TEXT": "Data processing on this website is carried out by the website operator. Their contact details can be found in the section 'Information on the Responsible Party' in this privacy policy.",
+            "HOW_WE_COLLECT_TITLE": "How do we collect your data?",
+            "HOW_WE_COLLECT_TEXT_1": "Some data is collected when you provide it to us. This can, for example, be data you enter into a contact form.",
+            "HOW_WE_COLLECT_TEXT_2": "Other data is collected automatically or after your consent when visiting the website through our IT systems. These are primarily technical data (e.g., internet browser, operating system, or time of the page view). This data is collected automatically as soon as you enter this website.",
+            "WHY_WE_USE_TITLE": "What do we use your data for?",
+            "WHY_WE_USE_TEXT": "Part of the data is collected to ensure the website is provided without errors. Other data may be used to analyze your user behavior. If contracts are concluded or initiated via the website, the transmitted data is also processed for contract offers, orders, or other inquiries.",
+            "YOUR_RIGHTS_TITLE": "What rights do you have regarding your data?",
+            "YOUR_RIGHTS_TEXT_1": "You have the right at any time to obtain free information about the origin, recipient, and purpose of your stored personal data. You also have the right to request the correction or deletion of this data.",
+            "YOUR_RIGHTS_TEXT_2": "If you have given consent to data processing, you can revoke this consent at any time for the future. You also have the right to request the restriction of the processing of your personal data under certain circumstances. Furthermore, you have the right to lodge a complaint with the competent supervisory authority. For this and other questions regarding data protection, you can contact us at any time."
+        },
+        "HOSTING": {
+            "TITLE": "2. Hosting",
+            "INTRO_TEXT": "We host the content of our website with the following provider:",
+            "PROVIDER_NAME": "All-Inkl",
+            "PROVIDER_INFO": "The provider is ALL-INKL.COM - Neue Medien Münnich, owner René Münnich, Hauptstraße 68, 02742 Friedersdorf (hereinafter referred to as All-Inkl). For details, please refer to All-Inkl’s privacy policy:",
+            "LEGAL_BASIS": "The use of All-Inkl is based on Art. 6(1)(f) GDPR. We have a legitimate interest in the most reliable presentation of our website. If consent has been requested, processing is based exclusively on Art. 6(1)(a) GDPR and § 25(1) TDDDG, insofar as the consent includes the storage of cookies or access to information on the user’s end device (e.g., device fingerprinting) within the meaning of the TDDDG. Consent can be revoked at any time."
+        },
+        "GENERAL_INFO": {
+            "TITLE": "3. General Information and Mandatory Disclosures",
+            "DATA_PROTECTION_TITLE": "Data Protection",
+            "DATA_PROTECTION_TEXT_1": "The operators of these pages take the protection of your personal data very seriously. We treat your personal data confidentially and in accordance with the statutory data protection regulations and this privacy policy.",
+            "DATA_PROTECTION_TEXT_2": "When you use this website, various personal data are collected. Personal data are data that can be used to personally identify you. This privacy policy explains which data we collect and what we use it for. It also explains how and for what purpose this is done.",
+            "DATA_PROTECTION_TEXT_3": "We point out that data transmission over the Internet (e.g. when communicating via email) can have security vulnerabilities. A complete protection of the data from access by third parties is not possible.",
+            "CONTROLLER_TITLE": "Information about the Responsible Party",
+            "CONTROLLER_DESCRIPTION": "The responsible party for data processing on this website is:",
+            "CONTROLLER_NAME": "Bedirhan Mehmet Soylu",
+            "CONTROLLER_ADDRESS": "Bergkammstraße 8, 30453 Hannover",
+            "CONTROLLER_PHONE": "Phone: 0175 6086292",
+            "CONTROLLER_EMAIL": "Email: bedirhanmehmetsoylu@gmail.com",
+            "CONTROLLER_EXPLANATION": "The responsible party is the natural or legal person who alone or jointly with others decides on the purposes and means of processing personal data (e.g. names, email addresses, etc.).",
+            "STORAGE_DURATION_TITLE": "Storage Duration",
+            "STORAGE_DURATION_TEXT": "Unless a more specific storage duration is stated in this privacy policy, your personal data will remain with us until the purpose for data processing ceases to apply...",
+            "LEGAL_BASES_TITLE": "General Notes on the Legal Bases of Data Processing on This Website",
+            "LEGAL_BASES_TEXT": "If you have consented to data processing, we process your personal data on the basis of Art. 6(1)(a) GDPR ...",
+            "RECIPIENTS_TITLE": "Recipients of Personal Data",
+            "RECIPIENTS_TEXT": "As part of our business activities, we work together with various external parties...",
+            "WITHDRAW_CONSENT_TITLE": "Revocation of Your Consent to Data Processing",
+            "WITHDRAW_CONSENT_TEXT": "Many data processing operations are only possible with your express consent...",
+            "OBJECTION_TITLE": "Right to Object to Data Collection in Special Cases and to Direct Advertising (Art. 21 GDPR)",
+            "OBJECTION_TEXT_1": "IF DATA PROCESSING IS BASED ON ART. 6(1)(E) OR (F) GDPR ...",
+            "OBJECTION_TEXT_2": "IF YOUR PERSONAL DATA ARE PROCESSED FOR DIRECT MARKETING PURPOSES ...",
+            "COMPLAINT_RIGHT_TITLE": "Right to Lodge a Complaint with the Competent Supervisory Authority",
+            "COMPLAINT_RIGHT_TEXT": "In the event of violations of the GDPR, data subjects have a right to lodge a complaint with a supervisory authority ...",
+            "DATA_PORTABILITY_TITLE": "Right to Data Portability",
+            "DATA_PORTABILITY_TEXT": "You have the right to have data that we process automatically based on your consent or in fulfillment of a contract handed over to you or to a third party in a commonly used, machine-readable format ...",
+            "ACCESS_CORRECTION_DELETION_TITLE": "Access, Correction and Deletion",
+            "ACCESS_CORRECTION_DELETION_TEXT": "Within the framework of the applicable legal provisions, you have the right at any time to free information about your stored personal data ...",
+            "RESTRICTION_RIGHT_TITLE": "Right to Restrict Processing",
+            "RESTRICTION_RIGHT_TEXT": "You have the right to request the restriction of the processing of your personal data...",
+            "RESTRICTION_CASE_1": "If you contest the accuracy of your personal data stored by us...",
+            "RESTRICTION_CASE_2": "If the processing of your personal data was/is unlawful...",
+            "RESTRICTION_CASE_3": "If we no longer need your personal data but you need it to exercise legal claims...",
+            "RESTRICTION_CASE_4": "If you have objected to processing pursuant to Art. 21(1) GDPR...",
+            "RESTRICTION_FOOTER": "If you have restricted the processing of your personal data, such data – apart from being stored – may only be processed with your consent ...",
+            "SSL_TITLE": "SSL or TLS Encryption",
+            "SSL_TEXT_1": "This site uses SSL or TLS encryption for security reasons and to protect the transmission of confidential content ...",
+            "SSL_TEXT_2": "When SSL or TLS encryption is activated, the data you transmit to us cannot be read by third parties."
+        },
+        "DATA_COLLECTION": {
+            "TITLE": "4. Data Collection on This Website",
+            "CONTACT_FORM_TITLE": "Contact Form",
+            "CONTACT_FORM_TEXT_1": "If you send us inquiries via the contact form, your details from the inquiry form, including the contact data you provide there, will be stored by us for the purpose of processing the inquiry and in case of follow-up questions. We do not pass on this data without your consent.",
+            "CONTACT_FORM_TEXT_2": "The processing of this data is based on Art. 6(1)(b) GDPR if your request is related to the performance of a contract or is necessary to carry out pre-contractual measures. In all other cases, the processing is based on our legitimate interest in the effective processing of the inquiries addressed to us (Art. 6(1)(f) GDPR) or on your consent (Art. 6(1)(a) GDPR), if this was requested; the consent can be revoked at any time.",
+            "CONTACT_FORM_TEXT_3": "The data you enter in the contact form will remain with us until you request deletion, revoke your consent to storage, or the purpose for data storage no longer applies (e.g., after your inquiry has been processed). Mandatory legal provisions – in particular retention periods – remain unaffected."
+        },
+        "PLUGINS_TOOLS": {
+            "TITLE": "5. Plugins and Tools",
+            "GOOGLE_FONTS_TITLE": "Google Fonts (Local Hosting)",
+            "GOOGLE_FONTS_TEXT_1": "This site uses so-called Google Fonts provided by Google for uniform font display. The Google Fonts are installed locally. No connection to Google servers takes place.",
+            "GOOGLE_FONTS_TEXT_2": "For more information about Google Fonts, please visit <a href=\"https://developers.google.com/fonts/faq\" target=\"_blank\" rel=\"noopener noreferrer\">https://developers.google.com/fonts/faq</a> and Google's privacy policy: <a href=\"https://policies.google.com/privacy?hl=en\" target=\"_blank\" rel=\"noopener noreferrer\">https://policies.google.com/privacy?hl=en</a>.",
+            "SOURCE": "Source: <a href=\"https://www.e-recht24.de\">https://www.e-recht24.de</a>"
+        }
     }
 }

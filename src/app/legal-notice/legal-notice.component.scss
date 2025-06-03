@@ -8,6 +8,7 @@
     flex-direction: column;
     gap: 16px;
     min-height: calc(100vh - 431px);
+    word-break: break-word;
 
     >div {
         display: flex;
@@ -26,10 +27,6 @@ h2 {
 
 a {
     color: white;
-    word-wrap: break-word;       /* alt, aber noch hilfreich */
-    overflow-wrap: break-word;   /* moderne Alternative */
-    word-break: break-word;      /* falls lange Wörter vorhanden */
-    white-space: normal;         /* sicherstellen, dass kein nowrap aktiv ist */
 }
 
 @media (max-width: 1400px) {
