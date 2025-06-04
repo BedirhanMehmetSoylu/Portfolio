@@ -34,7 +34,7 @@
 
     .person {
         width: 560px;
-        top: 152px;
+        top: 54px;
     }
 
     .background {
@@ -58,11 +58,11 @@
     }
 
     .i-am {
-        left: 48px !important;
+        left: 0px !important;
     }
 
     .name-container {
-        padding-left: 93px;
+        padding-left: 40px;
     }
 }
 
@@ -105,7 +105,8 @@
 
     .person {
         width: 480px;
-        top: 112px;
+        top: 16px;
+        left: 16px;
     }
 
     .background {
@@ -165,7 +166,7 @@
     }
 
     .i-am {
-        left: 64px !important;
+        left: 12px !important;
     }
 }
 
@@ -174,6 +175,7 @@
         width: 410px;
         left: 50%;
         transform: translateX(-50%);
+        top: 40px;
     }
 
     .shadow {
@@ -210,6 +212,16 @@
 }
 
 @media (max-width: 480px) {
+    .person {
+        width: 360px;
+        top: 40px;
+    }
+
+    .background {
+        top: 72px;
+        left: -144px;
+    }
+
     .name {
         font-size: 39px !important;
     }
@@ -219,12 +231,12 @@
     }
 
     .hero-right-mobile {
-        bottom: 328px;
+        bottom: 384px;
         gap: 32px;
     }
 
     .i-am {
-        font-size: 30px !important;
+        font-size: 31px !important;
         left: 8px !important;
     }
 
@@ -242,7 +254,7 @@
 @media (max-width: 380px) {
     .person {
         width: 304px;
-        top: 96px;
+        top: 32px;
     }
 
     .shadow {
@@ -275,7 +287,7 @@
 
 @media (max-width: 365px) {
     .person {
-        top: 72px;
+        top: 16px;
         width: 272px;
     }
 

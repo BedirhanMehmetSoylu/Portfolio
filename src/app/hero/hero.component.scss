@@ -37,7 +37,8 @@
 
 .person {
     position: absolute;
-    top: 120px;
+    width: 640px;
+    top: 6px;
     left: 32px;
     z-index: 1;
 }
@@ -204,5 +205,5 @@
 }
 
 .padding-reset {
-  padding-left: 0px !important;
+    padding-left: 0px !important;
 }
