@@ -16,7 +16,6 @@ export class HeroComponent {
   constructor(public translate: TranslateService) {
     this.loadButtonFontSize();
 
-    // Sprache wechseln
     this.translate.onLangChange.subscribe(() => {
       this.loadButtonFontSize();
     });

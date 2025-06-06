@@ -3,7 +3,6 @@ import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgForm } from '@angular/forms';
-import emailjs from 'emailjs-com';
 import { HttpClient } from '@angular/common/http';
 import { Router, RouterModule } from '@angular/router';
 
@@ -26,7 +25,7 @@ export class ContactComponent {
     message: ""
   }
 
-  mailTest = true;
+  mailTest = false;
 
   constructor(private router: Router) { }
 
@@ -37,48 +36,8 @@ export class ContactComponent {
     }
   }
 
-  // onSubmit(form: NgForm) {
-  //   this.submitted = true;
-
-  //   console.log(this.submitted);
-
-  //   if (form.invalid || !form.value.privacy) {
-  //     return;
-  //   }
-
-  //   const formData = {
-  //     name: form.value.name,
-  //     email: form.value.email,
-  //     message: form.value.message,
-  //   };
-
-  //   this.sendEmail(formData);
-
-  //   this.submitted = false;
-  // }
-
-  sendEmail(formData: any) {
-    const serviceID = 'service_53udtyv';
-    const templateID = 'template_t0lar7o';
-    const userID = 'L2X7IfJE1sjU3NQOw';
-
-    const templateParams = {
-      from_name: formData.name,
-      from_email: formData.email,
-      message: formData.message,
-    };
-
-    emailjs.send(serviceID, templateID, templateParams, userID)
-      .then(() => {
-        alert('Nachricht wurde erfolgreich gesendet!');
-      }, (error) => {
-        console.error('E-Mail Fehler:', error);
-        alert('Beim Senden der Nachricht ist ein Fehler aufgetreten.');
-      });
-  }
-
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://bedirhan-soylu.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -96,21 +55,17 @@ export class ContactComponent {
             this.success = true;
             ngForm.resetForm();
             this.submitted = false;
+
+            setTimeout(() => {
+              this.success = false;
+            }, 3000);
           },
           error: (error) => {
             console.error(error);
           },
-          complete: () => console.info('send post complete'),
+          complete: () => console.info('The email was sent successfully!'),
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-      this.success = true;
-      console.log(this.contactData);
-      ngForm.resetForm();
-      this.submitted = false;
-
-      setTimeout(() => {
-        this.success = false;
-      }, 3000);
     }
   }
 }

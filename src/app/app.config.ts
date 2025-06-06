@@ -7,20 +7,16 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-// ➤ Loader-Funktion für ngx-translate
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
 }
 
-// ➤ App-Konfiguration mit Sprachunterstützung
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideAnimationsAsync(),
-    // HTTP-Client für Übersetzungen
     provideHttpClient(withInterceptorsFromDi()),
 
-    // Übersetzungsmodul bereitstellen
     importProvidersFrom(
       TranslateModule.forRoot({
         loader: {
