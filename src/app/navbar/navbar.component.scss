@@ -1,7 +1,13 @@
-.navbar {
+nav {
+    width: 100%;
     background-color: #141D2F;
-    z-index: 20;
     position: fixed;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-section {
     max-width: 1920px;
     width: 100% !important;
     max-height: 109px !important;
@@ -102,7 +108,7 @@ span {
 
 
 @media (max-width: 1100px) {
-    .navbar {
+    .navbar-section {
         padding: 40px 54px;
     }
 }
@@ -118,7 +124,7 @@ span {
 }
 
 @media (max-width: 450px) {
-    .navbar {
+    .navbar-section {
         padding: 40px 28px;
     }
 
@@ -130,7 +136,7 @@ span {
 }
 
 @media (max-width: 400px) {
-    .navbar {
+    .navbar-section {
         padding: 40px 25px;
     }
 
@@ -150,8 +156,7 @@ span {
         right: 16px;
     }
 
-    .navbar {
+    .navbar-section {
         padding: 28px 16px;
     }
 }
-

@@ -1,4 +1,11 @@
+.privacy-policy-container {
+    display: flex;
+    justify-content: center;
+}
+
 .privacy-policy-section {
+    max-width: 1920px;
+    width: 100%;
     padding: 0px 100px;
     margin-top: 109px;
     margin-bottom: 32px;

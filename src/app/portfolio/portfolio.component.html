@@ -1,66 +1,70 @@
 <div class="portfolio-section">
-    <div class="portfolio-headline">
-        <div class="purple-line-left">
-            <div class=""></div>
-            <div class="purple-line-short"></div>
-        </div>
-        <h2>Portfolio</h2>
-        <div class="purple-line-long"></div>
+  <div class="portfolio-headline" data-aos="fade-down" data-aos-duration="800">
+    <div class="purple-line-left">
+      <div class=""></div>
+      <div class="purple-line-short"></div>
     </div>
-    <p class="section-description">{{ 'PORTFOLIO.DESCRIPTION' | translate }}</p>
-    <div class="projects-container">
-        <div class="project">
-            <div class="laptop-container">
-                <img src="assets/img/portfolio/join.png" alt="">
-            </div>
+    <h2>Portfolio</h2>
+    <div class="purple-line-long"></div>
+  </div>
 
-            <div class="project-description">
-                <h3>Join</h3>
-                <span>Angular | TypeScript | HTML | CSS | Firebase </span>
-                <p>{{ 'PORTFOLIO.JOIN' | translate }}</p>
-                <div>
-                    <button class="live-test-btn" (click)="openExternalLink('https://join.bedirhan-soylu.de/')">{{ 'PORTFOLIO.LIVE' | translate }}</button>
-                    <button class="github-btn" (click)="openExternalLink('https://github.com/BedirhanMehmetSoylu/Join')">Github</button>
-                </div>
-            </div>
+  <p class="section-description" data-aos="fade-up" data-aos-delay="200">
+    {{ 'PORTFOLIO.DESCRIPTION' | translate }}
+  </p>
+
+  <div class="projects-container">
+    <div class="project" data-aos="fade-right" data-aos-delay="300">
+      <div class="laptop-container">
+        <img src="assets/img/portfolio/join.png" alt="">
+      </div>
+
+      <div class="project-description">
+        <h3>Join</h3>
+        <span>Angular | TypeScript | HTML | CSS | Firebase </span>
+        <p>{{ 'PORTFOLIO.JOIN' | translate }}</p>
+        <div>
+          <button class="live-test-btn" (click)="openExternalLink('https://join.bedirhan-soylu.de/')">{{ 'PORTFOLIO.LIVE' | translate }}</button>
+          <button class="github-btn" (click)="openExternalLink('https://github.com/BedirhanMehmetSoylu/Join')">Github</button>
         </div>
-        <div class="project">
-            <div class="laptop-container mobile">
-                <img src="assets/img/portfolio/el_pollo_loco.png" alt="">
-            </div>
-
-            <div class="project-description-to-right">
-                <h3>El Pollo Loco</h3>
-                <span>JavaScript | HTML | CSS</span>
-                <p>{{ 'PORTFOLIO.EL_POLLO_LOCO' | translate }}</p>
-                <div>
-                    <button class="live-test-btn" (click)="openExternalLink('https://elpolloloco.bedirhan-soylu.de/')">{{ 'PORTFOLIO.LIVE' | translate }}</button>
-                    <button class="github-btn" (click)="openExternalLink('https://github.com/BedirhanMehmetSoylu/El-Pollo-Loco')">Github</button>
-                </div>
-            </div>
-
-            <div class="laptop-container desktop">
-                <img src="assets/img/portfolio/el_pollo_loco.png" alt="">
-            </div>
-        </div>
-        <div class="project">
-            <div class="laptop-container">
-                <img src="assets/img/portfolio/pokedex.png" alt="">
-            </div>
-
-            <div class="project-description">
-                <h3>Pokedex</h3>
-                <span>JavaScript | HTML | CSS | Api</span>
-                <p>{{ 'PORTFOLIO.POKEDEX' | translate }}</p>
-                <div>
-                    <button class="live-test-btn" (click)="openExternalLink('https://pokedex.bedirhan-soylu.de/')">{{ 'PORTFOLIO.LIVE' | translate }}</button>
-                    <button class="github-btn" (click)="openExternalLink('https://github.com/BedirhanMehmetSoylu/Pokedex')">Github</button>
-                </div>
-            </div>
-        </div>
-        <img class="shadow" src="assets/img/portfolio/shadow.png" alt="">
+      </div>
     </div>
-    <div>
-        
+
+    <div class="project" data-aos="fade-left" data-aos-delay="400">
+      <div class="laptop-container mobile">
+        <img src="assets/img/portfolio/el_pollo_loco.png" alt="">
+      </div>
+
+      <div class="project-description-to-right">
+        <h3>El Pollo Loco</h3>
+        <span>JavaScript | HTML | CSS</span>
+        <p>{{ 'PORTFOLIO.EL_POLLO_LOCO' | translate }}</p>
+        <div>
+          <button class="live-test-btn" (click)="openExternalLink('https://elpolloloco.bedirhan-soylu.de/')">{{ 'PORTFOLIO.LIVE' | translate }}</button>
+          <button class="github-btn" (click)="openExternalLink('https://github.com/BedirhanMehmetSoylu/El-Pollo-Loco')">Github</button>
+        </div>
+      </div>
+
+      <div class="laptop-container desktop">
+        <img src="assets/img/portfolio/el_pollo_loco.png" alt="">
+      </div>
     </div>
+
+    <div class="project" data-aos="fade-right" data-aos-delay="500">
+      <div class="laptop-container">
+        <img src="assets/img/portfolio/pokedex.png" alt="">
+      </div>
+
+      <div class="project-description">
+        <h3>Pokedex</h3>
+        <span>JavaScript | HTML | CSS | Api</span>
+        <p>{{ 'PORTFOLIO.POKEDEX' | translate }}</p>
+        <div>
+          <button class="live-test-btn" (click)="openExternalLink('https://pokedex.bedirhan-soylu.de/')">{{ 'PORTFOLIO.LIVE' | translate }}</button>
+          <button class="github-btn" (click)="openExternalLink('https://github.com/BedirhanMehmetSoylu/Pokedex')">Github</button>
+        </div>
+      </div>
+    </div>
+
+    <img class="shadow" src="assets/img/portfolio/shadow.png" alt="">
+  </div>
 </div>

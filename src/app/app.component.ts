@@ -20,7 +20,11 @@ export class AppComponent {
       filter((event): event is NavigationEnd => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
       this.showMainContent = event.urlAfterRedirects !== '/legal-notice';
-    });
 
+      const tree = this.router.parseUrl(event.urlAfterRedirects);
+      if (!tree.fragment) {
+        window.scrollTo(0, 0);
+      }
+    });
   }
 }

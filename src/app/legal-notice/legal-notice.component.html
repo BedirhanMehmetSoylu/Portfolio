@@ -1,51 +1,56 @@
 <app-navbar></app-navbar>
-<div class="legal-notice-section">
-    <div>
-        <h1>{{ 'LEGAL_NOTICE.TITLE' | translate }}</h1>
-        <p>
-            {{ 'LEGAL_NOTICE.NAME' | translate }}<br />
-            {{ 'LEGAL_NOTICE.ADDRESS.STREET' | translate }}<br />
-            {{ 'LEGAL_NOTICE.ADDRESS.ZIP' | translate }} {{ 'LEGAL_NOTICE.ADDRESS.CITY' | translate }}<br />
-            {{ 'LEGAL_NOTICE.ADDRESS.COUNTRY' | translate }}
-        </p>
-    </div>
+<div class="legal-notice-container">
+    <div class="legal-notice-section">
+        <div>
+            <h1>{{ 'LEGAL_NOTICE.TITLE' | translate }}</h1>
+            <p>
+                {{ 'LEGAL_NOTICE.NAME' | translate }}<br />
+                {{ 'LEGAL_NOTICE.ADDRESS.STREET' | translate }}<br />
+                {{ 'LEGAL_NOTICE.ADDRESS.ZIP' | translate }} {{ 'LEGAL_NOTICE.ADDRESS.CITY' | translate }}<br />
+                {{ 'LEGAL_NOTICE.ADDRESS.COUNTRY' | translate }}
+            </p>
+        </div>
 
-    <div>
-        <h2>{{ 'LEGAL_NOTICE.CONTACT.TITLE' | translate }}</h2>
-        <p>
-            {{ 'LEGAL_NOTICE.CONTACT.PHONE' | translate }}<br />
-            {{ 'LEGAL_NOTICE.CONTACT.EMAIL' | translate }}
-        </p>
-    </div>
+        <div>
+            <h2>{{ 'LEGAL_NOTICE.CONTACT.TITLE' | translate }}</h2>
+            <p>
+                {{ 'LEGAL_NOTICE.CONTACT.PHONE' | translate }}<br />
+                {{ 'LEGAL_NOTICE.CONTACT.EMAIL' | translate }}
+            </p>
+        </div>
 
 
-    <div>
-        <h2>{{ 'LEGAL_NOTICE.RESPONSIBLE.TITLE' | translate }}</h2>
-        <p>
-            {{ 'LEGAL_NOTICE.RESPONSIBLE.TEXT' | translate }}<br />
-            {{ 'LEGAL_NOTICE.NAME' | translate }}<br />
-            {{ 'LEGAL_NOTICE.ADDRESS.STREET' | translate }}<br />
-            {{ 'LEGAL_NOTICE.ADDRESS.ZIP' | translate }} {{ 'LEGAL_NOTICE.ADDRESS.CITY' | translate }}<br />
-            {{ 'LEGAL_NOTICE.ADDRESS.COUNTRY' | translate }}
-        </p>
-    </div>
+        <div>
+            <h2>{{ 'LEGAL_NOTICE.RESPONSIBLE.TITLE' | translate }}</h2>
+            <p>
+                {{ 'LEGAL_NOTICE.RESPONSIBLE.TEXT' | translate }}<br />
+                {{ 'LEGAL_NOTICE.NAME' | translate }}<br />
+                {{ 'LEGAL_NOTICE.ADDRESS.STREET' | translate }}<br />
+                {{ 'LEGAL_NOTICE.ADDRESS.ZIP' | translate }} {{ 'LEGAL_NOTICE.ADDRESS.CITY' | translate }}<br />
+                {{ 'LEGAL_NOTICE.ADDRESS.COUNTRY' | translate }}
+            </p>
+        </div>
 
-    <div>
-        <h2>{{ 'LEGAL_NOTICE.EU_DISPUTE.TITLE' | translate }}</h2>
-        <p>
-            {{ 'LEGAL_NOTICE.EU_DISPUTE.TEXT' | translate }}
-            <a href="{{ 'LEGAL_NOTICE.EU_DISPUTE.LINK_TEXT' | translate }}" target="_blank" rel="noopener noreferrer">
-                {{ 'LEGAL_NOTICE.EU_DISPUTE.LINK_TEXT' | translate }}
-            </a><br />
-            {{ 'LEGAL_NOTICE.EU_DISPUTE.NOTE' | translate }}
-        </p>
-    </div>
+        <div>
+            <h2>{{ 'LEGAL_NOTICE.EU_DISPUTE.TITLE' | translate }}</h2>
+            <p>
+                {{ 'LEGAL_NOTICE.EU_DISPUTE.TEXT' | translate }}
+                <a href="{{ 'LEGAL_NOTICE.EU_DISPUTE.LINK_TEXT' | translate }}" target="_blank"
+                    rel="noopener noreferrer">
+                    {{ 'LEGAL_NOTICE.EU_DISPUTE.LINK_TEXT' | translate }}
+                </a><br />
+                {{ 'LEGAL_NOTICE.EU_DISPUTE.NOTE' | translate }}
+            </p>
+        </div>
 
-    <div>
-        <h2>{{ 'LEGAL_NOTICE.CONSUMER_DISPUTE.TITLE' | translate }}</h2>
-        <p>{{ 'LEGAL_NOTICE.CONSUMER_DISPUTE.TEXT' | translate }}</p>
+        <div>
+            <h2>{{ 'LEGAL_NOTICE.CONSUMER_DISPUTE.TITLE' | translate }}</h2>
+            <p>{{ 'LEGAL_NOTICE.CONSUMER_DISPUTE.TEXT' | translate }}</p>
 
-        <p>{{ 'LEGAL_NOTICE.SOURCE' | translate }} <a href="https://www.e-recht24.de">https://www.e-recht24.de</a></p>
+            <p>{{ 'LEGAL_NOTICE.SOURCE' | translate }} <a href="https://www.e-recht24.de">https://www.e-recht24.de</a>
+            </p>
+        </div>
     </div>
 </div>
+
 <app-footer></app-footer>

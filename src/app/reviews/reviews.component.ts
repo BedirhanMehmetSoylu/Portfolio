@@ -15,7 +15,7 @@ export class ReviewsComponent {
       text: 'REVIEWS.FIRST',
       name: "L. Eckert - Team Partner",
       image: "reviewer.png",
-      style: 'position: absolute; width: 260%; height: 120%; object-fit: cover; transform: rotate(90deg) translateX(20%);'
+      style: 'position: absolute; width: 120%; height: 200%; object-fit: cover; transform: translateX(-2%) translateY(15%);;'
     },
     {
       text: "REVIEWS.SECOND",

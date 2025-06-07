@@ -1,5 +1,4 @@
 .contact-section {
-    max-width: 1920px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -13,6 +12,7 @@
     display: flex;
     align-items: center;
     gap: 32px;
+    max-width: 1920px;
     width: 100%;
     padding-bottom: 48px;
 
@@ -37,6 +37,8 @@
 }
 
 .contact-bottom {
+    position: relative;
+    max-width: 1920px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -75,6 +77,7 @@ form {
     max-width: 617px;
     width: 100%;
     gap: 8px;
+    z-index: 1;
 }
 
 .form-group {
@@ -264,8 +267,8 @@ form {
 
 .shadow {
     position: absolute;
-    bottom: -436px;
-    left: -416px;
+    bottom: -480px;
+    left: -496px;
 }
 
 input.invalid,

@@ -1,41 +1,42 @@
 <div class="about-me-section">
-    <div class="about-me-info-container">
-      <h1>{{ 'NAV.ABOUT' | translate }}</h1>
-  
-      <p>{{ 'ABOUTME.DESCRIPTION' | translate }}</p>
-  
-      <div>
-        <div>
-          <div class="images-container">
-            <img src="assets/img/aboutme/location.png" alt="">
-          </div>
-          <p>{{ 'ABOUTME.LOCATION' | translate }}</p>
+  <div class="about-me-info-container" data-aos="fade-up">
+    <h1>{{ 'NAV.ABOUT' | translate }}</h1>
+
+    <p data-aos="fade-up" data-aos-delay="100">
+      {{ 'ABOUTME.DESCRIPTION' | translate }}
+    </p>
+
+    <div>
+      <div data-aos="fade-right" data-aos-delay="200">
+        <div class="images-container">
+          <img src="assets/img/aboutme/location.png" alt="">
         </div>
-  
-        <div>
-          <div class="images-container">
-            <img src="assets/img/aboutme/mind.png" alt="">
-          </div>
-          <p>{{ 'ABOUTME.LEARNING' | translate }}</p>
+        <p>{{ 'ABOUTME.LOCATION' | translate }}</p>
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="300">
+        <div class="images-container">
+          <img src="assets/img/aboutme/mind.png" alt="">
         </div>
-  
-        <div>
-          <div class="images-container">
-            <img src="assets/img/aboutme/solution.png" alt="">
-          </div>
-          <p>{{ 'ABOUTME.SOLUTIONS' | translate }}</p>
+        <p>{{ 'ABOUTME.LEARNING' | translate }}</p>
+      </div>
+
+      <div data-aos="fade-left" data-aos-delay="400">
+        <div class="images-container">
+          <img src="assets/img/aboutme/solution.png" alt="">
         </div>
+        <p>{{ 'ABOUTME.SOLUTIONS' | translate }}</p>
       </div>
     </div>
-  
-    <div class="selfie-container">
-      <div class="selfie">
-        <img class="selfie-img" src="assets/img/aboutme/person.png" alt="">
-        <div class="green-circle"></div>
-      </div>
-      <div class="green-line"></div>
-    </div>
-  
-    <img class="shadow" src="assets/img/aboutme/shadow.png" alt="">
   </div>
-  
+
+  <div class="selfie-container" data-aos="zoom-in-up" data-aos-delay="500">
+    <div class="selfie">
+      <img class="selfie-img" src="assets/img/aboutme/person.png" alt="">
+      <div class="green-circle"></div>
+    </div>
+    <div class="green-line"></div>
+  </div>
+
+  <img class="shadow" src="assets/img/aboutme/shadow.png" alt="" data-aos="fade-in" data-aos-delay="600">
+</div>

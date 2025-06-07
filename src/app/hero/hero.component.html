@@ -1,11 +1,26 @@
-<div class="hero-section">
-  <div class="hero-left">
-    <img class="shadow" src="assets/img/hero/hero-shadows.png" alt="">
-    <img class="person" src="assets/img/hero/person.png" alt="">
-    <img class="background" src="assets/img/hero/hero-background.png" alt="">
-    <div class="hero-right-mobile">
-      <div [class.padding-reset]="translate.currentLang === 'de'" class="name-container">
-        <p class="i-am">{{ 'HERO.IAM' | translate }}</p>
+<!-- <div class="hero-section">
+  <div class="hero-top">
+    <div class="hero-left">
+      <img class="shadow" src="assets/img/hero/hero-shadows.png" alt="">
+      <img class="person" src="assets/img/hero/person.png" alt="">
+      <img class="background" src="assets/img/hero/hero-background.png" alt="">
+      <div class="hero-right-mobile">
+        <div [class.padding-reset]="translate.currentLang === 'de'" class="name-container">
+          <p class="i-am">{{ 'HERO.IAM' | translate }}</p>
+          <div>
+            <p class="name">Bedirhan Soylu</p>
+            <p class="profession">{{ 'HERO.PROFESSION' | translate }}</p>
+          </div>
+        </div>
+        <button (click)="scrollToSection('contact')" [style.fontSize]="buttonFontSize">
+          {{ 'HERO.LETS_TALK' | translate }}
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="name-container">
+        <p>{{ 'HERO.IAM' | translate }}</p>
         <div>
           <p class="name">Bedirhan Soylu</p>
           <p class="profession">{{ 'HERO.PROFESSION' | translate }}</p>
@@ -15,19 +30,6 @@
         {{ 'HERO.LETS_TALK' | translate }}
       </button>
     </div>
-  </div>
-
-  <div class="hero-right">
-    <div class="name-container">
-      <p>{{ 'HERO.IAM' | translate }}</p>
-      <div>
-        <p class="name">Bedirhan Soylu</p>
-        <p class="profession">{{ 'HERO.PROFESSION' | translate }}</p>
-      </div>
-    </div>
-    <button (click)="scrollToSection('contact')" [style.fontSize]="buttonFontSize">
-      {{ 'HERO.LETS_TALK' | translate }}
-    </button>
   </div>
 
   <div class="hero-bottom">
@@ -45,4 +47,57 @@
       <img src="assets/img/hero/arrow.png" alt="">
     </div>
   </div>
+  <img class="background-widescreen" src="assets/img/hero/hero-background.png" alt="">
+</div> -->
+
+<div class="hero-section">
+  <div class="hero-top">
+    <div class="hero-left">
+      <img class="shadow" src="assets/img/hero/hero-shadows.png" alt="">
+      <img class="person" src="assets/img/hero/person.png" alt="">
+      <div class="hero-right-mobile">
+        <div [class.padding-reset]="translate.currentLang === 'de'" class="name-container">
+          <p class="i-am">{{ 'HERO.IAM' | translate }}</p>
+          <div>
+            <p class="name">Bedirhan Soylu</p>
+            <p class="profession">{{ 'HERO.PROFESSION' | translate }}</p>
+          </div>
+        </div>
+        <button (click)="scrollToSection('contact')" [style.fontSize]="buttonFontSize">
+          {{ 'HERO.LETS_TALK' | translate }}
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="name-container">
+        <p>{{ 'HERO.IAM' | translate }}</p>
+        <div>
+          <p class="name">Bedirhan Soylu</p>
+          <p class="profession">{{ 'HERO.PROFESSION' | translate }}</p>
+        </div>
+      </div>
+      <button (click)="scrollToSection('contact')" [style.fontSize]="buttonFontSize">
+        {{ 'HERO.LETS_TALK' | translate }}
+      </button>
+    </div>
+  </div>
+
+  <div class="hero-bottom">
+    <img class="background" src="assets/img/hero/hero-background.png" alt="">
+    <div class="socials">
+      <div class="line"></div>
+      <img src="assets/img/hero/github.png" alt="GitHub"
+        (click)="openExternalLink('https://github.com/BedirhanMehmetSoylu')">
+      <img (click)="scrollToSection('contact')" src="assets/img/hero/email.png" alt="">
+      <img src="assets/img/hero/linkedin.png" alt="LinkedIn"
+        (click)="openExternalLink('https://www.linkedin.com/in/bedirhan-soylu-65b703367/')">
+      <p (click)="scrollToSection('contact')">bedirhanmehmetsoylu&#64;gmail.com</p>
+    </div>
+    <div class="scroll-down">
+      <p>{{ 'HERO.SCROLL_DOWN' | translate }}</p>
+      <img src="assets/img/hero/arrow.png" alt="">
+    </div>
+  </div>
+  <img class="background-widescreen" src="assets/img/hero/hero-background.png" alt="">
 </div>
