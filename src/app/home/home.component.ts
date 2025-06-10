@@ -20,7 +20,6 @@ import * as AOS from 'aos';
 
 export class HomeComponent implements AfterViewInit {
   ngAfterViewInit(): void {
-    console.log('Starte AOS...');
     AOS.init({
       duration: 1000,
       once: true,
