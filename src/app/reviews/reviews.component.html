@@ -3,7 +3,7 @@
         <div class="review-container">
             <img src="assets/img/reviews/quotation_marks.png" alt="">
 
-            <p>{{ reviews[currentIndex].text  | translate }}</p>
+            <p>{{ reviews[currentIndex].text | translate }}</p>
 
             <div class="reviewer-name">
                 <div class="purple-line"></div>
@@ -13,7 +13,12 @@
 
         <div class="reviewer-container">
             <div class="purple-circle">
-                <img [attr.style]="reviews[currentIndex].style"  src="assets/img/reviews/{{ reviews[currentIndex].image }}" alt="">
+                <img class="reviewer-img-1" src="assets/img/reviews/reviewer.png" alt=""
+                    [style.display]="currentIndex === 0 ? 'block' : 'none'">
+                <img class="reviewer-img-2" src="assets/img/reviews/reviewer_2.jpg" alt=""
+                    [style.display]="currentIndex === 1 ? 'block' : 'none'">
+                <img class="reviewer-img-3" src="assets/img/reviews/reviewer_3.jpg" alt=""
+                    [style.display]="currentIndex === 2 ? 'block' : 'none'">
             </div>
 
             <div class="purple-line-short"></div>
@@ -25,11 +30,10 @@
     <div class="reviews-section-bottom">
         <div>
             <img src="assets/img/reviews/arrow_back.png" alt="" (click)="previousReview()">
-            
+
             <div *ngFor="let review of reviews; let i = index">
-                <div 
-                  class="purple-point" 
-                  [ngStyle]="{ 'background-color': currentIndex === i ? '#70E61C' : '#9747FF' }">
+                <div class="purple-point"
+                    [ngStyle]="{ 'background-color': currentIndex === i ? '#70E61C' : '#9747FF' }">
                 </div>
             </div>
 

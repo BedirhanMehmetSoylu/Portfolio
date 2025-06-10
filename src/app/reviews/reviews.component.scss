@@ -54,6 +54,30 @@
     }
 }
 
+.reviewer-img-1 {
+    position: absolute;
+    width: 120%;
+    height: 200%;
+    object-fit: cover;
+    transform: translateX(-2%) translateY(15%);
+}
+
+.reviewer-img-2 {
+    position: absolute;
+    width: 160%;
+    height: 210%;
+    object-fit: cover;
+    transform: translateX(-3%) translateY(15%);
+}
+
+.reviewer-img-3 {
+    position: absolute;
+    width: 190%;
+    height: 290%;
+    object-fit: cover;
+    transform: translateX(7%) translateY(30%);
+}
+
 .purple-line {
     border: 1px solid rgb(151, 71, 255);
     flex-grow: 1;
