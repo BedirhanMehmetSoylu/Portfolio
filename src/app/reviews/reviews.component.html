@@ -31,11 +31,13 @@
         <div>
             <img src="assets/img/reviews/arrow_back.png" alt="" (click)="previousReview()">
 
-            <div *ngFor="let review of reviews; let i = index">
-                <div class="purple-point"
-                    [ngStyle]="{ 'background-color': currentIndex === i ? '#70E61C' : '#9747FF' }">
+            @for (review of reviews; track review.name; let i = $index) {
+                <div>
+                    <div class="purple-point"
+                        [ngStyle]="{ 'background-color': currentIndex === i ? '#70E61C' : '#9747FF' }">
+                    </div>
                 </div>
-            </div>
+            }
 
             <img src="assets/img/reviews/arrow_forward.png" alt="" (click)="nextReview()">
         </div>

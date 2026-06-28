@@ -1,14 +1,15 @@
 <div class="skills-section">
   <div class="skills-container">
-    <div
-      class="skill"
-      *ngFor="let skill of skills; let i = index"
-      [attr.data-aos]="'fade-up'"
-      [attr.data-aos-delay]="i * 100"
-    >
-      <img [src]="'assets/img/myskills/' + skill.imagePath" [alt]="skill.text" />
-      <span>{{ skill.text }}</span>
-    </div>
+    @for (skill of skills; track skill.text; let i = $index) {
+      <div
+        class="skill"
+        [attr.data-aos]="'fade-up'"
+        [attr.data-aos-delay]="i * 100"
+      >
+        <img [src]="'assets/img/myskills/' + skill.imagePath" [alt]="skill.text" />
+        <span>{{ skill.text }}</span>
+      </div>
+    }
 
     <div class="skill" data-aos="fade-up" data-aos-delay="600">
       <img src="assets/img/myskills/materialdesign.png" alt="">
@@ -56,15 +57,16 @@
       </div>
 
       <div class="skills-container moved-skills">
-        <div
-          class="skill"
-          *ngFor="let skill of skills; let i = index"
-          [attr.data-aos]="'fade-up'"
-          [attr.data-aos-delay]="i * 100 + 500"
-        >
-          <img [src]="'assets/img/myskills/' + skill.imagePath" [alt]="skill.text" />
-          <span>{{ skill.text }}</span>
-        </div>
+        @for (skill of skills; track skill.text; let i = $index) {
+          <div
+            class="skill"
+            [attr.data-aos]="'fade-up'"
+            [attr.data-aos-delay]="i * 100 + 500"
+          >
+            <img [src]="'assets/img/myskills/' + skill.imagePath" [alt]="skill.text" />
+            <span>{{ skill.text }}</span>
+          </div>
+        }
 
         <div class="skill padd-0" data-aos="fade-up" data-aos-delay="1000">
           <img src="assets/img/myskills/materialdesign.png" alt="">
