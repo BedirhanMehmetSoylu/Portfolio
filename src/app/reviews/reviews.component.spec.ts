@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { commonTestImports, commonTestProviders } from '../shared/testing/test-providers';
 
 import { ReviewsComponent } from './reviews.component';
 
@@ -8,7 +9,8 @@ describe('ReviewsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ReviewsComponent]
+      imports: [ReviewsComponent, ...commonTestImports],
+      providers: [...commonTestProviders],
     })
     .compileComponents();
     

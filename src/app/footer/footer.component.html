@@ -1,7 +1,7 @@
 <footer>
     <div class="footer-section">
         <div class="footer-left">
-            <img (click)="scrollToSection('hero')" (click)="goHome()" src="assets/img/logo.png" alt="">
+            <img (click)="nav.goHome()" src="assets/img/logo.png" alt="">
             
             <div class="link-wrapper d-block">
                 <a routerLink="/legal-notice">{{ 'FOOTER.LEGAL' | translate }}</a>
@@ -12,9 +12,9 @@
         <p>© Bedirhan Soylu 2025</p>
     
         <div class="footer-right">
-            <img src="assets/img/hero/github.png" alt="" (click)="openExternalLink('https://github.com/BedirhanMehmetSoylu')">
-            <img (click)="scrollToSection('contact')" src="assets/img/hero/email.png" alt="">
-            <img src="assets/img/hero/linkedin.png" alt="" (click)="openExternalLink('https://www.linkedin.com/in/bedirhan-soylu-65b703367/')">
+            <img src="assets/img/hero/github.png" alt="" (click)="nav.openExternalLink('https://github.com/BedirhanMehmetSoylu')">
+            <img (click)="nav.scrollToSection('contact')" src="assets/img/hero/email.png" alt="">
+            <img src="assets/img/hero/linkedin.png" alt="" (click)="nav.openExternalLink('https://www.linkedin.com/in/bedirhan-soylu-65b703367/')">
         </div>
 
         <div class="link-wrapper d-none">

@@ -1,9 +1,9 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { MobileMenuComponent } from '../mobile-menu/mobile-menu.component';
-import { Router } from '@angular/router';
+import { NavigationService } from '../shared/services/navigation.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,8 +12,10 @@ import { Router } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-
 export class NavbarComponent {
+  protected readonly nav = inject(NavigationService);
+  private readonly translate = inject(TranslateService);
+
   currentLang: string = 'en';
   activeSection: string = '';
   isOpen = false;
@@ -29,28 +31,20 @@ export class NavbarComponent {
     return this.imageSequence[this.imageIndex];
   }
 
-  constructor(private router: Router, private translate: TranslateService) {
-    translate.addLangs(['en', 'de']);
-    translate.setDefaultLang('en');
+  constructor() {
+    this.translate.addLangs(['en', 'de']);
+    this.translate.setDefaultLang('en');
 
     const savedLang = localStorage.getItem('lang');
     const langToUse = savedLang || 'en';
     this.currentLang = langToUse;
-    translate.use(langToUse);
+    this.translate.use(langToUse);
   }
 
   switchLang(lang: string) {
     this.currentLang = lang;
     this.translate.use(lang);
     localStorage.setItem('lang', lang);
-  }
-
-  scrollToSection(id: string) {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-  }
-
-  goHome() {
-    this.router.navigate(['/']);
   }
 
   toggleMenu(): void {

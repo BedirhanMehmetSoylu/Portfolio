@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { Router, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { NavigationService } from '../shared/services/navigation.service';
 
 @Component({
   selector: 'app-footer',
@@ -11,20 +12,5 @@ import { Router, RouterModule } from '@angular/router';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-  constructor(private router: Router) { }
-
-  scrollToSection(sectionId: string) {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
-  goHome() {
-    this.router.navigate(['/']);
-  }
-
-  openExternalLink(url: string): void {
-    window.open(url, '_blank');
-  }
+  protected readonly nav = inject(NavigationService);
 }

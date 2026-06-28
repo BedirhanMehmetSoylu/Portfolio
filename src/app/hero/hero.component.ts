@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { NavigationService } from '../shared/services/navigation.service';
 
 @Component({
   selector: 'app-hero',
@@ -10,31 +11,19 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   styleUrls: ['./hero.component.scss', './hero.component.responsive.scss']
 })
 export class HeroComponent {
-  iamHeight: string = 'auto';
+  protected readonly nav = inject(NavigationService);
+  public readonly translate = inject(TranslateService);
+
   buttonFontSize: string = '16px';
 
-  constructor(public translate: TranslateService) {
+  constructor() {
     this.loadButtonFontSize();
-
-    this.translate.onLangChange.subscribe(() => {
-      this.loadButtonFontSize();
-    });
+    this.translate.onLangChange.subscribe(() => this.loadButtonFontSize());
   }
 
   loadButtonFontSize() {
     this.translate.get('HERO.LETS_TALK_FONT_SIZE').subscribe((size: string) => {
       this.buttonFontSize = size || '16px';
     });
-  }
-
-  scrollToSection(sectionId: string) {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
-  openExternalLink(url: string): void {
-    window.open(url, '_blank');
   }
 }

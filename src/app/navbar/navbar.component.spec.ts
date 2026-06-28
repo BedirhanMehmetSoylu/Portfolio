@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { commonTestImports, commonTestProviders } from '../shared/testing/test-providers';
 
 import { NavbarComponent } from './navbar.component';
 
@@ -8,7 +9,8 @@ describe('NavbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NavbarComponent]
+      imports: [NavbarComponent, ...commonTestImports],
+      providers: [...commonTestProviders],
     })
     .compileComponents();
     

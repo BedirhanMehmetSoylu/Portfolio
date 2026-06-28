@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { commonTestImports, commonTestProviders } from '../shared/testing/test-providers';
 
 import { MobileMenuComponent } from './mobile-menu.component';
 
@@ -8,7 +9,8 @@ describe('MobileMenuComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MobileMenuComponent]
+      imports: [MobileMenuComponent, ...commonTestImports],
+      providers: [...commonTestProviders],
     })
     .compileComponents();
     

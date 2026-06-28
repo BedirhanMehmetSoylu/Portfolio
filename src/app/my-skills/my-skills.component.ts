@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { Component, inject } from '@angular/core';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { NavigationService } from '../shared/services/navigation.service';
 
 @Component({
   selector: 'app-my-skills',
@@ -11,6 +12,10 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   styleUrls: ['./my-skills.component.scss', './my-skills.component.responsive.scss']
 })
 export class MySkillsComponent {
+  protected readonly nav = inject(NavigationService);
+  protected readonly dialog = inject(MatDialog);
+  public readonly translate = inject(TranslateService);
+
   skills = [
     {
       imagePath: 'html.png',
@@ -50,12 +55,4 @@ export class MySkillsComponent {
     }
   ];
 
-  constructor(private dialog: MatDialog, public translate: TranslateService) { }
-
-  scrollToSection(sectionId: string) {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
 }

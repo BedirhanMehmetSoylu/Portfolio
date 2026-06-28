@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { Router, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { NavigationService } from '../shared/services/navigation.service';
 
 @Component({
   selector: 'app-contact',
@@ -14,10 +15,11 @@ import { Router, RouterModule } from '@angular/router';
   styleUrls: ['./contact.component.scss', './contact.component.responsive.scss']
 })
 export class ContactComponent {
+  protected readonly nav = inject(NavigationService);
+  private readonly http = inject(HttpClient);
+
   submitted = false;
   success = false;
-
-  http = inject(HttpClient);
 
   contactData = {
     name: "",
@@ -26,15 +28,6 @@ export class ContactComponent {
   }
 
   mailTest = false;
-
-  constructor(private router: Router) { }
-
-  scrollToSection(sectionId: string) {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
 
   post = {
     endPoint: 'https://bedirhan-soylu.de/sendMail.php',

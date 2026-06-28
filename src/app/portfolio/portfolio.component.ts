@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
+import { NavigationService } from '../shared/services/navigation.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -10,7 +11,5 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './portfolio.component.scss'
 })
 export class PortfolioComponent {
-  openExternalLink(url: string): void {
-    window.open(url, '_blank');
-  }
+  protected readonly nav = inject(NavigationService);
 }
