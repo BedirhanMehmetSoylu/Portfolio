@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgForm } from '@angular/forms';
@@ -12,11 +12,13 @@ import { NavigationService } from '../shared/services/navigation.service';
   standalone: true,
   imports: [CommonModule, FormsModule, TranslateModule, RouterModule],
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss', './contact.component.responsive.scss']
+  styleUrls: ['./contact.component.scss', './contact.component.responsive.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContactComponent {
   protected readonly nav = inject(NavigationService);
   private readonly http = inject(HttpClient);
+  private readonly cdr = inject(ChangeDetectorRef);
 
   submitted = false;
   success = false;
@@ -48,13 +50,16 @@ export class ContactComponent {
             this.success = true;
             ngForm.resetForm();
             this.submitted = false;
+            this.cdr.markForCheck();
 
             setTimeout(() => {
               this.success = false;
+              this.cdr.markForCheck();
             }, 3000);
           },
           error: (error) => {
             console.error(error);
+            this.cdr.markForCheck();
           },
           complete: () => console.info('The email was sent successfully!'),
         });

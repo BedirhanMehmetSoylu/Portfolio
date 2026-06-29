@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from '../footer/footer.component';
@@ -9,7 +9,8 @@ import { FooterComponent } from '../footer/footer.component';
   standalone: true,
   imports: [CommonModule, TranslateModule, NavbarComponent, FooterComponent],
   templateUrl: './privacy-policy.component.html',
-  styleUrls: ['./privacy-policy.component.scss']
+  styleUrls: ['./privacy-policy.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PrivacyPolicyComponent {
 

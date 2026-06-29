@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet, Router, NavigationEnd, Event as RouterEvent } from '@angular/router';
+import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
 @Component({
@@ -8,19 +9,19 @@ import { filter } from 'rxjs/operators';
   standalone: true,
   imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-
 export class AppComponent {
   title = 'portfolio';
-  showMainContent = true;
 
-  constructor(private router: Router) {
+  private readonly router = inject(Router);
+
+  constructor() {
     this.router.events.pipe(
-      filter((event): event is NavigationEnd => event instanceof NavigationEnd)
+      filter((event): event is NavigationEnd => event instanceof NavigationEnd),
+      takeUntilDestroyed()
     ).subscribe((event: NavigationEnd) => {
-      this.showMainContent = event.urlAfterRedirects !== '/legal-notice';
-
       const tree = this.router.parseUrl(event.urlAfterRedirects);
       if (!tree.fragment) {
         window.scrollTo(0, 0);

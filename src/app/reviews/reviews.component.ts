@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -7,7 +7,8 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule, TranslateModule],
   templateUrl: './reviews.component.html',
-  styleUrl: './reviews.component.scss'
+  styleUrl: './reviews.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ReviewsComponent {
   reviews = [
@@ -38,5 +39,3 @@ export class ReviewsComponent {
     this.currentIndex = (this.currentIndex - 1 + this.reviews.length) % this.reviews.length;
   }
 }
-
-

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from '../footer/footer.component';
 import { TranslateModule } from '@ngx-translate/core';
@@ -9,7 +9,8 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule, NavbarComponent, FooterComponent, TranslateModule],
   templateUrl: './legal-notice.component.html',
-  styleUrls: ['./legal-notice.component.scss']
+  styleUrls: ['./legal-notice.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LegalNoticeComponent {
 

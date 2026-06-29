@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ChangeDetectionStrategy, EventEmitter, Input, Output } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -7,7 +7,8 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule, TranslateModule],
   templateUrl: './mobile-menu.component.html',
-  styleUrl: './mobile-menu.component.scss'
+  styleUrl: './mobile-menu.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class MobileMenuComponent {

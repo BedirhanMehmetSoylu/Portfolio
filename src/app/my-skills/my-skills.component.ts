@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NavigationService } from '../shared/services/navigation.service';
@@ -9,7 +9,8 @@ import { NavigationService } from '../shared/services/navigation.service';
   standalone: true,
   imports: [CommonModule, MatDialogModule, TranslateModule],
   templateUrl: './my-skills.component.html',
-  styleUrls: ['./my-skills.component.scss', './my-skills.component.responsive.scss']
+  styleUrls: ['./my-skills.component.scss', './my-skills.component.responsive.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MySkillsComponent {
   protected readonly nav = inject(NavigationService);

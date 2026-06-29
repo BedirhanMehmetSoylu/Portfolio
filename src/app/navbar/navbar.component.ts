@@ -1,4 +1,4 @@
-import { Component, HostListener, inject } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, inject, OnDestroy } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
@@ -10,11 +10,14 @@ import { NavigationService } from '../shared/services/navigation.service';
   standalone: true,
   imports: [CommonModule, TranslateModule, MobileMenuComponent],
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NavbarComponent {
+
+export class NavbarComponent implements OnDestroy {
   protected readonly nav = inject(NavigationService);
   private readonly translate = inject(TranslateService);
+  private readonly cdr = inject(ChangeDetectorRef);
 
   currentLang: string = 'en';
   activeSection: string = '';
@@ -26,6 +29,8 @@ export class NavbarComponent {
     'assets/img/navbar/burger_3.png',
     'assets/img/navbar/burger_4.png'
   ];
+
+  private animationIntervalId: ReturnType<typeof setInterval> | null = null;
 
   get currentBurgerImage(): string {
     return this.imageSequence[this.imageIndex];
@@ -39,6 +44,17 @@ export class NavbarComponent {
     const langToUse = savedLang || 'en';
     this.currentLang = langToUse;
     this.translate.use(langToUse);
+  }
+
+  ngOnDestroy(): void {
+    this.clearAnimationInterval();
+  }
+
+  private clearAnimationInterval(): void {
+    if (this.animationIntervalId !== null) {
+      clearInterval(this.animationIntervalId);
+      this.animationIntervalId = null;
+    }
   }
 
   switchLang(lang: string) {
@@ -59,24 +75,28 @@ export class NavbarComponent {
   }
 
   animateOpen(): void {
+    this.clearAnimationInterval();
     let step = 0;
-    const interval = setInterval(() => {
+    this.animationIntervalId = setInterval(() => {
       this.imageIndex = step;
       step++;
       if (step >= this.imageSequence.length) {
-        clearInterval(interval);
+        this.clearAnimationInterval();
       }
+      this.cdr.markForCheck();
     }, 50);
   }
 
   animateClose(): void {
+    this.clearAnimationInterval();
     let step = this.imageSequence.length - 1;
-    const interval = setInterval(() => {
+    this.animationIntervalId = setInterval(() => {
       this.imageIndex = step;
       step--;
       if (step < 0) {
-        clearInterval(interval);
+        this.clearAnimationInterval();
       }
+      this.cdr.markForCheck();
     }, 50);
   }
 

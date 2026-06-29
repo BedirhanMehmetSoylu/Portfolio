@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { NavigationService } from '../shared/services/navigation.service';
 
@@ -8,7 +8,8 @@ import { NavigationService } from '../shared/services/navigation.service';
   standalone: true,
   imports: [CommonModule, TranslateModule],
   templateUrl: './portfolio.component.html',
-  styleUrl: './portfolio.component.scss'
+  styleUrl: './portfolio.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PortfolioComponent {
   protected readonly nav = inject(NavigationService);
