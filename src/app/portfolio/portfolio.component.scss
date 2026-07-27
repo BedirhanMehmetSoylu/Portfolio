@@ -51,6 +51,13 @@ h2 {
     width: 100%;
 }
 
+.portfolio-switch-btns {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    margin-top: 40px;
+}
+
 .projects-container {
     max-width: 1920px;
     width: 100%;

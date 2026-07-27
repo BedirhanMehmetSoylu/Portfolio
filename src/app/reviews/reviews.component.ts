@@ -14,8 +14,8 @@ export class ReviewsComponent {
   reviews = [
     {
       text: 'REVIEWS.FIRST',
-      name: "L. Eckert - Team Partner",
-      image: "reviewer.png",
+      name: "N. Müftüoglu - Team Partner",
+      image: "nafi.png",
     },
     {
       text: "REVIEWS.SECOND",

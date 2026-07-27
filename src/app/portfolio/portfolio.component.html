@@ -12,6 +12,11 @@
     {{ 'PORTFOLIO.DESCRIPTION' | translate }}
   </p>
 
+  <div class="portfolio-switch-btns" data-aos="fade-up" data-aos-delay="300">
+          <button class="live-test-btn" (click)="nav.openExternalLink('https://join.bedirhan-soylu.de/')">Frontend</button>
+          <button class="github-btn" (click)="nav.openExternalLink('https://github.com/BedirhanMehmetSoylu/Join')">Backend</button>
+  </div>
+
   <div class="projects-container">
     <div class="project" data-aos="fade-right" data-aos-delay="300">
       <div class="laptop-container">
