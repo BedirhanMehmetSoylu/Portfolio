@@ -13,12 +13,22 @@
   </p>
 
   <div class="portfolio-switch-btns" data-aos="fade-up" data-aos-delay="300">
-          <button class="live-test-btn" (click)="nav.openExternalLink('https://join.bedirhan-soylu.de/')">Frontend</button>
-          <button class="github-btn" (click)="nav.openExternalLink('https://github.com/BedirhanMehmetSoylu/Join')">Backend</button>
+    <button 
+      class="tab-btn" 
+      [class.active]="selectedCategory === 'frontend'"
+      (click)="selectCategory('frontend')">
+      Frontend
+    </button>
+    <button 
+      class="tab-btn" 
+      [class.active]="selectedCategory === 'backend'"
+      (click)="selectCategory('backend')">
+      Backend
+    </button>
   </div>
 
   <div class="projects-container">
-    <div class="project" data-aos="fade-right" data-aos-delay="300">
+    <div class="project" *ngIf="selectedCategory === 'frontend'" data-aos="fade-right" data-aos-delay="300">
       <div class="laptop-container">
         <img src="assets/img/portfolio/join.avif" alt="">
       </div>
@@ -34,7 +44,7 @@
       </div>
     </div>
 
-    <div class="project" data-aos="fade-left" data-aos-delay="400">
+    <div class="project" *ngIf="selectedCategory === 'frontend'" data-aos="fade-left" data-aos-delay="400">
       <div class="laptop-container mobile">
         <img src="assets/img/portfolio/el_pollo_loco.avif" alt="">
       </div>
@@ -54,7 +64,7 @@
       </div>
     </div>
 
-    <div class="project" data-aos="fade-right" data-aos-delay="500">
+    <div class="project" *ngIf="selectedCategory === 'frontend'" data-aos="fade-right" data-aos-delay="500">
       <div class="laptop-container">
         <img src="assets/img/portfolio/pokedex.avif" alt="">
       </div>
@@ -70,23 +80,55 @@
       </div>
     </div>
 
-    <div class="project" data-aos="fade-left" data-aos-delay="400">
-      <div class="laptop-container mobile">
-        <img src="assets/img/portfolio/codermacbook.avif" alt="">
+    <div class="project" *ngIf="selectedCategory === 'backend'" data-aos="fade-left" data-aos-delay="400">
+      <div class="laptop-container">
+        <img src="assets/img/portfolio/coderr.avif" alt="">
       </div>
 
-      <div class="project-description-to-right">
+      <div class="project-description">
         <h3>Coderr</h3>
         <span>JavaScript | HTML | CSS</span>
-        <p>{{ 'PORTFOLIO.EL_POLLO_LOCO' | translate }}</p>
+        <p>{{ 'PORTFOLIO.CODERR' | translate }}</p>
         <div>
           <button class="live-test-btn" (click)="nav.openExternalLink('https://elpolloloco.bedirhan-soylu.de/')">{{ 'PORTFOLIO.LIVE' | translate }}</button>
           <button class="github-btn" (click)="nav.openExternalLink('https://github.com/BedirhanMehmetSoylu/El-Pollo-Loco')">Github</button>
         </div>
       </div>
+    </div>
+
+    <div class="project" *ngIf="selectedCategory === 'backend'" data-aos="fade-right" data-aos-delay="300">
+      <div class="laptop-container mobile">
+        <img src="assets/img/portfolio/kanmind.avif" alt="">
+      </div>
+
+      <div class="project-description-to-right">
+        <h3>Kanmind</h3>
+        <span>Angular | TypeScript | HTML | CSS | Firebase </span>
+        <p>{{ 'PORTFOLIO.KANMIND' | translate }}</p>
+        <div>
+          <button class="live-test-btn" (click)="nav.openExternalLink('https://join.bedirhan-soylu.de/')">{{ 'PORTFOLIO.LIVE' | translate }}</button>
+          <button class="github-btn" (click)="nav.openExternalLink('https://github.com/BedirhanMehmetSoylu/Join')">Github</button>
+        </div>
+      </div>
 
       <div class="laptop-container desktop">
-        <img src="assets/img/portfolio/codermacbook.avif" alt="">
+        <img src="assets/img/portfolio/kanmind.avif" alt="">
+      </div>
+    </div>
+
+    <div class="project" *ngIf="selectedCategory === 'backend'" data-aos="fade-left" data-aos-delay="400">
+      <div class="laptop-container">
+        <img src="assets/img/portfolio/videoflix.avif" alt="">
+      </div>
+
+      <div class="project-description">
+        <h3>Videoflix</h3>
+        <span>JavaScript | HTML | CSS</span>
+        <p>{{ 'PORTFOLIO.VIDEOFLIX' | translate }}</p>
+        <div>
+          <button class="live-test-btn" (click)="nav.openExternalLink('https://elpolloloco.bedirhan-soylu.de/')">{{ 'PORTFOLIO.LIVE' | translate }}</button>
+          <button class="github-btn" (click)="nav.openExternalLink('https://github.com/BedirhanMehmetSoylu/El-Pollo-Loco')">Github</button>
+        </div>
       </div>
     </div>
 

@@ -13,4 +13,10 @@ import { NavigationService } from '../shared/services/navigation.service';
 })
 export class PortfolioComponent {
   protected readonly nav = inject(NavigationService);
+
+  selectedCategory: 'frontend' | 'backend' = 'frontend';
+
+  selectCategory(category: 'frontend' | 'backend') {
+    this.selectedCategory = category;
+  }
 }

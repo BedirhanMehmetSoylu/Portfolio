@@ -34,6 +34,9 @@
         "JOIN": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
         "EL_POLLO_LOCO": "A simple Jump-and-Run game based on an object-oriented approach. Help Pepe to find coins and salsa bottles to fight against the killer chicken.",
         "POKEDEX": "Based on the PokéAPI a simple library that provides and catalogues pokemon information.",
+        "KANMIND": "A backend for a project management tool featuring user management, task management, and a powerful REST API.",
+        "CODERR": "A backend for a freelancer platform featuring authentication, offer management, and secure data processing.",
+        "VIDEOFLIX": "A backend for a video streaming platform featuring user management, video processing, and streaming functionality.",
         "LIVE": "Live test"
     },
     "REVIEWS": {

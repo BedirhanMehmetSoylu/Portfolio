@@ -204,6 +204,28 @@ h2 {
     }
 }
 
+.tab-btn {
+    background-color: transparent;
+    color: white;
+    font-size: 23px;
+    line-height: 120%;
+    border: 1px solid #70E61C;
+    border-radius: 10px;
+    width: 152px;
+    height: 58px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #70E61C;
+    }
+
+    &.active {
+        background-color: #9747FF;
+        border: none;
+    }
+}
+
 @media (max-width: 1288px) {
     .laptop-container {
         width: 424px;
