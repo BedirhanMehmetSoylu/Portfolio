@@ -20,10 +20,80 @@
     flex-wrap: wrap;
     gap: 40px 88px;
     margin-left: 100px;
+
+    &.stack-backend {
+        justify-content: center;
+    }
 }
 
 .moved-skills {
     display: none;
+}
+
+.stack-toggle-wrapper {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.stack-toggle {
+    position: relative;
+    display: flex;
+    width: fit-content;
+    padding: 6px;
+    border-radius: 100px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.stack-toggle-indicator {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 152px;
+    height: calc(100% - 12px);
+    border-radius: 100px;
+    background-color: #9747FF;
+    transition: transform 0.35s cubic-bezier(0.65, 0, 0.35, 1), background-color 0.35s ease;
+    z-index: 0;
+
+    &.backend {
+        transform: translateX(152px);
+        background-color: #70E61C;
+    }
+}
+
+.stack-toggle-btn {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 152px;
+    height: auto;
+    background-color: transparent;
+    border: none;
+    border-radius: 100px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 120%;
+    padding: 14px 0;
+    box-shadow: none;
+    margin-top: 0;
+    transition: color 0.3s ease;
+
+    &.active {
+        color: white;
+    }
+
+    &:hover {
+        transform: none;
+        background-color: transparent;
+        color: white;
+        cursor: pointer;
+    }
 }
 
 .skill {
@@ -61,6 +131,18 @@
     line-height: 120%;
 }
 
+@keyframes learningPopIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
 .skill-learning {
     position: relative;
     z-index: 1;
@@ -71,6 +153,7 @@
     gap: 10px;
     width: 88px;
     padding-top: 12px;
+    animation: learningPopIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 
     &:hover {
         >img {
@@ -107,7 +190,8 @@ mat-dialog-content {
     visibility: hidden;
     position: absolute;
     top: -120px;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -115,22 +199,25 @@ mat-dialog-content {
     justify-content: center;
     text-align: center;
     gap: 8px;
-    width: 196px;
-    height: 128px;
-    border-radius: 20px;
+    min-width: 196px;
+    width: max-content;
+    max-width: calc(100vw - 32px);
+    min-height: 128px;
+    padding: 16px 8px;
+    border-radius: 24px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
 
     >p {
         color: black;
         padding: 0px 16px;
     }
 
-    >div {
+    .learning-items {
         display: flex;
         flex-direction: row;
         gap: 16px;
 
-        >div {
-            position: relative;
+        .learning-item {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -141,17 +228,22 @@ mat-dialog-content {
                 font-weight: 700;
             }
 
-            >.vector {
-                position: absolute;
-                bottom: -26px;
-                left: -4px;
+            >img.invert-icon {
+                filter: brightness(0);
             }
         }
+    }
+
+    >.vector {
+        position: absolute;
+        bottom: -18px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
 .german-vector-bottom {
-    bottom: -17px !important;
+    bottom: -11px !important;
 }
 
 .shadow {

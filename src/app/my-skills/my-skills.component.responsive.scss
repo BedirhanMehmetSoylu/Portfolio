@@ -42,8 +42,8 @@
 
     .skills-container {
         gap: 32px 64px;
-        justify-content: center;
         margin-left: 40px;
+        justify-content: center;
     }
 
     .skills-section {
@@ -75,6 +75,10 @@
         justify-content: flex-start;
         max-width: 544px;
         margin-left: 0px;
+    }
+
+    .hide-mobile-skill {
+        display: none;
     }
 
     .shadow {
@@ -222,16 +226,6 @@
 
     mat-dialog-content {
         top: -136px;
-        left: -32px;
-
-        .vector {
-            bottom: -26px;
-            left: 23px !important;
-        }
-    }
-
-    .german-vector-bottom {
-        bottom: -17px !important;
     }
 }
 
@@ -302,17 +296,5 @@
 
     .skill-learning {
         width: 70px;
-    }
-
-    mat-dialog-content {
-        left: -96px;
-
-        .vector {
-            left: 80px !important;
-        }
-    }
-
-    .german-vector-bottom {
-        bottom: -17px !important;
     }
 }

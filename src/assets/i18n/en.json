@@ -19,8 +19,10 @@
     },
     "MYSKILLS": {
         "HEADLINE": "My Skills",
-        "DESCRIPTION": "During my training to become a front-end developer, I built strong skills in HTML, CSS, JavaScript, and TypeScript.",
-        "DESCRIPTION_SKILLS": "I work with Angular, Firebase, and Git, and have initial experience with REST APIs, Material Design, and agile methods like Scrum.",
+        "DESCRIPTION_FRONTEND": "During my training to become a front-end developer, I built strong skills in HTML, CSS, JavaScript, and TypeScript.",
+        "DESCRIPTION_SKILLS_FRONTEND": "I work with Angular, Firebase, and Git, and have initial experience with REST APIs, Material Design, and agile methods like Scrum.",
+        "DESCRIPTION_BACKEND": "As part of my further training to become a backend developer, I expanded my knowledge of server-side technologies such as Python and Django.",
+        "DESCRIPTION_SKILLS_BACKEND": "I work with relational databases like PostgreSQL, containerize applications with Docker, and deploy them via cloud platforms like Heroku.",
         "LOOKING": "Looking for",
         "ANOTHER": "another skill",
         "LEARNING_SKILLS": "My goal is to continuously expand my knowledge, learn new technologies, and contribute to building modern web applications.",
