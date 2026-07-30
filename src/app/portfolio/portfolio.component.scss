@@ -52,10 +52,58 @@ h2 {
 }
 
 .portfolio-switch-btns {
+    position: relative;
     display: flex;
-    flex-direction: row;
-    gap: 24px;
+    width: fit-content;
+    padding: 6px;
     margin-top: 40px;
+    border-radius: 100px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.switch-indicator {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 152px;
+    height: calc(100% - 12px);
+    border-radius: 100px;
+    background-color: #9747FF;
+    transition: transform 0.35s cubic-bezier(0.65, 0, 0.35, 1), background-color 0.35s ease;
+    z-index: 0;
+
+    &.backend {
+        transform: translateX(152px);
+        background-color: #70E61C;
+    }
+}
+
+.switch-btn {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 152px;
+    background-color: transparent;
+    border: none;
+    border-radius: 100px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 120%;
+    padding: 14px 0;
+    transition: color 0.3s ease;
+
+    &.active {
+        color: white;
+    }
+
+    &:hover {
+        cursor: pointer;
+        color: white;
+    }
 }
 
 .projects-container {
@@ -201,28 +249,6 @@ h2 {
     &:hover {
         cursor: pointer;
         background-color: #70E61C;
-    }
-}
-
-.tab-btn {
-    background-color: transparent;
-    color: white;
-    font-size: 23px;
-    line-height: 120%;
-    border: 1px solid #70E61C;
-    border-radius: 10px;
-    width: 152px;
-    height: 58px;
-    transition: background-color 0.2s ease, color 0.2s ease;
-
-    &:hover {
-        cursor: pointer;
-        background-color: #70E61C;
-    }
-
-    &.active {
-        background-color: #9747FF;
-        border: none;
     }
 }
 

@@ -13,16 +13,19 @@
   </p>
 
   <div class="portfolio-switch-btns" data-aos="fade-up" data-aos-delay="300">
-    <button 
-      class="tab-btn" 
+    <div class="switch-indicator" [class.backend]="selectedCategory === 'backend'"></div>
+    <button
+      class="switch-btn"
       [class.active]="selectedCategory === 'frontend'"
-      (click)="selectCategory('frontend')">
+      (click)="selectCategory('frontend')"
+    >
       Frontend
     </button>
-    <button 
-      class="tab-btn" 
+    <button
+      class="switch-btn"
       [class.active]="selectedCategory === 'backend'"
-      (click)="selectCategory('backend')">
+      (click)="selectCategory('backend')"
+    >
       Backend
     </button>
   </div>
