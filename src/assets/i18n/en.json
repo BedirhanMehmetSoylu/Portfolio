@@ -49,8 +49,8 @@
     "CONTACT": {
         "TITLE": "Contact",
         "SOLVE": "Got a problem to solve?",
-        "EXPLAIN_INTERESTS": "As a trained software developer with a focus on frontend and backend, I bring solid knowledge in HTML, CSS, JavaScript, Angular, Node.js, and relational databases. I am looking for a full-time position where I can apply my skills and continue to grow — motivated, eager to learn, and ready to create real value.",
-        "NEED": "Need a Frontend developer?",
+        "EXPLAIN_INTERESTS": "As a trained software developer with a focus on frontend and backend, I bring solid knowledge in HTML, CSS, JavaScript, Angular, Node.js, Python, PostgreSQL, MySQL, and Docker. I am looking for a full-time position where I can apply my skills and continue to grow — motivated, eager to learn, and ready to create real value.",
+        "NEED": "Need a Full-Stack developer?",
         "CONTACT_ME": "Contact me!",
         "NAME": "Your name",
         "EMAIL": "Your email",
