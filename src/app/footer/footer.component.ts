@@ -14,4 +14,6 @@ import { NavigationService } from '../shared/services/navigation.service';
 })
 export class FooterComponent {
   protected readonly nav = inject(NavigationService);
+
+  currentYear = new Date().getFullYear();
 }
