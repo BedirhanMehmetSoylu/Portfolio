@@ -1,27 +1,77 @@
-# Portfolio
+# Bedirhan Soylu — Portfolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.6.
+Persönliches Portfolio als Fullstack-Webanwendung, gebaut mit Angular. Präsentiert Skills, Projekte (Frontend & Backend) und einen Kontaktweg.
 
-## Development server
+**🔗 Live:** [bedirhan-soylu.de](https://www.bedirhan-soylu.de) <!-- ggf. Domain anpassen -->
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<!-- 📸 Screenshot / GIF der Startseite hier einfügen -->
 
-## Code scaffolding
+## Über das Projekt
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Ich bin Junior Fullstack Entwickler mit Fokus auf Angular im Frontend und Python/Django im Backend. Dieses Portfolio dient als zentrale Anlaufstelle für meine Projekte und Bewerbungsunterlagen und zeigt gleichzeitig, wie ich eine produktionsnahe Angular-Anwendung strukturiere.
 
-## Build
+## Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- 🌍 Mehrsprachig (DE/EN) via `@ngx-translate`
+- 📱 Vollständig responsive (Mobile-first)
+- ⚡ Standalone Components (Angular 17), OnPush Change Detection
+- ✉️ Kontaktformular mit E-Mail-Versand
+- 📄 Impressum & Datenschutzerklärung (DSGVO-konform)
+- 🎬 Scroll-Animationen mit AOS
 
-## Running unit tests
+## Tech-Stack
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+| Bereich       | Technologien |
+|---------------|--------------|
+| Frontend      | Angular 17, TypeScript, SCSS |
+| UI/Animation  | Angular Material (Dialog), AOS |
+| i18n          | @ngx-translate/core |
+| Kontaktformular | PHP (`sendMail.php`) |
 
-## Running end-to-end tests
+## Projektstruktur
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```
+src/app/
+├── hero/            # Startbereich mit Kurzvorstellung
+├── about-me/         # Über mich
+├── my-skills/        # Skills-Übersicht
+├── portfolio/         # Projektübersicht (Frontend/Backend Filter)
+├── reviews/          # Referenzen/Testimonials
+├── contact/          # Kontaktformular
+├── navbar / mobile-menu / footer
+├── legal-notice/      # Impressum
+└── privacy-policy/    # Datenschutzerklärung
+```
 
-## Further help
+## Lokal starten
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Voraussetzung: Node.js (empfohlen: aktuelle LTS-Version) und Angular CLI.
+
+```bash
+# Repository klonen
+git clone https://github.com/BedirhanMehmetSoylu/Portfolio.git
+cd Portfolio
+
+# Abhängigkeiten installieren
+npm install
+
+# Dev-Server starten
+ng serve
+```
+
+Die Anwendung läuft danach unter `http://localhost:4200/`.
+
+### Build
+
+```bash
+ng build
+```
+
+Die Build-Artefakte liegen anschließend im `dist/`-Verzeichnis.
+
+## Kontakt
+
+**Bedirhan Mehmet Soylu**
+📧 bedirhanmehmetsoylu@gmail.com
+💼 [LinkedIn](https://www.linkedin.com/in/bedirhan-soylu-65b703367/)
+🐙 [GitHub](https://github.com/BedirhanMehmetSoylu)

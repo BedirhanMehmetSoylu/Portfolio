@@ -44,6 +44,7 @@ export class NavbarComponent implements OnDestroy {
     const langToUse = savedLang || 'en';
     this.currentLang = langToUse;
     this.translate.use(langToUse);
+    document.documentElement.lang = langToUse;
   }
 
   ngOnDestroy(): void {
@@ -61,6 +62,7 @@ export class NavbarComponent implements OnDestroy {
     this.currentLang = lang;
     this.translate.use(lang);
     localStorage.setItem('lang', lang);
+    document.documentElement.lang = lang;
   }
 
   toggleMenu(): void {
