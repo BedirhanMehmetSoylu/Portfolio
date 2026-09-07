@@ -19,7 +19,7 @@ export class NavbarComponent implements OnDestroy {
   private readonly translate = inject(TranslateService);
   private readonly cdr = inject(ChangeDetectorRef);
 
-  currentLang: string = 'en';
+  currentLang: string = 'de';
   activeSection: string = '';
   isOpen = false;
   imageIndex = 0;
@@ -38,10 +38,10 @@ export class NavbarComponent implements OnDestroy {
 
   constructor() {
     this.translate.addLangs(['en', 'de']);
-    this.translate.setDefaultLang('en');
+    this.translate.setDefaultLang('de');
 
     const savedLang = localStorage.getItem('lang');
-    const langToUse = savedLang || 'en';
+    const langToUse = savedLang || 'de';
     this.currentLang = langToUse;
     this.translate.use(langToUse);
     document.documentElement.lang = langToUse;
