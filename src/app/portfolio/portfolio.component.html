@@ -93,7 +93,7 @@
         <span>Python | Django | REST</span>
         <p>{{ 'PORTFOLIO.CODERR' | translate }}</p>
         <div>
-          <button class="live-test-btn" (click)="nav.openExternalLink('https://coderr.bedirhan-soylu.de/')">{{ 'PORTFOLIO.LIVE' | translate }}</button>
+          <button class="live-test-btn" [attr.data-tooltip]="'PORTFOLIO.COLD_START_HINT' | translate" (click)="nav.openExternalLink('https://coderr.bedirhan-soylu.de/')">{{ 'PORTFOLIO.LIVE' | translate }}</button>
           <button class="github-btn" (click)="nav.openExternalLink('https://github.com/BedirhanMehmetSoylu/Coderr-Backend')">Github</button>
         </div>
       </div>
@@ -109,7 +109,7 @@
         <span>Python | Django | REST</span>
         <p>{{ 'PORTFOLIO.KANMIND' | translate }}</p>
         <div>
-          <button class="live-test-btn" (click)="nav.openExternalLink('https://kanmind.bedirhan-soylu.de/')">{{ 'PORTFOLIO.LIVE' | translate }}</button>
+          <button class="live-test-btn" [attr.data-tooltip]="'PORTFOLIO.COLD_START_HINT' | translate" (click)="nav.openExternalLink('https://kanmind.bedirhan-soylu.de/')">{{ 'PORTFOLIO.LIVE' | translate }}</button>
           <button class="github-btn" (click)="nav.openExternalLink('https://github.com/BedirhanMehmetSoylu/KanMind-Backend')">Github</button>
         </div>
       </div>
@@ -126,9 +126,10 @@
 
       <div class="project-description">
         <h3>Videoflix</h3>
-        <span>Python | HTML | Shell | Dockerfile</span>
+        <span>Python | Django | Redis</span>
         <p>{{ 'PORTFOLIO.VIDEOFLIX' | translate }}</p>
         <div>
+          <button class="live-test-btn" (click)="nav.openExternalLink('https://videoflix.bedirhan-soylu.de/')">{{ 'PORTFOLIO.LIVE' | translate }}</button>
           <button class="github-btn" (click)="nav.openExternalLink('https://github.com/BedirhanMehmetSoylu/Videoflix-Backend')">Github</button>
         </div>
       </div>

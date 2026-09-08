@@ -79,7 +79,7 @@ p {
 
 .selfie-img {
     position: absolute;
-    top: -120px;
+    top: -150px;
     left: -15px;
     width: 110%;
     position: absolute;
@@ -118,6 +118,10 @@ p {
     .selfie {
         width: 368px;
         height: 368px;
+    }
+
+    .selfie-img {
+        top: -130px;
     }
 }
 

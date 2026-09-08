@@ -39,7 +39,8 @@
         "KANMIND": "A backend for a project management tool featuring user management, task management, and a powerful REST API.",
         "CODERR": "A backend for a freelancer platform featuring authentication, offer management, and secure data processing.",
         "VIDEOFLIX": "A backend for a video streaming platform featuring user management, video processing, and streaming functionality.",
-        "LIVE": "Live test"
+        "LIVE": "Live test",
+        "COLD_START_HINT": "Hosted on a free tier – the first load can take up to 50 seconds."
     },
     "REVIEWS": {
         "FIRST": "Bedirhan not only brings technical skills to the table, but also a strong sense of teamwork. His structured approach and clear communication noticeably strengthened our project.",
