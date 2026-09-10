@@ -32,7 +32,7 @@ export class ContactComponent {
   mailTest = false;
 
   post = {
-    endPoint: 'https://bedirhan-soylu.de/sendMail.php',
+    endPoint: '/api/sendMail',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {

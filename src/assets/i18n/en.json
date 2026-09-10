@@ -120,9 +120,9 @@
         "HOSTING": {
             "TITLE": "2. Hosting",
             "INTRO_TEXT": "We host the content of our website with the following provider:",
-            "PROVIDER_NAME": "All-Inkl",
-            "PROVIDER_INFO": "The provider is ALL-INKL.COM - Neue Medien Münnich, owner René Münnich, Hauptstraße 68, 02742 Friedersdorf (hereinafter referred to as All-Inkl). For details, please refer to All-Inkl’s privacy policy:",
-            "LEGAL_BASIS": "The use of All-Inkl is based on Art. 6(1)(f) GDPR. We have a legitimate interest in the most reliable presentation of our website. If consent has been requested, processing is based exclusively on Art. 6(1)(a) GDPR and § 25(1) TDDDG, insofar as the consent includes the storage of cookies or access to information on the user’s end device (e.g., device fingerprinting) within the meaning of the TDDDG. Consent can be revoked at any time."
+            "PROVIDER_NAME": "Vercel",
+            "PROVIDER_INFO": "The provider is Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA (hereinafter referred to as Vercel). For details, please refer to Vercel's privacy policy:",
+            "LEGAL_BASIS": "The use of Vercel is based on Art. 6(1)(f) GDPR. We have a legitimate interest in a reliable and performant presentation of our website."
         },
         "GENERAL_INFO": {
             "TITLE": "3. General Information and Mandatory Disclosures",
@@ -133,7 +133,7 @@
             "CONTROLLER_TITLE": "Information about the Responsible Party",
             "CONTROLLER_DESCRIPTION": "The responsible party for data processing on this website is:",
             "CONTROLLER_NAME": "Bedirhan Mehmet Soylu",
-            "CONTROLLER_ADDRESS": "Bergkammstraße 8, 30453 Hannover",
+            "CONTROLLER_ADDRESS": "Richard-Lattorf-Straße 41, 30453 Hannover",
             "CONTROLLER_PHONE": "Phone: 0175 6086292",
             "CONTROLLER_EMAIL": "Email: bedirhanmehmetsoylu@gmail.com",
             "CONTROLLER_EXPLANATION": "The responsible party is the natural or legal person who alone or jointly with others decides on the purposes and means of processing personal data (e.g. names, email addresses, etc.).",
@@ -174,9 +174,9 @@
         },
         "PLUGINS_TOOLS": {
             "TITLE": "5. Plugins and Tools",
-            "GOOGLE_FONTS_TITLE": "Google Fonts (Local Hosting)",
-            "GOOGLE_FONTS_TEXT_1": "This site uses so-called Google Fonts provided by Google for uniform font display. The Google Fonts are installed locally. No connection to Google servers takes place.",
-            "GOOGLE_FONTS_TEXT_2": "For more information about Google Fonts, please visit <a href=\"https://developers.google.com/fonts/faq\" target=\"_blank\" rel=\"noopener noreferrer\">https://developers.google.com/fonts/faq</a> and Google's privacy policy: <a href=\"https://policies.google.com/privacy?hl=en\" target=\"_blank\" rel=\"noopener noreferrer\">https://policies.google.com/privacy?hl=en</a>.",
+            "GOOGLE_FONTS_TITLE": "Web fonts (self-hosted)",
+            "GOOGLE_FONTS_TEXT_1": "This website uses web fonts for a consistent display of typefaces, which are fully self-hosted on our own server/hosting provider. No connection to any third-party servers (e.g. Google Fonts) is made, and no data is transmitted to third parties in this context.",
+            "GOOGLE_FONTS_TEXT_2": "",
             "SOURCE": "Source: <a href=\"https://www.e-recht24.de\">https://www.e-recht24.de</a>"
         }
     }

@@ -120,9 +120,9 @@
         "HOSTING": {
             "TITLE": "2. Hosting",
             "INTRO_TEXT": "Wir hosten die Inhalte unserer Website bei folgendem Anbieter:",
-            "PROVIDER_NAME": "All-Inkl",
-            "PROVIDER_INFO": "Anbieter ist die ALL-INKL.COM - Neue Medien Münnich, Inh. René Münnich, Hauptstraße 68, 02742 Friedersdorf (nachfolgend All-Inkl). Details entnehmen Sie der Datenschutzerklärung von All-Inkl:",
-            "LEGAL_BASIS": "Die Verwendung von All-Inkl erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer möglichst zuverlässigen Darstellung unserer Website. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B. Device-Fingerprinting) im Sinne des TDDDG umfasst. Die Einwilligung ist jederzeit widerrufbar."
+            "PROVIDER_NAME": "Vercel",
+            "PROVIDER_INFO": "Anbieter ist die Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA (nachfolgend Vercel). Details entnehmen Sie der Datenschutzerklärung von Vercel:",
+            "LEGAL_BASIS": "Die Verwendung von Vercel erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer möglichst zuverlässigen und performanten Darstellung unserer Website."
         },
         "GENERAL_INFO": {
             "TITLE": "3. Allgemeine Hinweise und Pflichtinformationen",
@@ -133,7 +133,7 @@
             "CONTROLLER_TITLE": "Hinweis zur verantwortlichen Stelle",
             "CONTROLLER_DESCRIPTION": "Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:",
             "CONTROLLER_NAME": "Bedirhan Mehmet Soylu",
-            "CONTROLLER_ADDRESS": "Bergkammstraße 8, 30453 Hannover",
+            "CONTROLLER_ADDRESS": "Richard-Lattorf-Straße 41, 30453 Hannover",
             "CONTROLLER_PHONE": "Telefon: 0175 6086292",
             "CONTROLLER_EMAIL": "E-Mail: bedirhanmehmetsoylu@gmail.com",
             "CONTROLLER_EXPLANATION": "Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.",
@@ -174,9 +174,9 @@
         },
         "PLUGINS_TOOLS": {
             "TITLE": "5. Plugins und Tools",
-            "GOOGLE_FONTS_TITLE": "Google Fonts (lokales Hosting)",
-            "GOOGLE_FONTS_TEXT_1": "Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten so genannte Google Fonts, die von Google bereitgestellt werden. Die Google Fonts sind lokal installiert. Eine Verbindung zu Servern von Google findet dabei nicht statt.",
-            "GOOGLE_FONTS_TEXT_2": "Weitere Informationen zu Google Fonts finden Sie unter <a href=\"https://developers.google.com/fonts/faq\" target=\"_blank\" rel=\"noopener noreferrer\">https://developers.google.com/fonts/faq</a> und in der Datenschutzerklärung von Google: <a href=\"https://policies.google.com/privacy?hl=de\" target=\"_blank\" rel=\"noopener noreferrer\">https://policies.google.com/privacy?hl=de</a>.",
+            "GOOGLE_FONTS_TITLE": "Web-Schriftarten (selbst gehostet)",
+            "GOOGLE_FONTS_TEXT_1": "Diese Website nutzt zur einheitlichen Darstellung von Schriftarten Webfonts, die vollständig lokal auf unserem eigenen Server bzw. Hosting-Anbieter eingebunden sind. Es findet keine Verbindung zu Servern eines Drittanbieters (z. B. Google Fonts) statt, und es werden dabei keine Daten an Dritte übertragen.",
+            "GOOGLE_FONTS_TEXT_2": "",
             "SOURCE": "Quelle: <a href=\"https://www.e-recht24.de\">https://www.e-recht24.de</a>"
         }
     }
