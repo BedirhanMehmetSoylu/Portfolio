@@ -19,6 +19,10 @@ module.exports = async (req, res) => {
   }
 
   try {
+    // TEMPORARY DEBUG LOGGING - remove after diagnosing the issue
+    console.log('DEBUG EMAIL_USER set:', !!process.env.EMAIL_USER, 'length:', (process.env.EMAIL_USER || '').length);
+    console.log('DEBUG EMAIL_APP_PASSWORD set:', !!process.env.EMAIL_APP_PASSWORD, 'length:', (process.env.EMAIL_APP_PASSWORD || '').length);
+
     // Vercel parses application/json bodies automatically into req.body.
     // The Angular frontend sends Content-Type: text/plain to avoid a CORS
     // preflight, so the body may arrive as a raw string here - handle both.
