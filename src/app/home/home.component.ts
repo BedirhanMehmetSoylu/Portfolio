@@ -24,6 +24,8 @@ export class HomeComponent implements AfterViewInit {
     AOS.init({
       duration: 1000,
       once: true,
+      // Bei "Bewegung reduzieren" im Betriebssystem keine Einblend-Animationen
+      disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
     });
   }
 }

@@ -1,20 +1,28 @@
 <footer>
     <div class="footer-section">
         <div class="footer-left">
-            <img (click)="nav.goHome()" src="assets/img/logo.png" alt="">
-            
+            <a class="footer-logo" href="/" (click)="$event.preventDefault(); nav.goHome()">
+                <img src="assets/img/logo.png" [alt]="'A11Y.HOME' | translate">
+            </a>
+
             <div class="link-wrapper d-block">
                 <a routerLink="/legal-notice">{{ 'FOOTER.LEGAL' | translate }}</a>
                 <div class="underline"></div>
             </div>
         </div>
-        
+
         <p>© Bedirhan Soylu {{ currentYear }}</p>
-    
+
         <div class="footer-right">
-            <img src="assets/img/hero/github.png" alt="" (click)="nav.openExternalLink('https://github.com/BedirhanMehmetSoylu')">
-            <img (click)="nav.scrollToSection('contact')" src="assets/img/hero/email.png" alt="">
-            <img src="assets/img/hero/linkedin.png" alt="" (click)="nav.openExternalLink('https://www.linkedin.com/in/bedirhan-soylu/')">
+            <a href="https://github.com/BedirhanMehmetSoylu" target="_blank" rel="noopener noreferrer">
+                <img src="assets/img/hero/github.png" [alt]="'A11Y.GITHUB' | translate">
+            </a>
+            <a href="#contact" (click)="$event.preventDefault(); nav.scrollToSection('contact')">
+                <img src="assets/img/hero/email.png" [alt]="'A11Y.CONTACT' | translate">
+            </a>
+            <a href="https://www.linkedin.com/in/bedirhan-soylu/" target="_blank" rel="noopener noreferrer">
+                <img src="assets/img/hero/linkedin.png" [alt]="'A11Y.LINKEDIN' | translate">
+            </a>
         </div>
 
         <div class="link-wrapper d-none">

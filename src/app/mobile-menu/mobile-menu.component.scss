@@ -53,9 +53,16 @@ a.active-link::after {
     display: flex;
     gap: 10px;
 
-    p {
+    button, .separator {
       font-size: 23px;
       color: white;
+    }
+
+    button {
+      padding: 0;
+      background: none;
+      border: none;
+      font-family: inherit;
       &.active-lang {
         color: #70E61C;
         cursor: default;

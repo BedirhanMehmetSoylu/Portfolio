@@ -5,37 +5,45 @@
       <img class="person" src="assets/img/hero/hero-person-cut.avif" alt="Bedirhan Soylu">
     </div>
 
+    <!-- Desktop-Variante; die Mobile-Variante unten ist per display:none ausgeblendet,
+         daher liest ein Screenreader den Namen nur einmal vor -->
     <div class="hero-top-right">
-      <div class="name-section">
-        <p class="i-am">{{ 'HERO.IAM' | translate}}</p>
-        <div class="name-container">
-          <p class="name">Bedirhan Soylu</p>
-          <p class="profession">{{ 'HERO.PROFESSION' | translate}}</p>
-        </div>
-      </div>
+      <h1 class="name-section">
+        <span class="i-am">{{ 'HERO.IAM' | translate}}</span>
+        <span class="name-container">
+          <span class="name">Bedirhan Soylu</span>
+          <span class="profession">{{ 'HERO.PROFESSION' | translate}}</span>
+        </span>
+      </h1>
       <button (click)="nav.scrollToSection('contact')">{{ 'HERO.LETS_TALK' | translate}}</button>
     </div>
   </div>
   <div class="hero-bottom">
     <div class="hero-bottom-name" [class.padding-reset]="translate.currentLang === 'de'">
-      <div class="name-section">
-        <p class="i-am">{{ 'HERO.IAM' | translate}}</p>
-        <div class="name-container">
-          <p class="name">Bedirhan Soylu</p>
-          <p class="profession">{{ 'HERO.PROFESSION' | translate}}</p>
-        </div>
-      </div>
+      <h1 class="name-section">
+        <span class="i-am">{{ 'HERO.IAM' | translate}}</span>
+        <span class="name-container">
+          <span class="name">Bedirhan Soylu</span>
+          <span class="profession">{{ 'HERO.PROFESSION' | translate}}</span>
+        </span>
+      </h1>
       <button [class.padding-reset]="translate.currentLang === 'de'" (click)="nav.scrollToSection('contact')">{{ 'HERO.LETS_TALK' | translate}}</button>
     </div>
     <div class="bottom-content">
       <div class="bottom-left">
         <div class="purple-line"></div>
-        <img (click)="nav.openExternalLink('https://github.com/BedirhanMehmetSoylu')" src="assets/img/hero/github.png" alt="GitHub Profil öffnen">
-        <img (click)="nav.scrollToSection('contact')" src="assets/img/hero/email.png" alt="Zum Kontaktformular springen">
-        <img (click)="nav.openExternalLink('https://www.linkedin.com/in/bedirhan-soylu/')" src="assets/img/hero/linkedin.png" alt="LinkedIn Profil öffnen">
-        <p (click)="nav.scrollToSection('contact')">bedirhanmehmetsoylu&#64;gmail.com</p>
+        <a href="https://github.com/BedirhanMehmetSoylu" target="_blank" rel="noopener noreferrer">
+          <img src="assets/img/hero/github.png" [alt]="'A11Y.GITHUB' | translate">
+        </a>
+        <a href="#contact" (click)="$event.preventDefault(); nav.scrollToSection('contact')">
+          <img src="assets/img/hero/email.png" [alt]="'A11Y.CONTACT' | translate">
+        </a>
+        <a href="https://www.linkedin.com/in/bedirhan-soylu/" target="_blank" rel="noopener noreferrer">
+          <img src="assets/img/hero/linkedin.png" [alt]="'A11Y.LINKEDIN' | translate">
+        </a>
+        <a class="email" href="#contact" (click)="$event.preventDefault(); nav.scrollToSection('contact')">bedirhanmehmetsoylu&#64;gmail.com</a>
       </div>
-      <div class="bottom-right">
+      <div class="bottom-right" aria-hidden="true">
         <p>{{ 'HERO.SCROLL_DOWN' | translate}}</p>
         <img src="assets/img/hero/arrow.png" alt="">
       </div>

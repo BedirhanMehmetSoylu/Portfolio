@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, inject, OnDestroy } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostListener, inject, OnDestroy, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
@@ -29,6 +29,8 @@ export class NavbarComponent implements OnDestroy {
     'assets/img/navbar/burger_3.png',
     'assets/img/navbar/burger_4.png'
   ];
+
+  @ViewChild('burgerButton') private burgerButton?: ElementRef<HTMLButtonElement>;
 
   private animationIntervalId: ReturnType<typeof setInterval> | null = null;
 
@@ -114,6 +116,15 @@ export class NavbarComponent implements OnDestroy {
           break;
         }
       }
+    }
+  }
+
+  // Escape schließt das Mobile-Menü und gibt den Fokus an den Burger-Button zurück
+  @HostListener('document:keydown.escape')
+  onEscape() {
+    if (this.isOpen) {
+      this.toggleMenu();
+      this.burgerButton?.nativeElement.focus();
     }
   }
 

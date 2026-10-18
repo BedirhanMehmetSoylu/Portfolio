@@ -1,20 +1,26 @@
-<nav>
+<nav [attr.aria-label]="'A11Y.MAIN_NAV' | translate">
   <div class="navbar-section">
-    <img class="logo" (click)="nav.goHome()" src="assets/img/logo.png" alt="">
+    <a class="logo-link" href="/" (click)="$event.preventDefault(); nav.goHome()">
+      <img class="logo" src="assets/img/logo.png" [alt]="'A11Y.HOME' | translate">
+    </a>
     <div class="navbar-right">
       <div class="link-container">
         <a href="#about">{{ 'NAV.ABOUT' | translate }}</a>
         <a href="#skills">{{ 'NAV.SKILLS' | translate }}</a>
         <a href="#portfolio">{{ 'NAV.PORTFOLIO' | translate }}</a>
       </div>
-      <div class="language-btn-container">
-        <button [ngClass]="{'active-lang': currentLang === 'de'}" (click)="switchLang('de')">DE</button>
-        <button [ngClass]="{'active-lang': currentLang === 'en'}" (click)="switchLang('en')">EN</button>
+      <div class="language-btn-container" role="group" [attr.aria-label]="'A11Y.LANGUAGE' | translate">
+        <button [ngClass]="{'active-lang': currentLang === 'de'}" [attr.aria-pressed]="currentLang === 'de'" lang="de" (click)="switchLang('de')">DE</button>
+        <button [ngClass]="{'active-lang': currentLang === 'en'}" [attr.aria-pressed]="currentLang === 'en'" lang="en" (click)="switchLang('en')">EN</button>
       </div>
     </div>
-    <img class="burger-icon" [src]="currentBurgerImage" alt="Burger Icon" (click)="toggleMenu()" />
+    <button #burgerButton class="burger-icon icon-btn" type="button"
+      [attr.aria-label]="(isOpen ? 'A11Y.MENU_CLOSE' : 'A11Y.MENU_OPEN') | translate"
+      [attr.aria-expanded]="isOpen" aria-controls="mobile-menu" (click)="toggleMenu()">
+      <img [src]="currentBurgerImage" alt="" />
+    </button>
     @if (isOpen) {
-      <app-mobile-menu [currentLang]="currentLang" [activeSection]="activeSection"
+      <app-mobile-menu id="mobile-menu" [currentLang]="currentLang" [activeSection]="activeSection"
         (switchLangEvent)="switchLang($event)" (close)="toggleMenu()">
       </app-mobile-menu>
     }

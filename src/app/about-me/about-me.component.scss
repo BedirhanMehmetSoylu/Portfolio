@@ -41,7 +41,7 @@
     justify-content: center;
 }
 
-h1 {
+h2 {
     font-size: 89px;
     font-weight: 700;
     line-height: 120%;
@@ -126,7 +126,7 @@ p {
 }
 
 @media (max-width: 1070px) {
-    h1 {
+    h2 {
         font-size: 72px;
     }
 
@@ -188,7 +188,7 @@ p {
 }
 
 @media (max-width: 430px) {
-    h1 {
+    h2 {
         font-size: 45px;
     }
 
@@ -207,7 +207,7 @@ p {
         height: unset;
     }
 
-    h1 {
+    h2 {
         font-size: 45px;
     }
 

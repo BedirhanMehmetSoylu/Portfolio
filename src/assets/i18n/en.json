@@ -64,10 +64,25 @@
         "REQUIRED_EMAIL": "Your email is required",
         "REQUIRED_MESSAGE": "Your message is empty",
         "REQUIRED_POLICY": "Please accept the privacy policy",
-        "SUCCESS": "The email was sent successfully!"
+        "SUCCESS": "The email was sent successfully!",
+        "ERROR": "Your message could not be sent. Please try again later or email me directly."
     },
     "FOOTER": {
         "LEGAL": "Legal Notice"
+    },
+    "A11Y": {
+        "HOME": "Go to homepage",
+        "GITHUB": "GitHub profile (opens in new tab)",
+        "LINKEDIN": "LinkedIn profile (opens in new tab)",
+        "CONTACT": "Go to contact form",
+        "MENU_OPEN": "Open menu",
+        "MENU_CLOSE": "Close menu",
+        "MAIN_NAV": "Main navigation",
+        "LANGUAGE": "Choose language",
+        "REVIEWS_TITLE": "Reviews",
+        "REVIEW_PREV": "Previous review",
+        "REVIEW_NEXT": "Next review",
+        "BACK_TO_TOP": "Back to top"
     },
     "LEGAL_NOTICE": {
         "TITLE": "Legal Notice",

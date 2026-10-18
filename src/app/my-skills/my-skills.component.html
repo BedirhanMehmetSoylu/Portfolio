@@ -1,4 +1,4 @@
-<div class="skills-section">
+<section class="skills-section" aria-labelledby="skills-title">
   <div class="skills-container" [class.stack-backend]="selectedStack === 'backend'">
     <div class="stack-toggle-wrapper" data-aos="fade-down" data-aos-delay="100">
       <div class="stack-toggle">
@@ -6,6 +6,7 @@
         <button
           class="stack-toggle-btn"
           [class.active]="selectedStack === 'frontend'"
+          [attr.aria-pressed]="selectedStack === 'frontend'"
           (click)="selectStack('frontend')"
         >
           Frontend
@@ -13,6 +14,7 @@
         <button
           class="stack-toggle-btn"
           [class.active]="selectedStack === 'backend'"
+          [attr.aria-pressed]="selectedStack === 'backend'"
           (click)="selectStack('backend')"
         >
           Backend
@@ -72,7 +74,7 @@
 
   <div class="description-container" data-aos="fade-left" data-aos-delay="300">
     <div class="description-header">
-      <h2 [class.german-big-title]="translate.currentLang === 'de'">{{ 'MYSKILLS.HEADLINE' | translate }}</h2>
+      <h2 id="skills-title" [class.german-big-title]="translate.currentLang === 'de'">{{ 'MYSKILLS.HEADLINE' | translate }}</h2>
       <div class="purple-line"></div>
     </div>
 
@@ -89,6 +91,7 @@
             <button
               class="stack-toggle-btn"
               [class.active]="selectedStack === 'frontend'"
+          [attr.aria-pressed]="selectedStack === 'frontend'"
               (click)="selectStack('frontend')"
             >
               Frontend
@@ -96,6 +99,7 @@
             <button
               class="stack-toggle-btn"
               [class.active]="selectedStack === 'backend'"
+          [attr.aria-pressed]="selectedStack === 'backend'"
               (click)="selectStack('backend')"
             >
               Backend
@@ -176,4 +180,4 @@
 
     <img class="shadow-mobile" src="assets/img/myskills/shadow.avif" alt="">
   </div>
-</div>
+</section>

@@ -180,7 +180,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #9747FF;
+    // Helleres Lila: #9747FF erreicht auf dem dunklen Hintergrund nur 3,7:1 (WCAG verlangt 4,5:1 für kleinen Text)
+    color: #B07CFF;
     font-weight: 700;
     line-height: 120%;
 }

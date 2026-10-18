@@ -1,6 +1,9 @@
-<div class="reviews-section">
+<section class="reviews-section" aria-labelledby="reviews-title">
+    <h2 id="reviews-title" class="sr-only">{{ 'A11Y.REVIEWS_TITLE' | translate }}</h2>
+
     <div class="reviews-section-top">
-        <div class="review-container">
+        <!-- aria-live: Screenreader lesen die neue Bewertung nach einem Klick auf die Pfeile vor -->
+        <div class="review-container" aria-live="polite">
             <img src="assets/img/reviews/quotation_marks.png" alt="">
 
             <p>{{ reviews[currentIndex].text | translate }}</p>
@@ -12,13 +15,17 @@
         </div>
 
         <div class="reviewer-container">
+            <!-- Nur das aktive Foto wird gerendert (und geladen); der Name steht bereits im Text -->
             <div class="purple-circle">
-                <img class="reviewer-img-1" src="assets/img/reviews/nafi.avif" alt="N. Müftüoglu"
-                    [style.display]="currentIndex === 0 ? 'block' : 'none'">
-                <img class="reviewer-img-2" src="assets/img/reviews/reviewer_2.avif" alt="A. Hess"
-                    [style.display]="currentIndex === 1 ? 'block' : 'none'">
-                <img class="reviewer-img-3" src="assets/img/reviews/reviewer_3.avif" alt="M. Tosyali"
-                    [style.display]="currentIndex === 2 ? 'block' : 'none'">
+                @if (currentIndex === 0) {
+                    <img class="reviewer-img-1" src="assets/img/reviews/nafi.avif" alt="">
+                }
+                @if (currentIndex === 1) {
+                    <img class="reviewer-img-2" src="assets/img/reviews/reviewer_2.avif" alt="">
+                }
+                @if (currentIndex === 2) {
+                    <img class="reviewer-img-3" src="assets/img/reviews/reviewer_3.avif" alt="">
+                }
             </div>
 
             <div class="purple-line-short"></div>
@@ -29,18 +36,22 @@
 
     <div class="reviews-section-bottom">
         <div>
-            <img src="assets/img/reviews/arrow_back.png" alt="" (click)="previousReview()">
+            <button type="button" class="icon-btn" (click)="previousReview()" [attr.aria-label]="'A11Y.REVIEW_PREV' | translate">
+                <img src="assets/img/reviews/arrow_back.png" alt="">
+            </button>
 
             @for (review of reviews; track review.name; let i = $index) {
-                <div>
+                <div aria-hidden="true">
                     <div class="purple-point"
                         [ngStyle]="{ 'background-color': currentIndex === i ? '#70E61C' : '#9747FF' }">
                     </div>
                 </div>
             }
 
-            <img src="assets/img/reviews/arrow_forward.png" alt="" (click)="nextReview()">
+            <button type="button" class="icon-btn" (click)="nextReview()" [attr.aria-label]="'A11Y.REVIEW_NEXT' | translate">
+                <img src="assets/img/reviews/arrow_forward.png" alt="">
+            </button>
         </div>
 
     </div>
-</div>
+</section>

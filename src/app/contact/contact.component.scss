@@ -119,8 +119,10 @@ form {
         border-color: #70E61C;
     }
 
-    >input:focus {
-        outline: #9747FF;
+    // Vorher "outline: #9747FF" – ohne Linienstil wird gar kein Rahmen gezeichnet
+    >input:focus-visible {
+        outline: 2px solid #9747FF;
+        outline-offset: 2px;
     }
 }
 
@@ -162,8 +164,9 @@ form {
         font-size: 16px;
     }
 
-    >textarea:focus {
-        outline: #9747FF;
+    >textarea:focus-visible {
+        outline: 2px solid #9747FF;
+        outline-offset: 2px;
     }
 
     >textarea:hover {
@@ -213,10 +216,12 @@ form {
         font-size: 14px;
         gap: 4px;
 
-        >p {
+        >label {
+            cursor: pointer;
 
             >a {
-                color: #9747FF;
+                // Helleres Lila für ausreichenden Kontrast bei 14px (siehe my-skills)
+                color: #B07CFF;
                 text-decoration: none;
             }
         }
@@ -249,18 +254,22 @@ form {
     width: 100%;
     margin-top: 16px;
 
-    >img {
-        border: 2px solid #FFFFFF;
+    >a {
+        display: flex;
         border-radius: 41px;
-        padding: 3px;
-        transition: filter 0.15s;
         margin-right: 8px;
-        width: 39px;
-        height: 39px;
 
-        &:hover {
-            filter: brightness(0) saturate(100%) invert(72%) sepia(93%) saturate(374%) hue-rotate(54deg) brightness(93%) contrast(89%);
-            cursor: pointer;
+        >img {
+            border: 2px solid #FFFFFF;
+            border-radius: 41px;
+            padding: 3px;
+            transition: filter 0.15s;
+            width: 39px;
+            height: 39px;
+
+            &:hover {
+                filter: brightness(0) saturate(100%) invert(72%) sepia(93%) saturate(374%) hue-rotate(54deg) brightness(93%) contrast(89%);
+            }
         }
     }
 }
@@ -282,7 +291,8 @@ textarea.valid {
 }
 
 .error {
-    color: #e61c40;
+    // Helleres Rot als beim Rahmen: #e61c40 erreicht als Text nur 3,7:1
+    color: #FF5C7A;
     font-size: 14px;
     line-height: 120%;
 }
@@ -292,7 +302,9 @@ textarea.valid {
     flex-direction: column;
     align-items: center;
     gap: 4px;
-    height: 91px;
+    // min-height statt height: die Fehlermeldung kann zweizeilig werden
+    min-height: 91px;
+    text-align: center;
 
     >button {
         box-shadow: 4px 4px 4px 0px #00000040;

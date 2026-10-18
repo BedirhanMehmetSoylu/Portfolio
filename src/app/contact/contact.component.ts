@@ -22,6 +22,7 @@ export class ContactComponent {
 
   submitted = false;
   success = false;
+  sendError = false;
 
   contactData = {
     name: "",
@@ -43,6 +44,16 @@ export class ContactComponent {
   };
 
   onSubmit(ngForm: NgForm) {
+    this.submitted = true;
+    this.sendError = false;
+
+    // Ungültiges Formular: alle Felder als "touched" markieren,
+    // damit die Fehlermeldungen sichtbar (und vorlesbar) werden
+    if (ngForm.form.invalid) {
+      ngForm.form.markAllAsTouched();
+      return;
+    }
+
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
@@ -59,6 +70,7 @@ export class ContactComponent {
           },
           error: (error) => {
             console.error(error);
+            this.sendError = true;
             this.cdr.markForCheck();
           },
           complete: () => console.info('The email was sent successfully!'),

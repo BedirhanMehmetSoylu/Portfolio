@@ -1,7 +1,7 @@
-<div class="contact-section">
+<section class="contact-section" aria-labelledby="contact-title">
   <div class="contact-headline" data-aos="fade-down" data-aos-duration="800">
     <div class="purple-line"></div>
-    <h2>{{ 'CONTACT.TITLE' | translate }}</h2>
+    <h2 id="contact-title">{{ 'CONTACT.TITLE' | translate }}</h2>
     <div class="transparent-line"></div>
   </div>
 
@@ -12,82 +12,88 @@
       <p>{{ 'CONTACT.NEED' | translate }} <span>{{ 'CONTACT.CONTACT_ME' | translate }}</span></p>
     </div>
 
-    <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+    <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" novalidate>
             <div class="form-group" data-aos="fade-up" data-aos-delay="300">
                 <div class="input-wrapper">
-                    <input name="name" placeholder="{{ 'CONTACT.NAME' | translate }}" [(ngModel)]="contactData.name"
+                    <label class="sr-only" for="contact-name">{{ 'CONTACT.NAME' | translate }}</label>
+                    <input id="contact-name" name="name" autocomplete="name"
+                        placeholder="{{ 'CONTACT.NAME' | translate }}" [(ngModel)]="contactData.name"
                         #name="ngModel" [class.invalid]="name.invalid && name.touched"
-                        [class.valid]="name.valid && name.touched" required />
+                        [class.valid]="name.valid && name.touched"
+                        [attr.aria-invalid]="name.invalid && name.touched"
+                        [attr.aria-describedby]="name.invalid && name.touched ? 'contact-name-error' : null" required />
                     @if (name.invalid && name.touched) {
-                      <img src="assets/img/contacts/invalid.png"
-                          class="validation-icon" alt="invalid" />
+                      <img src="assets/img/contacts/invalid.png" class="validation-icon" alt="" />
                     }
                     @if (name.valid && name.touched) {
-                      <img src="assets/img/contacts/valid.png" alt="valid"
-                          class="validation-icon">
+                      <img src="assets/img/contacts/valid.png" class="validation-icon" alt="" />
                     }
                 </div>
                 @if (name.invalid && name.touched) {
-                  <p class="error">{{ 'CONTACT.REQUIRED_NAME' | translate }}</p>
+                  <p id="contact-name-error" class="error">{{ 'CONTACT.REQUIRED_NAME' | translate }}</p>
                 }
             </div>
 
             <div class="form-group" data-aos="fade-up" data-aos-delay="400">
                 <div class="input-wrapper">
-                    <input name="email" placeholder="{{ 'CONTACT.EMAIL' | translate }}" [(ngModel)]="contactData.email"
+                    <label class="sr-only" for="contact-email">{{ 'CONTACT.EMAIL' | translate }}</label>
+                    <input id="contact-email" name="email" type="email" autocomplete="email"
+                        placeholder="{{ 'CONTACT.EMAIL' | translate }}" [(ngModel)]="contactData.email"
                         #email="ngModel" [class.invalid]="email.invalid && email.touched"
                         [class.valid]="email.valid && email.touched"
+                        [attr.aria-invalid]="email.invalid && email.touched"
+                        [attr.aria-describedby]="email.invalid && email.touched ? 'contact-email-error' : null"
                         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required />
                     @if (email.invalid && email.touched) {
-                      <img src="assets/img/contacts/invalid.png"
-                          class="validation-icon" alt="Fehler" />
+                      <img src="assets/img/contacts/invalid.png" class="validation-icon" alt="" />
                     }
                     @if (email.valid && email.touched) {
-                      <img src="assets/img/contacts/valid.png" alt="valid"
-                          class="validation-icon">
+                      <img src="assets/img/contacts/valid.png" class="validation-icon" alt="" />
                     }
                 </div>
                 @if (email.invalid && email.touched) {
-                  <p class="error">{{ 'CONTACT.REQUIRED_EMAIL' | translate }}</p>
+                  <p id="contact-email-error" class="error">{{ 'CONTACT.REQUIRED_EMAIL' | translate }}</p>
                 }
             </div>
 
             <div class="form-group-textarea" data-aos="fade-up" data-aos-delay="500">
                 <div class="textarea-wrapper">
                     <div class="textarea-container">
-                        <textarea name="message" placeholder="{{ 'CONTACT.MESSAGE' | translate }}"
+                        <label class="sr-only" for="contact-message">{{ 'CONTACT.MESSAGE' | translate }}</label>
+                        <textarea id="contact-message" name="message" placeholder="{{ 'CONTACT.MESSAGE' | translate }}"
                             [(ngModel)]="contactData.message" required #message="ngModel"
                             [class.invalid]="message.invalid && message.touched"
-                            [class.valid]="message.valid && message.touched"></textarea>
+                            [class.valid]="message.valid && message.touched"
+                            [attr.aria-invalid]="message.invalid && message.touched"
+                            [attr.aria-describedby]="message.invalid && message.touched ? 'contact-message-error' : null"></textarea>
                         <img src="assets/img/contacts/resize.png" alt="">
                     </div>
                     @if (message.invalid && message.touched) {
-                      <img src="assets/img/contacts/invalid.png"
-                          class="validation-icon-message" alt="Fehler" />
+                      <img src="assets/img/contacts/invalid.png" class="validation-icon-message" alt="" />
                     }
                     @if (message.valid && message.touched) {
-                      <img src="assets/img/contacts/valid.png" alt="valid"
-                          class="validation-icon-message">
+                      <img src="assets/img/contacts/valid.png" class="validation-icon-message" alt="" />
                     }
                 </div>
                 @if (message.invalid && message.touched) {
-                  <p class="error">{{ 'CONTACT.REQUIRED_MESSAGE' | translate }}
-                  </p>
+                  <p id="contact-message-error" class="error">{{ 'CONTACT.REQUIRED_MESSAGE' | translate }}</p>
                 }
             </div>
             <div class="privacy" data-aos="fade-up" data-aos-delay="600">
                 <div class="privacy-policy-checking">
-                    <input type="checkbox" name="privacy" ngModel required #privacy="ngModel" />
+                    <input id="contact-privacy" type="checkbox" name="privacy" ngModel required #privacy="ngModel"
+                        [attr.aria-invalid]="submitted && !privacy.value"
+                        [attr.aria-describedby]="submitted && !privacy.value ? 'contact-privacy-error' : null" />
                     <div>
-                        <p>
+                        <label for="contact-privacy">
                             {{ 'CONTACT.POLICY_ONE' | translate }}
                             <a routerLink="/privacy-policy">{{ 'CONTACT.POLICY_TWO' | translate }}</a>
                             {{ 'CONTACT.POLICY_THREE' | translate }}
-                        </p>
+                        </label>
                     </div>
                 </div>
                 @if (submitted && !privacy.value) {
-                  <p class="error">{{ 'CONTACT.REQUIRED_POLICY' | translate }}</p>
+                  <p id="contact-privacy-error" class="error">{{ 'CONTACT.REQUIRED_POLICY' | translate }}</p>
                 }
             </div>
 
@@ -95,16 +101,20 @@
                 <button type="submit" [ngClass]="{ 'ready': contactForm.form.valid && privacy.value }">
                     {{ 'CONTACT.BUTTON' | translate }}
                 </button>
-                @if (success) {
-                  <p class="success-message">{{ 'CONTACT.SUCCESS' | translate }}</p>
+                <!-- Live-Region muss dauerhaft im DOM sein, damit Screenreader die Erfolgsmeldung ansagen -->
+                <p class="success-message" role="status">{{ success ? ('CONTACT.SUCCESS' | translate) : '' }}</p>
+                @if (sendError) {
+                  <p class="error" role="alert">{{ 'CONTACT.ERROR' | translate }}</p>
                 }
             </div>
 
             <div class="scroll-up-section">
-                <img (click)="nav.scrollToSection('hero')" src="assets/img/contacts/arrow_up.png" alt="">
+                <a href="#hero" (click)="$event.preventDefault(); nav.scrollToSection('hero')">
+                    <img src="assets/img/contacts/arrow_up.png" [alt]="'A11Y.BACK_TO_TOP' | translate">
+                </a>
             </div>
         </form>
 
     <img class="shadow" src="assets/img/contacts/contact_shadow.avif" alt="">
   </div>
-</div>
+</section>

@@ -53,8 +53,18 @@
     margin-top: -128px;
 }
 
+// <h1> enthält nur <span>s: Browser-Defaults der Überschrift neutralisieren,
+// damit das Aussehen identisch zu den früheren <p>-Elementen bleibt
 .name-section {
     display: flex;
+    font-size: inherit;
+    font-weight: 400;
+}
+
+.i-am,
+.name,
+.profession {
+    display: block;
 }
 
 .i-am {
@@ -131,18 +141,19 @@ button {
     gap: 32px;
     font-size: 23px;
 
-    >img {
-        width: 30px;
+    >a {
+        display: flex;
+        color: inherit;
+        text-decoration: none;
 
-        &:hover {
-            transition: all 250ms ease-out;
-            transform: scale(1.3);
-            cursor: pointer;
+        >img {
+            width: 30px;
+
+            &:hover {
+                transition: all 250ms ease-out;
+                transform: scale(1.3);
+            }
         }
-    }
-
-    >p {
-        cursor: pointer;
     }
 }
 

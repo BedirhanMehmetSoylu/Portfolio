@@ -220,6 +220,15 @@ h2 {
     }
 }
 
+// Live/GitHub sind <a>-Links im Button-Look
+.live-test-btn,
+.github-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
 .live-test-btn {
     position: relative;
     background-color: #9747FF;
@@ -275,7 +284,9 @@ h2 {
     }
 
     &:hover::after,
-    &:hover::before {
+    &:hover::before,
+    &:focus-visible::after,
+    &:focus-visible::before {
         opacity: 1;
         transform: translateX(-50%) translateY(0);
     }

@@ -2,3 +2,9 @@
     display: flex;
     justify-content: center;
 }
+
+// <main> ist nur ein semantischer Wrapper und soll das Layout nicht verändern:
+// ohne diese Regel würde "*" ihn zur Flex-Zeile machen und alle Sektionen nebeneinander stellen
+main {
+    display: block;
+}

@@ -12,18 +12,13 @@ export class NavigationService {
 
   /**
    * Smoothly scrolls to a section on the current page.
+   * Respects the OS setting "reduce motion" by jumping instantly instead.
    * Does nothing if the target element is not yet present in the DOM.
    */
   scrollToSection(sectionId: string): void {
     const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: 'smooth' });
-  }
-
-  /**
-   * Opens an external URL in a new browser tab.
-   */
-  openExternalLink(url: string): void {
-    window.open(url, '_blank', 'noopener,noreferrer');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    element?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
   }
 
   /**

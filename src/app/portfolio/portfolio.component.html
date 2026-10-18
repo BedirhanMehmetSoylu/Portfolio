@@ -1,10 +1,10 @@
-<div class="portfolio-section">
+<section class="portfolio-section" aria-labelledby="portfolio-title">
   <div class="portfolio-headline" data-aos="fade-down" data-aos-duration="800">
     <div class="purple-line-left">
       <div class=""></div>
       <div class="purple-line-short"></div>
     </div>
-    <h2>Portfolio</h2>
+    <h2 id="portfolio-title">Portfolio</h2>
     <div class="purple-line-long"></div>
   </div>
 
@@ -17,6 +17,7 @@
     <button
       class="switch-btn"
       [class.active]="selectedCategory === 'frontend'"
+      [attr.aria-pressed]="selectedCategory === 'frontend'"
       (click)="selectCategory('frontend')"
     >
       Frontend
@@ -24,6 +25,7 @@
     <button
       class="switch-btn"
       [class.active]="selectedCategory === 'backend'"
+      [attr.aria-pressed]="selectedCategory === 'backend'"
       (click)="selectCategory('backend')"
     >
       Backend
@@ -41,8 +43,8 @@
         <span>Angular | TypeScript | HTML | CSS | Firebase </span>
         <p>{{ 'PORTFOLIO.JOIN' | translate }}</p>
         <div>
-          <button class="live-test-btn" (click)="nav.openExternalLink('https://join.bedirhan-soylu.de/')">{{ 'PORTFOLIO.LIVE' | translate }}</button>
-          <button class="github-btn" (click)="nav.openExternalLink('https://github.com/BedirhanMehmetSoylu/Join')">Github</button>
+          <a class="live-test-btn" href="https://join.bedirhan-soylu.de/" target="_blank" rel="noopener noreferrer">{{ 'PORTFOLIO.LIVE' | translate }}</a>
+          <a class="github-btn" href="https://github.com/BedirhanMehmetSoylu/Join" target="_blank" rel="noopener noreferrer">Github</a>
         </div>
       </div>
     </div>
@@ -57,8 +59,8 @@
         <span>JavaScript | HTML | CSS</span>
         <p>{{ 'PORTFOLIO.EL_POLLO_LOCO' | translate }}</p>
         <div>
-          <button class="live-test-btn" (click)="nav.openExternalLink('https://elpolloloco.bedirhan-soylu.de/')">{{ 'PORTFOLIO.LIVE' | translate }}</button>
-          <button class="github-btn" (click)="nav.openExternalLink('https://github.com/BedirhanMehmetSoylu/El-Pollo-Loco')">Github</button>
+          <a class="live-test-btn" href="https://elpolloloco.bedirhan-soylu.de/" target="_blank" rel="noopener noreferrer">{{ 'PORTFOLIO.LIVE' | translate }}</a>
+          <a class="github-btn" href="https://github.com/BedirhanMehmetSoylu/El-Pollo-Loco" target="_blank" rel="noopener noreferrer">Github</a>
         </div>
       </div>
 
@@ -77,8 +79,8 @@
         <span>JavaScript | HTML | CSS | Api</span>
         <p>{{ 'PORTFOLIO.POKEDEX' | translate }}</p>
         <div>
-          <button class="live-test-btn" (click)="nav.openExternalLink('https://pokedex.bedirhan-soylu.de/')">{{ 'PORTFOLIO.LIVE' | translate }}</button>
-          <button class="github-btn" (click)="nav.openExternalLink('https://github.com/BedirhanMehmetSoylu/Pokedex')">Github</button>
+          <a class="live-test-btn" href="https://pokedex.bedirhan-soylu.de/" target="_blank" rel="noopener noreferrer">{{ 'PORTFOLIO.LIVE' | translate }}</a>
+          <a class="github-btn" href="https://github.com/BedirhanMehmetSoylu/Pokedex" target="_blank" rel="noopener noreferrer">Github</a>
         </div>
       </div>
     </div>
@@ -93,8 +95,8 @@
         <span>Python | Django | REST</span>
         <p>{{ 'PORTFOLIO.CODERR' | translate }}</p>
         <div>
-          <button class="live-test-btn" [attr.data-tooltip]="'PORTFOLIO.COLD_START_HINT' | translate" (click)="nav.openExternalLink('https://coderr.bedirhan-soylu.de/')">{{ 'PORTFOLIO.LIVE' | translate }}</button>
-          <button class="github-btn" (click)="nav.openExternalLink('https://github.com/BedirhanMehmetSoylu/Coderr-Backend')">Github</button>
+          <a class="live-test-btn" [attr.data-tooltip]="'PORTFOLIO.COLD_START_HINT' | translate" href="https://coderr.bedirhan-soylu.de/" target="_blank" rel="noopener noreferrer">{{ 'PORTFOLIO.LIVE' | translate }}</a>
+          <a class="github-btn" href="https://github.com/BedirhanMehmetSoylu/Coderr-Backend" target="_blank" rel="noopener noreferrer">Github</a>
         </div>
       </div>
     </div>
@@ -109,8 +111,8 @@
         <span>Python | Django | REST</span>
         <p>{{ 'PORTFOLIO.KANMIND' | translate }}</p>
         <div>
-          <button class="live-test-btn" [attr.data-tooltip]="'PORTFOLIO.COLD_START_HINT' | translate" (click)="nav.openExternalLink('https://kanmind.bedirhan-soylu.de/')">{{ 'PORTFOLIO.LIVE' | translate }}</button>
-          <button class="github-btn" (click)="nav.openExternalLink('https://github.com/BedirhanMehmetSoylu/KanMind-Backend')">Github</button>
+          <a class="live-test-btn" [attr.data-tooltip]="'PORTFOLIO.COLD_START_HINT' | translate" href="https://kanmind.bedirhan-soylu.de/" target="_blank" rel="noopener noreferrer">{{ 'PORTFOLIO.LIVE' | translate }}</a>
+          <a class="github-btn" href="https://github.com/BedirhanMehmetSoylu/KanMind-Backend" target="_blank" rel="noopener noreferrer">Github</a>
         </div>
       </div>
 
@@ -129,12 +131,12 @@
         <span>Python | Django | Redis</span>
         <p>{{ 'PORTFOLIO.VIDEOFLIX' | translate }}</p>
         <div>
-          <button class="live-test-btn" (click)="nav.openExternalLink('https://videoflix.bedirhan-soylu.de/')">{{ 'PORTFOLIO.LIVE' | translate }}</button>
-          <button class="github-btn" (click)="nav.openExternalLink('https://github.com/BedirhanMehmetSoylu/Videoflix-Backend')">Github</button>
+          <a class="live-test-btn" href="https://videoflix.bedirhan-soylu.de/" target="_blank" rel="noopener noreferrer">{{ 'PORTFOLIO.LIVE' | translate }}</a>
+          <a class="github-btn" href="https://github.com/BedirhanMehmetSoylu/Videoflix-Backend" target="_blank" rel="noopener noreferrer">Github</a>
         </div>
       </div>
     </div>
 
     <img class="shadow" src="assets/img/portfolio/shadow.avif" alt="">
   </div>
-</div>
+</section>

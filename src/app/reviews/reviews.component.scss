@@ -131,14 +131,17 @@
         justify-content: center;
         gap: 20px;
 
-        >img {
+        >button {
             padding: 8px;
             border: 2px solid transparent;
             border-radius: 50%;
 
             &:hover {
-                cursor: pointer;
                 border-color: #70E61C;
+            }
+
+            >img {
+                display: block;
             }
         }
     }

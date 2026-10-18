@@ -64,10 +64,25 @@
         "REQUIRED_EMAIL": "Deine E-Mail ist erforderlich",
         "REQUIRED_MESSAGE": "Deine Nachricht darf nicht leer sein",
         "REQUIRED_POLICY": "Bitte akzeptiere die Datenschutzerklärung",
-        "SUCCESS": "Die E-Mail wurde erfolgreich versendet!"
+        "SUCCESS": "Die E-Mail wurde erfolgreich versendet!",
+        "ERROR": "Die Nachricht konnte nicht gesendet werden. Bitte versuche es später erneut oder schreib mir direkt per E-Mail."
     },
     "FOOTER": {
         "LEGAL": "Impressum"
+    },
+    "A11Y": {
+        "HOME": "Zur Startseite",
+        "GITHUB": "GitHub-Profil (öffnet in neuem Tab)",
+        "LINKEDIN": "LinkedIn-Profil (öffnet in neuem Tab)",
+        "CONTACT": "Zum Kontaktformular",
+        "MENU_OPEN": "Menü öffnen",
+        "MENU_CLOSE": "Menü schließen",
+        "MAIN_NAV": "Hauptnavigation",
+        "LANGUAGE": "Sprache wählen",
+        "REVIEWS_TITLE": "Bewertungen",
+        "REVIEW_PREV": "Vorherige Bewertung",
+        "REVIEW_NEXT": "Nächste Bewertung",
+        "BACK_TO_TOP": "Nach oben"
     },
     "LEGAL_NOTICE": {
         "TITLE": "Impressum",

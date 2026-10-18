@@ -90,3 +90,44 @@ app-root {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Poppins, "Helvetica Neue", sans-serif; }
+
+// Sichtbarer Fokusrahmen für Tastaturnutzer (Maus-Klicks lösen :focus-visible nicht aus)
+:focus-visible {
+    outline: 2px solid #70E61C;
+    outline-offset: 3px;
+}
+
+// Nur für Screenreader sichtbar (z. B. Formular-Labels, Abschnittsüberschriften)
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+// Setzt Browser-Styles von <button> zurück, wenn ein Icon klickbar sein soll
+.icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

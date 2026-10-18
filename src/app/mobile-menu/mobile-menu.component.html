@@ -12,10 +12,10 @@
         <a href="#contact" (click)="closeMenu()" [ngClass]="{ 'active-link': activeSection === 'contact' }">{{
             'CONTACT.TITLE' | translate }}</a>
 
-        <div class="language-btn-container">
-            <p [ngClass]="{'active-lang': currentLang === 'en'}" (click)="switchLang('en')">EN</p>
-            <p class="separator">/</p>
-            <p [ngClass]="{'active-lang': currentLang === 'de'}" (click)="switchLang('de')">DE</p>
+        <div class="language-btn-container" role="group" [attr.aria-label]="'A11Y.LANGUAGE' | translate">
+            <button type="button" [ngClass]="{'active-lang': currentLang === 'en'}" [attr.aria-pressed]="currentLang === 'en'" lang="en" (click)="switchLang('en')">EN</button>
+            <span class="separator" aria-hidden="true">/</span>
+            <button type="button" [ngClass]="{'active-lang': currentLang === 'de'}" [attr.aria-pressed]="currentLang === 'de'" lang="de" (click)="switchLang('de')">DE</button>
         </div>
     </div>
 </div>
