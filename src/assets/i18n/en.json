@@ -86,6 +86,7 @@
     },
     "LEGAL_NOTICE": {
         "TITLE": "Legal Notice",
+        "LEGAL_BASIS": "Information pursuant to § 5 DDG (German Digital Services Act)",
         "NAME": "Bedirhan Mehmet Soylu",
         "ADDRESS": {
             "STREET": "Richard-Lattorf-Straße 41",
@@ -100,13 +101,7 @@
         },
         "RESPONSIBLE": {
             "TITLE": "Person Responsible",
-            "TEXT": "Person responsible for content under § 18 MStV:"
-        },
-        "EU_DISPUTE": {
-            "TITLE": "EU Dispute Resolution",
-            "TEXT": "The European Commission provides a platform for online dispute resolution (ODR):",
-            "LINK_TEXT": "https://ec.europa.eu/consumers/odr/",
-            "NOTE": "You can find our email address above in the legal notice."
+            "TEXT": "Person responsible for content under § 18 (2) MStV:"
         },
         "CONSUMER_DISPUTE": {
             "TITLE": "Consumer Dispute Resolution / Universal Arbitration Board",

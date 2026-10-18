@@ -86,6 +86,7 @@
     },
     "LEGAL_NOTICE": {
         "TITLE": "Impressum",
+        "LEGAL_BASIS": "Angaben gemäß § 5 DDG",
         "NAME": "Bedirhan Mehmet Soylu",
         "ADDRESS": {
             "STREET": "Richard-Lattorf-Straße 41",
@@ -100,13 +101,7 @@
         },
         "RESPONSIBLE": {
             "TITLE": "Redaktionell verantwortlich",
-            "TEXT": "Inhaltlich verantwortliche Person:"
-        },
-        "EU_DISPUTE": {
-            "TITLE": "EU-Streitschlichtung",
-            "TEXT": "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:",
-            "LINK_TEXT": "https://ec.europa.eu/consumers/odr/",
-            "NOTE": "Unsere E-Mail-Adresse finden Sie oben im Impressum."
+            "TEXT": "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:"
         },
         "CONSUMER_DISPUTE": {
             "TITLE": "Verbraucherstreitbeilegung/Universalschlichtungsstelle",

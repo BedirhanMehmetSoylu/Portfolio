@@ -3,6 +3,7 @@
     <div class="legal-notice-section">
         <div>
             <h1>{{ 'LEGAL_NOTICE.TITLE' | translate }}</h1>
+            <p class="legal-basis">{{ 'LEGAL_NOTICE.LEGAL_BASIS' | translate }}</p>
             <p>
                 {{ 'LEGAL_NOTICE.NAME' | translate }}<br />
                 {{ 'LEGAL_NOTICE.ADDRESS.STREET' | translate }}<br />
@@ -31,17 +32,6 @@
             </p>
         </div>
 
-        <div>
-            <h2>{{ 'LEGAL_NOTICE.EU_DISPUTE.TITLE' | translate }}</h2>
-            <p>
-                {{ 'LEGAL_NOTICE.EU_DISPUTE.TEXT' | translate }}
-                <a href="{{ 'LEGAL_NOTICE.EU_DISPUTE.LINK_TEXT' | translate }}" target="_blank"
-                    rel="noopener noreferrer">
-                    {{ 'LEGAL_NOTICE.EU_DISPUTE.LINK_TEXT' | translate }}
-                </a><br />
-                {{ 'LEGAL_NOTICE.EU_DISPUTE.NOTE' | translate }}
-            </p>
-        </div>
 
         <div>
             <h2>{{ 'LEGAL_NOTICE.CONSUMER_DISPUTE.TITLE' | translate }}</h2>

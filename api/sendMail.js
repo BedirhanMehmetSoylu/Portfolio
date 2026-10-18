@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer');
 
 // Only this origin may call the function
-const allowedOrigin = 'https://bedirhan-soylu.de';
+const allowedOrigin = 'https://www.bedirhan-soylu.de';
 
 // Escapes HTML special characters so user input can never inject markup
 // into the email body.
