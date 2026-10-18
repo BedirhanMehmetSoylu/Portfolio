@@ -8,12 +8,11 @@ import { filter } from 'rxjs/operators';
 const SITE_URL = 'https://www.bedirhan-soylu.de';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-root',
+    imports: [CommonModule, RouterOutlet],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   title = 'portfolio';

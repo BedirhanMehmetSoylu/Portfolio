@@ -4,12 +4,11 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NavigationService } from '../shared/services/navigation.service';
 
 @Component({
-  selector: 'app-my-skills',
-  standalone: true,
-  imports: [CommonModule, TranslateModule],
-  templateUrl: './my-skills.component.html',
-  styleUrls: ['./my-skills.component.scss', './my-skills.component.responsive.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-my-skills',
+    imports: [CommonModule, TranslateModule],
+    templateUrl: './my-skills.component.html',
+    styleUrls: ['./my-skills.component.scss', './my-skills.component.responsive.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MySkillsComponent {
   protected readonly nav = inject(NavigationService);

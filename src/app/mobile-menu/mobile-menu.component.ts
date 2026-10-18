@@ -3,12 +3,11 @@ import { AfterViewInit, Component, ChangeDetectionStrategy, ElementRef, EventEmi
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-mobile-menu',
-  standalone: true,
-  imports: [CommonModule, TranslateModule],
-  templateUrl: './mobile-menu.component.html',
-  styleUrl: './mobile-menu.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-mobile-menu',
+    imports: [CommonModule, TranslateModule],
+    templateUrl: './mobile-menu.component.html',
+    styleUrl: './mobile-menu.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class MobileMenuComponent implements AfterViewInit {

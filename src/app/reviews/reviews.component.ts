@@ -3,12 +3,11 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-reviews',
-  standalone: true,
-  imports: [CommonModule, TranslateModule],
-  templateUrl: './reviews.component.html',
-  styleUrl: './reviews.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-reviews',
+    imports: [CommonModule, TranslateModule],
+    templateUrl: './reviews.component.html',
+    styleUrl: './reviews.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ReviewsComponent {
   reviews = [

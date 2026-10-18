@@ -5,12 +5,11 @@ import { FooterComponent } from '../footer/footer.component';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-legal-notice',
-  standalone: true,
-  imports: [CommonModule, NavbarComponent, FooterComponent, TranslateModule],
-  templateUrl: './legal-notice.component.html',
-  styleUrls: ['./legal-notice.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-legal-notice',
+    imports: [CommonModule, NavbarComponent, FooterComponent, TranslateModule],
+    templateUrl: './legal-notice.component.html',
+    styleUrls: ['./legal-notice.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LegalNoticeComponent {
 

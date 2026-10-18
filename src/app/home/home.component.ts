@@ -11,12 +11,11 @@ import { FooterComponent } from '../footer/footer.component';
 import * as AOS from 'aos';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [CommonModule, HeroComponent, AboutMeComponent, MySkillsComponent, PortfolioComponent, ReviewsComponent, ContactComponent, NavbarComponent, FooterComponent],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-home',
+    imports: [CommonModule, HeroComponent, AboutMeComponent, MySkillsComponent, PortfolioComponent, ReviewsComponent, ContactComponent, NavbarComponent, FooterComponent],
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class HomeComponent implements AfterViewInit {

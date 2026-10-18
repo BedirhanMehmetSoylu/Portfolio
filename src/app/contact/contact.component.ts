@@ -8,12 +8,11 @@ import { RouterModule } from '@angular/router';
 import { NavigationService } from '../shared/services/navigation.service';
 
 @Component({
-  selector: 'app-contact',
-  standalone: true,
-  imports: [CommonModule, FormsModule, TranslateModule, RouterModule],
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss', './contact.component.responsive.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-contact',
+    imports: [CommonModule, FormsModule, TranslateModule, RouterModule],
+    templateUrl: './contact.component.html',
+    styleUrls: ['./contact.component.scss', './contact.component.responsive.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContactComponent {
   protected readonly nav = inject(NavigationService);

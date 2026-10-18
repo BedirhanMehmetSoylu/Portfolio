@@ -6,12 +6,11 @@ import { MobileMenuComponent } from '../mobile-menu/mobile-menu.component';
 import { NavigationService } from '../shared/services/navigation.service';
 
 @Component({
-  selector: 'app-navbar',
-  standalone: true,
-  imports: [CommonModule, TranslateModule, MobileMenuComponent],
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-navbar',
+    imports: [CommonModule, TranslateModule, MobileMenuComponent],
+    templateUrl: './navbar.component.html',
+    styleUrls: ['./navbar.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class NavbarComponent implements AfterViewInit, OnDestroy {
