@@ -23,10 +23,10 @@
                         [attr.aria-invalid]="name.invalid && name.touched"
                         [attr.aria-describedby]="name.invalid && name.touched ? 'contact-name-error' : null" required />
                     @if (name.invalid && name.touched) {
-                      <img src="assets/img/contacts/invalid.png" class="validation-icon" alt="" />
+                      <img src="assets/img/contacts/invalid.png" width="26" height="26" loading="lazy" class="validation-icon" alt="" />
                     }
                     @if (name.valid && name.touched) {
-                      <img src="assets/img/contacts/valid.png" class="validation-icon" alt="" />
+                      <img src="assets/img/contacts/valid.png" width="25" height="26" loading="lazy" class="validation-icon" alt="" />
                     }
                 </div>
                 @if (name.invalid && name.touched) {
@@ -45,10 +45,10 @@
                         [attr.aria-describedby]="email.invalid && email.touched ? 'contact-email-error' : null"
                         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required />
                     @if (email.invalid && email.touched) {
-                      <img src="assets/img/contacts/invalid.png" class="validation-icon" alt="" />
+                      <img src="assets/img/contacts/invalid.png" width="26" height="26" loading="lazy" class="validation-icon" alt="" />
                     }
                     @if (email.valid && email.touched) {
-                      <img src="assets/img/contacts/valid.png" class="validation-icon" alt="" />
+                      <img src="assets/img/contacts/valid.png" width="25" height="26" loading="lazy" class="validation-icon" alt="" />
                     }
                 </div>
                 @if (email.invalid && email.touched) {
@@ -66,13 +66,13 @@
                             [class.valid]="message.valid && message.touched"
                             [attr.aria-invalid]="message.invalid && message.touched"
                             [attr.aria-describedby]="message.invalid && message.touched ? 'contact-message-error' : null"></textarea>
-                        <img src="assets/img/contacts/resize.png" alt="">
+                        <img src="assets/img/contacts/resize.png" width="13" height="13" loading="lazy" alt="">
                     </div>
                     @if (message.invalid && message.touched) {
-                      <img src="assets/img/contacts/invalid.png" class="validation-icon-message" alt="" />
+                      <img src="assets/img/contacts/invalid.png" width="26" height="26" loading="lazy" class="validation-icon-message" alt="" />
                     }
                     @if (message.valid && message.touched) {
-                      <img src="assets/img/contacts/valid.png" class="validation-icon-message" alt="" />
+                      <img src="assets/img/contacts/valid.png" width="25" height="26" loading="lazy" class="validation-icon-message" alt="" />
                     }
                 </div>
                 @if (message.invalid && message.touched) {
@@ -110,11 +110,11 @@
 
             <div class="scroll-up-section">
                 <a href="#hero" (click)="$event.preventDefault(); nav.scrollToSection('hero')">
-                    <img src="assets/img/contacts/arrow_up.png" [alt]="'A11Y.BACK_TO_TOP' | translate">
+                    <img src="assets/img/contacts/arrow_up.png" width="24" height="24" loading="lazy" [alt]="'A11Y.BACK_TO_TOP' | translate">
                 </a>
             </div>
         </form>
 
-    <img class="shadow" src="assets/img/contacts/contact_shadow.avif" alt="">
+    <img class="shadow" src="assets/img/contacts/contact_shadow.avif" width="1084" height="940" alt="">
   </div>
 </section>

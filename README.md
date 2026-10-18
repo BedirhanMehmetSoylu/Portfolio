@@ -26,7 +26,7 @@ Ich bin Junior Fullstack Entwickler mit Fokus auf Angular im Frontend und Python
 | Frontend      | Angular 17, TypeScript, SCSS |
 | UI/Animation  | Angular Material (Dialog), AOS |
 | i18n          | @ngx-translate/core |
-| Kontaktformular | PHP (`sendMail.php`) |
+| Kontaktformular | Vercel Serverless Function (`api/sendMail.js`, Nodemailer) |
 
 ## Projektstruktur
 

@@ -1,36 +1,11 @@
-@font-face {
-    font-family: 'Poppins';
-    src: url('assets/fonts/Poppins-Black.woff2') format('woff2');
-    font-weight: 900;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Poppins';
-    src: url('assets/fonts/Poppins-ExtraBold.woff2') format('woff2');
-    font-weight: 800;
-    font-style: normal;
-}
-
+// Nur tatsächlich genutzte Schnitte (300, 400, 700). font-display: swap zeigt Text sofort
+// in der Fallback-Schrift an, statt ihn bis zum Laden der Webfont unsichtbar zu lassen.
 @font-face {
     font-family: 'Poppins';
     src: url('assets/fonts/Poppins-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
-}
-
-@font-face {
-    font-family: 'Poppins';
-    src: url('assets/fonts/Poppins-SemiBold.woff2') format('woff2');
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Poppins';
-    src: url('assets/fonts/Poppins-Medium.woff2') format('woff2');
-    font-weight: 500;
-    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -38,6 +13,7 @@
     src: url('assets/fonts/Poppins-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -45,20 +21,7 @@
     src: url('assets/fonts/Poppins-Light.woff2') format('woff2');
     font-weight: 300;
     font-style: normal;
-}
-
-@font-face {
-    font-family: 'Poppins';
-    src: url('assets/fonts/Poppins-ExtraLight.woff2') format('woff2');
-    font-weight: 200;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Poppins';
-    src: url('assets/fonts/Poppins-Thin.woff2') format('woff2');
-    font-weight: 100;
-    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -66,6 +29,7 @@
     src: url('assets/fonts/Montserrat-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
 * {
@@ -86,6 +50,13 @@ body {
 app-root {
     width: 100%;
     overflow-x: clip;
+}
+
+// width/height-Attribute an <img> liefern nur das Seitenverhältnis (verhindert Layout-Sprünge
+// beim Laden). Die tatsächliche Größe kommt weiterhin aus dem Komponenten-CSS bzw. der Datei.
+img {
+    width: auto;
+    height: auto;
 }
 
 html, body { height: 100%; }

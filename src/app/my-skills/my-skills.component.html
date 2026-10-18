@@ -35,7 +35,7 @@
 
     @if (selectedStack === 'frontend') {
       <div class="skill" data-aos="fade-up" data-aos-delay="600">
-        <img src="assets/img/myskills/frontend/materialdesign.png" alt="">
+        <img src="assets/img/myskills/frontend/materialdesign.png" width="60" height="60" loading="lazy" alt="">
         <div class="skill-text-container">
           <span>Material</span>
           <span>Design</span>
@@ -44,13 +44,13 @@
     }
 
     @if (showLearning) {
-      <div class="skill-learning">
-        <img src="assets/img/myskills/learning.svg" alt="">
+      <div class="skill-learning" tabindex="0">
+        <img src="assets/img/myskills/learning.svg" width="60" height="60" loading="lazy" alt="">
         <div class="skill-learning-text-container">
           <span>{{ 'MYSKILLS.CONTINUALLY' | translate }}</span>
           <span>{{ 'MYSKILLS.LEARNING' | translate }}</span>
         </div>
-        <mat-dialog-content>
+        <div class="learning-dialog">
           <p>{{ 'MYSKILLS.INTEREST' | translate }}</p>
           <div class="learning-items">
             @for (learningSkill of learningSkills; track learningSkill.text) {
@@ -64,12 +64,12 @@
               </div>
             }
           </div>
-          <img [class.german-vector-bottom]="translate.currentLang === 'de'" class="vector" src="assets/img/myskills/vector_dialog.png" alt="">
-        </mat-dialog-content>
+          <img [class.german-vector-bottom]="translate.currentLang === 'de'" class="vector" src="assets/img/myskills/vector_dialog.png" width="26" height="15" loading="lazy" alt="">
+        </div>
       </div>
     }
 
-    <img class="shadow" src="assets/img/myskills/shadow.avif" alt="">
+    <img class="shadow" src="assets/img/myskills/shadow.avif" width="898" height="976" alt="">
   </div>
 
   <div class="description-container" data-aos="fade-left" data-aos-delay="300">
@@ -121,7 +121,7 @@
 
         @if (selectedStack === 'frontend') {
           <div class="skill padd-0" data-aos="fade-up" data-aos-delay="1000">
-            <img src="assets/img/myskills/frontend/materialdesign.png" alt="">
+            <img src="assets/img/myskills/frontend/materialdesign.png" width="60" height="60" loading="lazy" alt="">
             <div class="skill-text-container">
               <span>Material</span>
               <span>Design</span>
@@ -130,13 +130,13 @@
         }
 
         @if (showLearning) {
-          <div class="skill-learning">
-            <img src="assets/img/myskills/learning.svg" alt="">
+          <div class="skill-learning" tabindex="0">
+            <img src="assets/img/myskills/learning.svg" width="60" height="60" loading="lazy" alt="">
             <div class="skill-learning-text-container">
               <span>{{ 'MYSKILLS.CONTINUALLY' | translate }}</span>
               <span>{{ 'MYSKILLS.LEARNING' | translate }}</span>
             </div>
-            <mat-dialog-content>
+            <div class="learning-dialog">
               <p>{{ 'MYSKILLS.INTEREST' | translate }}</p>
               <div class="learning-items">
                 @for (learningSkill of learningSkills; track learningSkill.text) {
@@ -150,8 +150,8 @@
                   </div>
                 }
               </div>
-              <img [class.german-vector-bottom]="translate.currentLang === 'de'" class="vector" src="assets/img/myskills/vector_dialog.png" alt="">
-            </mat-dialog-content>
+              <img [class.german-vector-bottom]="translate.currentLang === 'de'" class="vector" src="assets/img/myskills/vector_dialog.png" width="26" height="15" loading="lazy" alt="">
+            </div>
           </div>
         }
       </div>
@@ -178,6 +178,6 @@
       </button>
     </div>
 
-    <img class="shadow-mobile" src="assets/img/myskills/shadow.avif" alt="">
+    <img class="shadow-mobile" src="assets/img/myskills/shadow.avif" width="898" height="976" alt="">
   </div>
 </section>

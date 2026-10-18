@@ -4,7 +4,7 @@
     <div class="reviews-section-top">
         <!-- aria-live: Screenreader lesen die neue Bewertung nach einem Klick auf die Pfeile vor -->
         <div class="review-container" aria-live="polite">
-            <img src="assets/img/reviews/quotation_marks.png" alt="">
+            <img src="assets/img/reviews/quotation_marks.png" width="97" height="69" loading="lazy" alt="">
 
             <p>{{ reviews[currentIndex].text | translate }}</p>
 
@@ -18,26 +18,26 @@
             <!-- Nur das aktive Foto wird gerendert (und geladen); der Name steht bereits im Text -->
             <div class="purple-circle">
                 @if (currentIndex === 0) {
-                    <img class="reviewer-img-1" src="assets/img/reviews/nafi.avif" alt="">
+                    <img class="reviewer-img-1" src="assets/img/reviews/nafi.avif" width="460" height="460" loading="lazy" alt="">
                 }
                 @if (currentIndex === 1) {
-                    <img class="reviewer-img-2" src="assets/img/reviews/reviewer_2.avif" alt="">
+                    <img class="reviewer-img-2" src="assets/img/reviews/reviewer_2.avif" width="1280" height="960" loading="lazy" alt="">
                 }
                 @if (currentIndex === 2) {
-                    <img class="reviewer-img-3" src="assets/img/reviews/reviewer_3.avif" alt="">
+                    <img class="reviewer-img-3" src="assets/img/reviews/reviewer_3.avif" width="853" height="1280" loading="lazy" alt="">
                 }
             </div>
 
             <div class="purple-line-short"></div>
 
-            <img class="shadow" src="assets/img/reviews/shadow.avif" alt="">
+            <img class="shadow" src="assets/img/reviews/shadow.avif" width="899" height="976" alt="">
         </div>
     </div>
 
     <div class="reviews-section-bottom">
         <div>
             <button type="button" class="icon-btn" (click)="previousReview()" [attr.aria-label]="'A11Y.REVIEW_PREV' | translate">
-                <img src="assets/img/reviews/arrow_back.png" alt="">
+                <img src="assets/img/reviews/arrow_back.png" width="22" height="22" loading="lazy" alt="">
             </button>
 
             @for (review of reviews; track review.name; let i = $index) {
@@ -49,7 +49,7 @@
             }
 
             <button type="button" class="icon-btn" (click)="nextReview()" [attr.aria-label]="'A11Y.REVIEW_NEXT' | translate">
-                <img src="assets/img/reviews/arrow_forward.png" alt="">
+                <img src="assets/img/reviews/arrow_forward.png" width="21" height="22" loading="lazy" alt="">
             </button>
         </div>
 

@@ -155,20 +155,23 @@
     padding-top: 12px;
     animation: learningPopIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 
-    &:hover {
+    // :focus-visible: Popup auch per Tab-Taste erreichbar, nicht nur per Maus
+    &:hover,
+    &:focus-visible {
         >img {
             transition: filter 0.3s ease;
             cursor: pointer;
             filter: brightness(0) invert(1);
         }
 
-        >div {
+        // Nur der Text wird weiß – nicht das Popup (ebenfalls ein <div>)
+        >.skill-learning-text-container {
             transition: filter 0.3s ease;
             cursor: pointer;
             filter: brightness(0) invert(1);
         }
 
-        >mat-dialog-content {
+        >.learning-dialog {
             transition: opacity 0.5s ease, visibility 0.3s ease;
             opacity: 1;
             visibility: visible;
@@ -186,7 +189,7 @@
     line-height: 120%;
 }
 
-mat-dialog-content {
+.learning-dialog {
     opacity: 0;
     visibility: hidden;
     position: absolute;
