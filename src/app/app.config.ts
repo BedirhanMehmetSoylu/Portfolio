@@ -1,32 +1,24 @@
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+import { ApplicationConfig, Injectable, inject } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { HttpClient, withXhr } from '@angular/common/http';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateLoader, TranslationObject, provideTranslateLoader, provideTranslateService } from '@ngx-translate/core';
 import { Observable, of } from 'rxjs';
 import de from '../assets/i18n/de.json';
 
 /**
  * Deutsch (Standardsprache) ist direkt im Bundle enthalten und steht sofort bereit –
  * ohne zusätzlichen HTTP-Request, in dem die Seite sonst ohne Text dasteht.
- * Englisch wird weiterhin erst bei Bedarf per HTTP nachgeladen.
+ * Englisch wird erst bei Bedarf per HTTP nachgeladen.
  */
+@Injectable()
 export class HybridTranslateLoader implements TranslateLoader {
-  private readonly httpLoader: TranslateHttpLoader;
+  private readonly http = inject(HttpClient);
 
-  constructor(http: HttpClient) {
-    this.httpLoader = new TranslateHttpLoader(http, 'assets/i18n/', '.json');
+  getTranslation(lang: string): Observable<TranslationObject> {
+    return lang === 'de' ? of(de) : this.http.get<TranslationObject>(`assets/i18n/${lang}.json`);
   }
-
-  getTranslation(lang: string): Observable<object> {
-    return lang === 'de' ? of(de) : this.httpLoader.getTranslation(lang);
-  }
-}
-
-export function HttpLoaderFactory(http: HttpClient) {
-  return new HybridTranslateLoader(http);
 }
 
 export const appConfig: ApplicationConfig = {
@@ -34,14 +26,10 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideHttpClient(withXhr(), withInterceptorsFromDi()),
 
-    importProvidersFrom(
-      TranslateModule.forRoot({
-        loader: {
-          provide: TranslateLoader,
-          useFactory: HttpLoaderFactory,
-          deps: [HttpClient],
-        }
-      })
-    )
+    // fallbackLang ersetzt das frühere setDefaultLang('de') in der Navbar
+    provideTranslateService({
+      loader: provideTranslateLoader(HybridTranslateLoader),
+      fallbackLang: 'de',
+    }),
   ]
 };

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
@@ -9,7 +9,7 @@ import { NavigationService } from '../shared/services/navigation.service';
 
 @Component({
     selector: 'app-contact',
-    imports: [CommonModule, FormsModule, TranslateModule, RouterModule],
+    imports: [CommonModule, FormsModule, TranslatePipe, RouterModule],
     templateUrl: './contact.component.html',
     styleUrls: ['./contact.component.scss', './contact.component.responsive.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush

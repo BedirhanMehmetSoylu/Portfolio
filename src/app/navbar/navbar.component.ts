@@ -1,13 +1,12 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostListener, inject, OnDestroy, ViewChild } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
-import { TranslateModule } from '@ngx-translate/core';
 import { MobileMenuComponent } from '../mobile-menu/mobile-menu.component';
 import { NavigationService } from '../shared/services/navigation.service';
 
 @Component({
     selector: 'app-navbar',
-    imports: [CommonModule, TranslateModule, MobileMenuComponent],
+    imports: [CommonModule, TranslatePipe, MobileMenuComponent],
     templateUrl: './navbar.component.html',
     styleUrls: ['./navbar.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
@@ -44,7 +43,6 @@ export class NavbarComponent implements AfterViewInit, OnDestroy {
 
   constructor() {
     this.translate.addLangs(['en', 'de']);
-    this.translate.setDefaultLang('de');
 
     const savedLang = localStorage.getItem('lang');
     const langToUse = savedLang || 'de';

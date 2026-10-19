@@ -64,7 +64,7 @@
               </div>
             }
           </div>
-          <img [class.german-vector-bottom]="translate.currentLang === 'de'" class="vector" src="assets/img/myskills/vector_dialog.png" width="26" height="15" loading="lazy" alt="">
+          <img [class.german-vector-bottom]="translate.currentLang() === 'de'" class="vector" src="assets/img/myskills/vector_dialog.png" width="26" height="15" loading="lazy" alt="">
         </div>
       </div>
     }
@@ -74,7 +74,7 @@
 
   <div class="description-container" data-aos="fade-left" data-aos-delay="300">
     <div class="description-header">
-      <h2 id="skills-title" [class.german-big-title]="translate.currentLang === 'de'">{{ 'MYSKILLS.HEADLINE' | translate }}</h2>
+      <h2 id="skills-title" [class.german-big-title]="translate.currentLang() === 'de'">{{ 'MYSKILLS.HEADLINE' | translate }}</h2>
       <div class="purple-line"></div>
     </div>
 
@@ -150,14 +150,14 @@
                   </div>
                 }
               </div>
-              <img [class.german-vector-bottom]="translate.currentLang === 'de'" class="vector" src="assets/img/myskills/vector_dialog.png" width="26" height="15" loading="lazy" alt="">
+              <img [class.german-vector-bottom]="translate.currentLang() === 'de'" class="vector" src="assets/img/myskills/vector_dialog.png" width="26" height="15" loading="lazy" alt="">
             </div>
           </div>
         }
       </div>
 
       <div class="looking-section" data-aos="flip-up" data-aos-delay="1200">
-        <div class="looking-container" [class.german-looking-text]="translate.currentLang === 'de'">
+        <div class="looking-container" [class.german-looking-text]="translate.currentLang() === 'de'">
           <p>{{ 'MYSKILLS.LOOKING' | translate }}</p>
           <div>
             <p style="color: #9747FF">{{ 'MYSKILLS.ANOTHER' | translate }}</p>

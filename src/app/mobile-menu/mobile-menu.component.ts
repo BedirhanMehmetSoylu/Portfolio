@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ChangeDetectionStrategy, ElementRef, EventEmitter, Input, Output, inject } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-mobile-menu',
-    imports: [CommonModule, TranslateModule],
+    imports: [CommonModule, TranslatePipe],
     templateUrl: './mobile-menu.component.html',
     styleUrl: './mobile-menu.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush

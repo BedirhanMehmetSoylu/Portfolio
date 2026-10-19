@@ -1,11 +1,11 @@
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
 import { NavigationService } from '../shared/services/navigation.service';
 
 @Component({
     selector: 'app-footer',
-    imports: [TranslateModule, RouterModule],
+    imports: [TranslatePipe, RouterModule],
     templateUrl: './footer.component.html',
     styleUrl: './footer.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush

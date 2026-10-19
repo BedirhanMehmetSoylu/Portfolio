@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-reviews',
-    imports: [CommonModule, TranslateModule],
+    imports: [CommonModule, TranslatePipe],
     templateUrl: './reviews.component.html',
     styleUrl: './reviews.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush

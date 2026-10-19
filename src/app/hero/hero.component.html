@@ -19,7 +19,7 @@
     </div>
   </div>
   <div class="hero-bottom">
-    <div class="hero-bottom-name" [class.padding-reset]="translate.currentLang === 'de'">
+    <div class="hero-bottom-name" [class.padding-reset]="translate.currentLang() === 'de'">
       <h1 class="name-section">
         <span class="i-am">{{ 'HERO.IAM' | translate}}</span>
         <span class="name-container">
@@ -27,7 +27,7 @@
           <span class="profession">{{ 'HERO.PROFESSION' | translate}}</span>
         </span>
       </h1>
-      <button [class.padding-reset]="translate.currentLang === 'de'" (click)="nav.scrollToSection('contact')">{{ 'HERO.LETS_TALK' | translate}}</button>
+      <button [class.padding-reset]="translate.currentLang() === 'de'" (click)="nav.scrollToSection('contact')">{{ 'HERO.LETS_TALK' | translate}}</button>
     </div>
     <div class="bottom-content">
       <div class="bottom-left">

@@ -1,11 +1,11 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from '../footer/footer.component';
 
 @Component({
     selector: 'app-privacy-policy',
-    imports: [TranslateModule, NavbarComponent, FooterComponent],
+    imports: [TranslatePipe, NavbarComponent, FooterComponent],
     templateUrl: './privacy-policy.component.html',
     styleUrls: ['./privacy-policy.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush

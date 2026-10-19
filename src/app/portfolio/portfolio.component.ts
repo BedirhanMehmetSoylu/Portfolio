@@ -1,10 +1,10 @@
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { NavigationService } from '../shared/services/navigation.service';
 
 @Component({
     selector: 'app-portfolio',
-    imports: [TranslateModule],
+    imports: [TranslatePipe],
     templateUrl: './portfolio.component.html',
     styleUrl: './portfolio.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush

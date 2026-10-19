@@ -1,9 +1,9 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-about-me',
-    imports: [TranslateModule],
+    imports: [TranslatePipe],
     templateUrl: './about-me.component.html',
     styleUrl: './about-me.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush
