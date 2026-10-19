@@ -1,4 +1,4 @@
-import { provideHttpClient, withXhr } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
 import { provideTranslateService } from '@ngx-translate/core';
 
@@ -18,7 +18,7 @@ import { provideTranslateService } from '@ngx-translate/core';
  * return `EnvironmentProviders`, which TypeScript infers automatically.
  */
 export const commonTestProviders = [
-  provideHttpClient(withXhr()),
+  provideHttpClient(),
   provideRouter([]),
   // Ohne Loader nutzt ngx-translate einen No-Op-Loader – keine echten HTTP-Requests im Test
   provideTranslateService(),

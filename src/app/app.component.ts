@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, inject, DOCUMENT } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, DOCUMENT, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Meta } from '@angular/platform-browser';
 import { RouterOutlet, Router, NavigationEnd, ActivatedRouteSnapshot } from '@angular/router';
@@ -19,6 +20,7 @@ export class AppComponent {
   private readonly router = inject(Router);
   private readonly meta = inject(Meta);
   private readonly document = inject(DOCUMENT);
+  private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   constructor() {
     this.router.events.pipe(
@@ -26,9 +28,11 @@ export class AppComponent {
       takeUntilDestroyed()
     ).subscribe((event: NavigationEnd) => {
       const tree = this.router.parseUrl(event.urlAfterRedirects);
-      if (!tree.fragment) {
+      if (this.isBrowser && !tree.fragment) {
         window.scrollTo(0, 0);
       }
+      // Läuft bewusst auch beim Vorrendern: so steht pro Route das richtige
+      // robots/Canonical schon im ausgelieferten HTML
       this.updateSeoTags(event.urlAfterRedirects);
     });
   }

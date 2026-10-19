@@ -1,8 +1,8 @@
 import { ApplicationConfig, Injectable, inject, provideZonelessChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
-import { HttpClient, withXhr } from '@angular/common/http';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpClient, provideHttpClient } from '@angular/common/http';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { TranslateLoader, TranslationObject, provideTranslateLoader, provideTranslateService } from '@ngx-translate/core';
 import { Observable, of } from 'rxjs';
 import de from '../assets/i18n/de.json';
@@ -27,7 +27,11 @@ export const appConfig: ApplicationConfig = {
     // eine Änderung meldet. Alle Komponenten sind OnPush und dafür bereits vorbereitet.
     provideZonelessChangeDetection(),
     provideRouter(routes),
-    provideHttpClient(withXhr(), withInterceptorsFromDi()),
+    // Seit Angular 22 nutzt HttpClient standardmäßig fetch – passend fürs Vorrendern
+    provideHttpClient(),
+    // Übernimmt das vorgerenderte HTML, statt es neu zu zeichnen; Klicks während
+    // des Ladens werden nach dem Start nachgeholt (Event Replay)
+    provideClientHydration(withEventReplay()),
 
     // fallbackLang ersetzt das frühere setDefaultLang('de') in der Navbar
     provideTranslateService({

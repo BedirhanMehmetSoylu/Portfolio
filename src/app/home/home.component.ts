@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component } from '@angular/core';
+import { afterNextRender, ChangeDetectionStrategy, Component } from '@angular/core';
 import { HeroComponent } from '../hero/hero.component';
 import { AboutMeComponent } from '../about-me/about-me.component';
 import { MySkillsComponent } from '../my-skills/my-skills.component';
@@ -7,7 +7,6 @@ import { ReviewsComponent } from '../reviews/reviews.component';
 import { ContactComponent } from '../contact/contact.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from '../footer/footer.component';
-import * as AOS from 'aos';
 
 @Component({
     selector: 'app-home',
@@ -17,13 +16,17 @@ import * as AOS from 'aos';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class HomeComponent implements AfterViewInit {
-  ngAfterViewInit(): void {
-    AOS.init({
-      duration: 1000,
-      once: true,
-      // Bei "Bewegung reduzieren" im Betriebssystem keine Einblend-Animationen
-      disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+export class HomeComponent {
+  constructor() {
+    // Nur im Browser und erst nach dem ersten Rendern: AOS greift auf window/document zu.
+    // Der dynamische Import lädt AOS als eigenen Chunk – es ist nicht mehr Teil des Start-Bundles.
+    afterNextRender(() => {
+      import('aos').then(({ default: AOS }) => AOS.init({
+        duration: 1000,
+        once: true,
+        // Bei "Bewegung reduzieren" im Betriebssystem keine Einblend-Animationen
+        disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+      }));
     });
   }
 }

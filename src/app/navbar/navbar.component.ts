@@ -1,6 +1,6 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostListener, inject, OnDestroy, ViewChild } from '@angular/core';
+import { afterNextRender, ChangeDetectionStrategy, ChangeDetectorRef, Component, DOCUMENT, ElementRef, HostListener, inject, OnDestroy, PLATFORM_ID, ViewChild } from '@angular/core';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { MobileMenuComponent } from '../mobile-menu/mobile-menu.component';
 import { NavigationService } from '../shared/services/navigation.service';
 
@@ -12,10 +12,12 @@ import { NavigationService } from '../shared/services/navigation.service';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class NavbarComponent implements AfterViewInit, OnDestroy {
+export class NavbarComponent implements OnDestroy {
   protected readonly nav = inject(NavigationService);
   private readonly translate = inject(TranslateService);
   private readonly cdr = inject(ChangeDetectorRef);
+  private readonly document = inject(DOCUMENT);
+  private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   currentLang: string = 'de';
   activeSection: string = '';
@@ -44,15 +46,15 @@ export class NavbarComponent implements AfterViewInit, OnDestroy {
   constructor() {
     this.translate.addLangs(['en', 'de']);
 
-    const savedLang = localStorage.getItem('lang');
+    // Beim Vorrendern (Build) gibt es kein localStorage – dort wird immer Deutsch erzeugt
+    const savedLang = this.isBrowser ? localStorage.getItem('lang') : null;
     const langToUse = savedLang || 'de';
     this.currentLang = langToUse;
     this.translate.use(langToUse);
-    document.documentElement.lang = langToUse;
-  }
+    this.document.documentElement.lang = langToUse;
 
-  ngAfterViewInit(): void {
-    this.observeSections();
+    // Läuft nur im Browser, nach dem ersten Rendern (IntersectionObserver gibt es beim Vorrendern nicht)
+    afterNextRender(() => this.observeSections());
   }
 
   ngOnDestroy(): void {
@@ -94,7 +96,7 @@ export class NavbarComponent implements AfterViewInit, OnDestroy {
     this.currentLang = lang;
     this.translate.use(lang);
     localStorage.setItem('lang', lang);
-    document.documentElement.lang = lang;
+    this.document.documentElement.lang = lang;
   }
 
   toggleMenu(): void {
