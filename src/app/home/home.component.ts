@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { AfterViewInit, ChangeDetectionStrategy, Component } from '@angular/core';
 import { HeroComponent } from '../hero/hero.component';
 import { AboutMeComponent } from '../about-me/about-me.component';
@@ -12,7 +11,7 @@ import * as AOS from 'aos';
 
 @Component({
     selector: 'app-home',
-    imports: [CommonModule, HeroComponent, AboutMeComponent, MySkillsComponent, PortfolioComponent, ReviewsComponent, ContactComponent, NavbarComponent, FooterComponent],
+    imports: [HeroComponent, AboutMeComponent, MySkillsComponent, PortfolioComponent, ReviewsComponent, ContactComponent, NavbarComponent, FooterComponent],
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush

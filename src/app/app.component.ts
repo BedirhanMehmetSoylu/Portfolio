@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, DOCUMENT } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { CommonModule } from '@angular/common';
 import { Meta } from '@angular/platform-browser';
 import { RouterOutlet, Router, NavigationEnd, ActivatedRouteSnapshot } from '@angular/router';
 import { filter } from 'rxjs/operators';
@@ -9,7 +8,7 @@ const SITE_URL = 'https://www.bedirhan-soylu.de';
 
 @Component({
     selector: 'app-root',
-    imports: [CommonModule, RouterOutlet],
+    imports: [RouterOutlet],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush

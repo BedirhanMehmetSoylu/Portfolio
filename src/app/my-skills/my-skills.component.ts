@@ -1,11 +1,10 @@
-import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NavigationService } from '../shared/services/navigation.service';
 
 @Component({
     selector: 'app-my-skills',
-    imports: [CommonModule, TranslateModule],
+    imports: [TranslateModule],
     templateUrl: './my-skills.component.html',
     styleUrls: ['./my-skills.component.scss', './my-skills.component.responsive.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
