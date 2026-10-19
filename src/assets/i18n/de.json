@@ -19,7 +19,7 @@
     },
     "MYSKILLS": {
         "HEADLINE": "Fähigkeiten",
-        "DESCRIPTION_FRONTEND": "Während meiner Ausbildung zum Frontend-Entwickler habe ich fundierte Kenntnisse in HTML, CSS, JavaScript und TypeScript aufgebaut.",
+        "DESCRIPTION_FRONTEND": "Während meiner Umschulung zum Frontend-Entwickler habe ich fundierte Kenntnisse in HTML, CSS, JavaScript und TypeScript aufgebaut.",
         "DESCRIPTION_SKILLS_FRONTEND": "Ich arbeite mit Angular, Firebase und Git und habe erste Erfahrungen mit REST-APIs, Material Design und agilen Methoden wie Scrum gesammelt.",
         "DESCRIPTION_BACKEND": "Im Rahmen meiner Umschulung zum Backend-Entwickler habe ich mein Wissen um serverseitige Technologien wie Python und Django erweitert.",
         "DESCRIPTION_SKILLS_BACKEND": "Ich arbeite mit relationalen Datenbanken wie PostgreSQL, containerisiere Anwendungen mit Docker und setze sie über Cloud-Plattformen wie Heroku auf.",
