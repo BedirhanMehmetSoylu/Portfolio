@@ -1,4 +1,4 @@
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withXhr } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -18,7 +18,7 @@ import { TranslateModule } from '@ngx-translate/core';
  * return `EnvironmentProviders`, which TypeScript infers automatically.
  */
 export const commonTestProviders = [
-  provideHttpClient(),
+  provideHttpClient(withXhr()),
   provideRouter([]),
 ];
 
