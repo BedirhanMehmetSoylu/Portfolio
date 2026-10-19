@@ -51,9 +51,12 @@ export class MySkillsComponent {
     { imagePath: 'linux.png', text: 'Linux', needsInvert: true },
   ];
 
-  get skills() {
-    return this.selectedStack === 'frontend' ? this.frontendSkills : this.backendSkills;
-  }
+  // Beide Stacks werden immer gerendert (inaktiver per [hidden]), damit Suchmaschinen
+  // und KI-Crawler auch die Backend-Skills im vorgerenderten HTML sehen
+  readonly stacks = [
+    { key: 'frontend', skills: this.frontendSkills },
+    { key: 'backend', skills: this.backendSkills },
+  ] as const;
 
   get learningSkills() {
     return this.selectedStack === 'frontend' ? this.learningSkillsFrontend : this.learningSkillsBackend;

@@ -70,6 +70,12 @@ body { margin: 0; font-family: Poppins, "Helvetica Neue", sans-serif; }
     outline-offset: 3px;
 }
 
+// [hidden] muss gegen Klassen wie .project { display: flex } gewinnen. Genutzt für den
+// Frontend/Backend-Umschalter: beide Varianten stehen im HTML (für Suchmaschinen), die inaktive ist versteckt.
+[hidden] {
+    display: none !important;
+}
+
 // Nur für Screenreader sichtbar (z. B. Formular-Labels, Abschnittsüberschriften)
 .sr-only {
     position: absolute;

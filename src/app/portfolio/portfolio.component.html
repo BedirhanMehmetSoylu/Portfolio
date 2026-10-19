@@ -33,113 +33,101 @@
   </div>
 
   <div class="projects-container">
-    @if (selectedCategory === 'frontend') {
-      <div class="project" data-aos="fade-right" data-aos-delay="300">
-        <div class="laptop-container">
-          <img src="assets/img/portfolio/join.avif" width="601" height="560" loading="lazy" alt="Screenshot der Join Kanban-Anwendung">
-        </div>
-        <div class="project-description">
-          <h3>Join</h3>
-          <span>Angular | TypeScript | HTML | CSS | Firebase </span>
-          <p>{{ 'PORTFOLIO.JOIN' | translate }}</p>
-          <div>
-            <a class="live-test-btn" href="https://join.bedirhan-soylu.de/" target="_blank" rel="noopener noreferrer">{{ 'PORTFOLIO.LIVE' | translate }}</a>
-            <a class="github-btn" href="https://github.com/BedirhanMehmetSoylu/Join" target="_blank" rel="noopener noreferrer">Github</a>
-          </div>
+    <div class="project" [hidden]="selectedCategory !== 'frontend'" data-aos="fade-right" data-aos-delay="300">
+      <div class="laptop-container">
+        <img src="assets/img/portfolio/join.avif" width="601" height="560" loading="lazy" alt="Screenshot der Join Kanban-Anwendung">
+      </div>
+      <div class="project-description">
+        <h3>Join</h3>
+        <span>Angular | TypeScript | HTML | CSS | Firebase </span>
+        <p>{{ 'PORTFOLIO.JOIN' | translate }}</p>
+        <div>
+          <a class="live-test-btn" href="https://join.bedirhan-soylu.de/" target="_blank" rel="noopener noreferrer">{{ 'PORTFOLIO.LIVE' | translate }}</a>
+          <a class="github-btn" href="https://github.com/BedirhanMehmetSoylu/Join" target="_blank" rel="noopener noreferrer">Github</a>
         </div>
       </div>
-    }
+    </div>
 
-    @if (selectedCategory === 'frontend') {
-      <div class="project" data-aos="fade-left" data-aos-delay="400">
-        <div class="laptop-container mobile">
-          <img src="assets/img/portfolio/el_pollo_loco.avif" width="601" height="560" loading="lazy" alt="Screenshot des El Pollo Loco Jump-and-Run-Spiels">
-        </div>
-        <div class="project-description-to-right">
-          <h3>El Pollo Loco</h3>
-          <span>JavaScript | HTML | CSS</span>
-          <p>{{ 'PORTFOLIO.EL_POLLO_LOCO' | translate }}</p>
-          <div>
-            <a class="live-test-btn" href="https://elpolloloco.bedirhan-soylu.de/" target="_blank" rel="noopener noreferrer">{{ 'PORTFOLIO.LIVE' | translate }}</a>
-            <a class="github-btn" href="https://github.com/BedirhanMehmetSoylu/El-Pollo-Loco" target="_blank" rel="noopener noreferrer">Github</a>
-          </div>
-        </div>
-        <div class="laptop-container desktop">
-          <img src="assets/img/portfolio/el_pollo_loco.avif" width="601" height="560" loading="lazy" alt="">
+    <div class="project" [hidden]="selectedCategory !== 'frontend'" data-aos="fade-left" data-aos-delay="400">
+      <div class="laptop-container mobile">
+        <img src="assets/img/portfolio/el_pollo_loco.avif" width="601" height="560" loading="lazy" alt="Screenshot des El Pollo Loco Jump-and-Run-Spiels">
+      </div>
+      <div class="project-description-to-right">
+        <h3>El Pollo Loco</h3>
+        <span>JavaScript | HTML | CSS</span>
+        <p>{{ 'PORTFOLIO.EL_POLLO_LOCO' | translate }}</p>
+        <div>
+          <a class="live-test-btn" href="https://elpolloloco.bedirhan-soylu.de/" target="_blank" rel="noopener noreferrer">{{ 'PORTFOLIO.LIVE' | translate }}</a>
+          <a class="github-btn" href="https://github.com/BedirhanMehmetSoylu/El-Pollo-Loco" target="_blank" rel="noopener noreferrer">Github</a>
         </div>
       </div>
-    }
+      <div class="laptop-container desktop">
+        <img src="assets/img/portfolio/el_pollo_loco.avif" width="601" height="560" loading="lazy" alt="">
+      </div>
+    </div>
 
-    @if (selectedCategory === 'frontend') {
-      <div class="project" data-aos="fade-right" data-aos-delay="500">
-        <div class="laptop-container">
-          <img src="assets/img/portfolio/pokedex.avif" width="601" height="560" loading="lazy" alt="Screenshot der Pokedex-Anwendung">
-        </div>
-        <div class="project-description">
-          <h3>Pokedex</h3>
-          <span>JavaScript | HTML | CSS | Api</span>
-          <p>{{ 'PORTFOLIO.POKEDEX' | translate }}</p>
-          <div>
-            <a class="live-test-btn" href="https://pokedex.bedirhan-soylu.de/" target="_blank" rel="noopener noreferrer">{{ 'PORTFOLIO.LIVE' | translate }}</a>
-            <a class="github-btn" href="https://github.com/BedirhanMehmetSoylu/Pokedex" target="_blank" rel="noopener noreferrer">Github</a>
-          </div>
+    <div class="project" [hidden]="selectedCategory !== 'frontend'" data-aos="fade-right" data-aos-delay="500">
+      <div class="laptop-container">
+        <img src="assets/img/portfolio/pokedex.avif" width="601" height="560" loading="lazy" alt="Screenshot der Pokedex-Anwendung">
+      </div>
+      <div class="project-description">
+        <h3>Pokedex</h3>
+        <span>JavaScript | HTML | CSS | Api</span>
+        <p>{{ 'PORTFOLIO.POKEDEX' | translate }}</p>
+        <div>
+          <a class="live-test-btn" href="https://pokedex.bedirhan-soylu.de/" target="_blank" rel="noopener noreferrer">{{ 'PORTFOLIO.LIVE' | translate }}</a>
+          <a class="github-btn" href="https://github.com/BedirhanMehmetSoylu/Pokedex" target="_blank" rel="noopener noreferrer">Github</a>
         </div>
       </div>
-    }
+    </div>
 
-    @if (selectedCategory === 'backend') {
-      <div class="project" data-aos="fade-left" data-aos-delay="400">
-        <div class="laptop-container">
-          <img src="assets/img/portfolio/coderr.avif" width="601" height="560" loading="lazy" alt="Screenshot des Coderr Backend-Projekts">
-        </div>
-        <div class="project-description">
-          <h3>Coderr</h3>
-          <span>Python | Django | REST</span>
-          <p>{{ 'PORTFOLIO.CODERR' | translate }}</p>
-          <div>
-            <a class="live-test-btn" [attr.data-tooltip]="'PORTFOLIO.COLD_START_HINT' | translate" href="https://coderr.bedirhan-soylu.de/" target="_blank" rel="noopener noreferrer">{{ 'PORTFOLIO.LIVE' | translate }}</a>
-            <a class="github-btn" href="https://github.com/BedirhanMehmetSoylu/Coderr-Backend" target="_blank" rel="noopener noreferrer">Github</a>
-          </div>
+    <div class="project" [hidden]="selectedCategory !== 'backend'" data-aos="fade-left" data-aos-delay="400">
+      <div class="laptop-container">
+        <img src="assets/img/portfolio/coderr.avif" width="601" height="560" loading="lazy" alt="Screenshot des Coderr Backend-Projekts">
+      </div>
+      <div class="project-description">
+        <h3>Coderr</h3>
+        <span>Python | Django | REST</span>
+        <p>{{ 'PORTFOLIO.CODERR' | translate }}</p>
+        <div>
+          <a class="live-test-btn" [attr.data-tooltip]="'PORTFOLIO.COLD_START_HINT' | translate" href="https://coderr.bedirhan-soylu.de/" target="_blank" rel="noopener noreferrer">{{ 'PORTFOLIO.LIVE' | translate }}</a>
+          <a class="github-btn" href="https://github.com/BedirhanMehmetSoylu/Coderr-Backend" target="_blank" rel="noopener noreferrer">Github</a>
         </div>
       </div>
-    }
+    </div>
 
-    @if (selectedCategory === 'backend') {
-      <div class="project" data-aos="fade-right" data-aos-delay="300">
-        <div class="laptop-container mobile">
-          <img src="assets/img/portfolio/kanmind.avif" width="601" height="560" loading="lazy" alt="Screenshot des Kanmind Backend-Projekts">
-        </div>
-        <div class="project-description-to-right">
-          <h3>Kanmind</h3>
-          <span>Python | Django | REST</span>
-          <p>{{ 'PORTFOLIO.KANMIND' | translate }}</p>
-          <div>
-            <a class="live-test-btn" [attr.data-tooltip]="'PORTFOLIO.COLD_START_HINT' | translate" href="https://kanmind.bedirhan-soylu.de/" target="_blank" rel="noopener noreferrer">{{ 'PORTFOLIO.LIVE' | translate }}</a>
-            <a class="github-btn" href="https://github.com/BedirhanMehmetSoylu/KanMind-Backend" target="_blank" rel="noopener noreferrer">Github</a>
-          </div>
-        </div>
-        <div class="laptop-container desktop">
-          <img src="assets/img/portfolio/kanmind.avif" width="601" height="560" loading="lazy" alt="">
+    <div class="project" [hidden]="selectedCategory !== 'backend'" data-aos="fade-right" data-aos-delay="300">
+      <div class="laptop-container mobile">
+        <img src="assets/img/portfolio/kanmind.avif" width="601" height="560" loading="lazy" alt="Screenshot des Kanmind Backend-Projekts">
+      </div>
+      <div class="project-description-to-right">
+        <h3>Kanmind</h3>
+        <span>Python | Django | REST</span>
+        <p>{{ 'PORTFOLIO.KANMIND' | translate }}</p>
+        <div>
+          <a class="live-test-btn" [attr.data-tooltip]="'PORTFOLIO.COLD_START_HINT' | translate" href="https://kanmind.bedirhan-soylu.de/" target="_blank" rel="noopener noreferrer">{{ 'PORTFOLIO.LIVE' | translate }}</a>
+          <a class="github-btn" href="https://github.com/BedirhanMehmetSoylu/KanMind-Backend" target="_blank" rel="noopener noreferrer">Github</a>
         </div>
       </div>
-    }
+      <div class="laptop-container desktop">
+        <img src="assets/img/portfolio/kanmind.avif" width="601" height="560" loading="lazy" alt="">
+      </div>
+    </div>
 
-    @if (selectedCategory === 'backend') {
-      <div class="project" data-aos="fade-left" data-aos-delay="400">
-        <div class="laptop-container">
-          <img src="assets/img/portfolio/videoflix.avif" width="601" height="560" loading="lazy" alt="Screenshot des Videoflix Backend-Projekts">
-        </div>
-        <div class="project-description">
-          <h3>Videoflix</h3>
-          <span>Python | Django | Redis</span>
-          <p>{{ 'PORTFOLIO.VIDEOFLIX' | translate }}</p>
-          <div>
-            <a class="live-test-btn" href="https://videoflix.bedirhan-soylu.de/" target="_blank" rel="noopener noreferrer">{{ 'PORTFOLIO.LIVE' | translate }}</a>
-            <a class="github-btn" href="https://github.com/BedirhanMehmetSoylu/Videoflix-Backend" target="_blank" rel="noopener noreferrer">Github</a>
-          </div>
+    <div class="project" [hidden]="selectedCategory !== 'backend'" data-aos="fade-left" data-aos-delay="400">
+      <div class="laptop-container">
+        <img src="assets/img/portfolio/videoflix.avif" width="601" height="560" loading="lazy" alt="Screenshot des Videoflix Backend-Projekts">
+      </div>
+      <div class="project-description">
+        <h3>Videoflix</h3>
+        <span>Python | Django | Redis</span>
+        <p>{{ 'PORTFOLIO.VIDEOFLIX' | translate }}</p>
+        <div>
+          <a class="live-test-btn" href="https://videoflix.bedirhan-soylu.de/" target="_blank" rel="noopener noreferrer">{{ 'PORTFOLIO.LIVE' | translate }}</a>
+          <a class="github-btn" href="https://github.com/BedirhanMehmetSoylu/Videoflix-Backend" target="_blank" rel="noopener noreferrer">Github</a>
         </div>
       </div>
-    }
+    </div>
 
     <img class="shadow" src="assets/img/portfolio/shadow.avif" width="827" height="934" alt="">
   </div>
