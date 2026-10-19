@@ -1,4 +1,4 @@
-import { ApplicationConfig, Injectable, inject } from '@angular/core';
+import { ApplicationConfig, Injectable, inject, provideZonelessChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { HttpClient, withXhr } from '@angular/common/http';
@@ -23,6 +23,9 @@ export class HybridTranslateLoader implements TranslateLoader {
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    // Ohne zone.js: Angular aktualisiert nur, wenn ein Event, ein Signal oder markForCheck()
+    // eine Änderung meldet. Alle Komponenten sind OnPush und dafür bereits vorbereitet.
+    provideZonelessChangeDetection(),
     provideRouter(routes),
     provideHttpClient(withXhr(), withInterceptorsFromDi()),
 
