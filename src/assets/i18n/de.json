@@ -39,8 +39,11 @@
         "KANMIND": "Ein Backend für ein Projektmanagement-Tool mit Benutzerverwaltung, Aufgabenverwaltung und einer leistungsfähigen REST-API.",
         "CODERR": "Ein Backend für eine Freelancer-Plattform mit Authentifizierung, Angebotsverwaltung und einer sicheren Datenverarbeitung.",
         "VIDEOFLIX": "Ein Backend für eine Videostreaming-Plattform mit Benutzerverwaltung, Videoverarbeitung und Streaming-Funktionen.",
+        "QUIZLY": "Ein Backend, das aus YouTube-Videos Multiple-Choice-Quizze erstellt: Audio-Download mit yt-dlp, lokale Transkription mit Whisper und Quiz-Generierung über die Gemini API – abgesichert mit JWT-Authentifizierung.",
         "LIVE": "Live test",
-        "COLD_START_HINT": "Kostenlos gehostet – der erste Ladevorgang kann bis zu 50 Sekunden dauern."
+        "COLD_START_HINT": "Kostenlos gehostet – der erste Ladevorgang kann bis zu 50 Sekunden dauern.",
+        "DEMO_VIDEO": "Video",
+        "DEMO_VIDEO_HINT": "Keine Live-Demo – ein Video auf YouTube zeigt das Projekt in Aktion."
     },
     "REVIEWS": {
         "FIRST": "Bedirhan bringt nicht nur technische Fähigkeiten mit, sondern auch eine starke Teamorientierung. Seine strukturierte Arbeitsweise und klare Kommunikation haben unser Projektteam spürbar gestärkt.",

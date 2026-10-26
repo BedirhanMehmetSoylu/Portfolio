@@ -129,6 +129,24 @@
       </div>
     </div>
 
+    <div class="project" [hidden]="selectedCategory !== 'backend'" data-aos="fade-right" data-aos-delay="300">
+      <div class="laptop-container mobile">
+        <img src="assets/img/portfolio/quizly.avif" width="601" height="560" loading="lazy" alt="Screenshot des Quizly Backend-Projekts">
+      </div>
+      <div class="project-description-to-right">
+        <h3>Quizly</h3>
+        <span>Python | Django | Django REST Framework | JWT | Whisper | Gemini API | yt-dlp</span>
+        <p>{{ 'PORTFOLIO.QUIZLY' | translate }}</p>
+        <div>
+          <a class="live-test-btn" [attr.data-tooltip]="'PORTFOLIO.DEMO_VIDEO_HINT' | translate" href="https://youtu.be/Y1HgYNzrFAg" target="_blank" rel="noopener noreferrer">{{ 'PORTFOLIO.DEMO_VIDEO' | translate }}</a>
+          <a class="github-btn" href="https://github.com/BedirhanMehmetSoylu/Quizly-Backend" target="_blank" rel="noopener noreferrer">Github</a>
+        </div>
+      </div>
+      <div class="laptop-container desktop">
+        <img src="assets/img/portfolio/quizly.avif" width="601" height="560" loading="lazy" alt="">
+      </div>
+    </div>
+
     <img class="shadow" src="assets/img/portfolio/shadow.avif" width="827" height="934" alt="">
   </div>
 </section>
