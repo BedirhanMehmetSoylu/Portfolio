@@ -1,0 +1,35 @@
+// Design-Tokens: zentrale Werte, die in mehreren Komponenten vorkommen.
+// Erzeugt selbst kein CSS, nur Variablen.
+
+// Farben
+$purple: #9747FF;
+$purple-light: #B07CFF; // Text auf dunklem Hintergrund: #9747FF erreicht nur 3,7:1, WCAG verlangt 4,5:1
+$purple-dark: #7C28BD;
+$green: #70E61C;
+$bg: #141D2F;
+$error: #e61c40;
+$error-text: #FF5C7A; // Helleres Rot für Text: $error erreicht als Text nur 3,7:1
+
+// Frontend/Backend-Umschalter
+$surface-subtle: rgba(255, 255, 255, 0.05);
+$border-subtle: rgba(255, 255, 255, 0.15);
+$text-muted: rgba(255, 255, 255, 0.6);
+
+// Schriftgrößen
+$font-size-s: 14px;
+$font-size-m: 16px;
+$font-size-l: 23px;
+$font-size-xl: 32px;
+
+// Layout
+$content-max-width: 1920px;
+$navbar-height: 109px;
+
+// Radien
+$radius-btn: 10px;
+$radius-pill: 100px;
+
+// Übergänge
+$transition-cta: all 300ms ease-out;
+$transition-icon: all 250ms ease-out;
+$transition-toggle: transform 0.35s cubic-bezier(0.65, 0, 0.35, 1), background-color 0.35s ease;

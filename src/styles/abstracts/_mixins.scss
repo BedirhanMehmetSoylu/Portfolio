@@ -1,0 +1,29 @@
+@use 'tokens' as *;
+@use 'breakpoints' as *;
+
+// Volle Breite, aber nie breiter als der Inhaltsbereich
+@mixin content-width {
+    max-width: $content-max-width;
+    width: 100%;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Große Abschnittsüberschrift (Über mich, Fähigkeiten, Portfolio, Kontakt)
+@mixin section-title($size: 90px) {
+    font-size: $size;
+    font-weight: 700;
+    line-height: 120%;
+
+    @include below(lg) {
+        font-size: 72px;
+    }
+
+    @include below(xs) {
+        font-size: 45px;
+    }
+}

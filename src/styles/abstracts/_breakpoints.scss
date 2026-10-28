@@ -1,0 +1,24 @@
+@use 'sass:map';
+
+// Breakpoints, die in mehreren Komponenten vorkommen. Einmalige Werte werden direkt
+// als Zahl übergeben: @include below(1288px)
+$breakpoints: (
+    xl: 1380px, // Seitenabstände 100px -> 64px
+    lg: 1070px, // Abschnittsüberschriften 90px -> 72px
+    nav: 1020px, // Burger-Menü statt Navigationslinks
+    md: 900px,
+    sm: 450px,
+    xs: 430px, // Abschnittsüberschriften -> 45px
+    xxs: 365px,
+);
+
+// Erzeugt @media (max-width: …). $bp ist ein Name aus $breakpoints oder ein Pixelwert.
+@mixin below($bp) {
+    @if map.has-key($breakpoints, $bp) {
+        $bp: map.get($breakpoints, $bp);
+    }
+
+    @media (max-width: $bp) {
+        @content;
+    }
+}
