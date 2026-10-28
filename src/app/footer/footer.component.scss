@@ -1,26 +1,27 @@
+@use 'abstracts' as *;
+
 footer {
-    width: 100%;
-    height: 290px;
-    display: flex;
-    justify-content: center;
-    border-top: 4px solid #70E61C;
-    background-color: #141D2F;
     position: relative;
     z-index: 2;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 290px;
+    border-top: 4px solid $green;
+    background-color: $bg;
 }
 
 .footer-section {
-    max-width: 1920px;
-    width: 100%;
+    @include content-width;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding: 0px 100px;
-    
+
     >p {
         color: white;
-        font-size: 23px;
+        font-size: $font-size-l;
         line-height: 120%;
     }
 }
@@ -46,14 +47,14 @@ footer {
     width: 100px;
 
     &:hover div {
-        background-color: #70E61C;
+        background-color: $green;
         cursor: pointer;
     }
 
     >a {
-        text-decoration: none;
         color: white;
         font-weight: 300;
+        text-decoration: none;
     }
 
     >div {
@@ -71,15 +72,15 @@ footer {
 
     >a {
         display: flex;
+    }
+}
 
-        >img {
-            width: 30px;
+.footer-right > a > img {
+    width: 30px;
 
-            &:hover {
-                transition: all 250ms ease-out;
-                transform: scale(1.3);
-            }
-        }
+    &:hover {
+        transform: scale(1.3);
+        transition: $transition-icon;
     }
 }
 
@@ -91,13 +92,13 @@ footer {
     display: none;
 }
 
-@media (max-width: 1380px) {
+@include below(xl) {
     .footer-section {
         padding: 0 64px;
     }
 }
 
-@media (max-width: 1070px) {
+@include below(lg) {
     .footer-section {
         padding: 0 48px;
     }
@@ -107,21 +108,19 @@ footer {
     }
 }
 
-@media (max-width: 900px) {
+@include below(md) {
     footer {
         height: unset;
     }
 
     .footer-section {
         flex-direction: column;
-        padding: 66px 0px;
         gap: 24px;
+        padding: 66px 0px;
     }
 
-    .footer-left {
-        >.footer-logo {
-            padding-bottom: 16px;
-        }
+    .footer-left > .footer-logo {
+        padding-bottom: 16px;
     }
 
     .d-block {
@@ -133,10 +132,8 @@ footer {
     }
 }
 
-@media (max-width: 374px) {
-    .footer-section {
-        >p {
-            font-size: 20px;
-        }
+@include below(374px) {
+    .footer-section > p {
+        font-size: 20px;
     }
 }

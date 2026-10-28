@@ -1,19 +1,21 @@
+@use 'abstracts' as *;
+
 nav {
-    width: 100%;
-    background-color: #141D2F;
     position: fixed;
     z-index: 20;
     display: flex;
     justify-content: center;
+    width: 100%;
+    background-color: $bg;
 }
 
 .navbar-section {
-    max-width: 1920px;
-    width: 100% !important;
-    max-height: 109px !important;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: $content-max-width;
+    width: 100% !important;
+    max-height: $navbar-height !important;
     padding: 40px 100px;
 }
 
@@ -23,19 +25,6 @@ nav {
 
 .logo {
     width: 160px;
-}
-
-span {
-    color: white;
-    font-size: 32px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    transition: color 300ms ease;
-
-    &:hover {
-        cursor: pointer;
-        color: #70E61C;
-    }
 }
 
 .navbar-right {
@@ -48,16 +37,15 @@ span {
     gap: 29px;
 
     >a {
-        text-decoration: none;
         color: white;
-        font-size: 23px;
-        font-family: 'Poppins', sans-serif;
+        font-size: $font-size-l;
         font-weight: 400;
         line-height: 120%;
+        text-decoration: none;
         transition: color 200ms ease;
 
         &:hover {
-            color: #70E61C;
+            color: $green;
         }
     }
 }
@@ -68,40 +56,35 @@ span {
     gap: 19px;
 
     >button {
-        border: 1px solid rgba(112, 230, 28, 1);
+        @include flex-center;
         width: 38px;
         height: 32px;
         padding: 5px 8px;
-        background-color: transparent;
-        gap: 5px;
-        border-radius: 10px;
-        border-width: 1px;
+        border: 1px solid $green;
+        border-radius: $radius-btn;
         color: white;
-        font-size: 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: border 200ms ease;
+        font-size: $font-size-m;
+        background-color: transparent;
         transition: background-color 200ms ease;
 
         &:not(.active-lang):hover {
-            border: 1px solid #7C28BD;
-            background-color: #7C28BD;
+            border: 1px solid $purple-dark;
+            background-color: $purple-dark;
             cursor: pointer;
         }
     }
 }
 
 .language-btn-container button.active-lang {
-    background-color: #70E61C;
     font-weight: 700;
+    background-color: $green;
 }
 
 .burger-icon {
-    display: none;
     position: fixed;
-    z-index: 1100;
     right: 54px;
+    z-index: 1100;
+    display: none;
     transition: opacity 0.2s ease-in-out;
 
     >img {
@@ -111,14 +94,13 @@ span {
     }
 }
 
-
-@media (max-width: 1100px) {
+@include below(1100px) {
     .navbar-section {
         padding: 40px 54px;
     }
 }
 
-@media (max-width: 1020px) {
+@include below(nav) {
     .navbar-right {
         display: none;
     }
@@ -128,7 +110,7 @@ span {
     }
 }
 
-@media (max-width: 450px) {
+@include below(sm) {
     .navbar-section {
         padding: 40px 28px;
     }
@@ -140,7 +122,7 @@ span {
     }
 }
 
-@media (max-width: 400px) {
+@include below(400px) {
     .navbar-section {
         padding: 40px 25px;
     }
@@ -150,15 +132,15 @@ span {
     }
 }
 
-@media (max-width: 365px) {
+@include below(xxs) {
     .logo {
         width: 136px;
     }
 
     .burger-icon {
+        right: 16px;
         width: 27px;
         height: 23px;
-        right: 16px;
     }
 
     .navbar-section {
