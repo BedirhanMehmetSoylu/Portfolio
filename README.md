@@ -69,6 +69,8 @@ Persönliches Portfolio als Junior Fullstack Entwickler (Angular & Python/Django
 │   │   ├── app.routes.ts          # Routen inkl. Seitentitel und robots
 │   │   └── app.routes.server.ts   # Render-Modus pro Route (Prerender)
 │   ├── assets/                # Bilder (AVIF), Schriften, Übersetzungen (i18n)
+│   ├── styles/abstracts/      # Design-Tokens, Breakpoints, Mixins (erzeugen selbst kein CSS)
+│   ├── styles.scss            # Globale Styles: Schriften, Reset, Fokusrahmen, Hilfsklassen
 │   ├── main.ts / main.server.ts
 │   ├── robots.txt · sitemap.xml
 │   └── index.html             # Meta-Tags, Open Graph, JSON-LD
@@ -82,6 +84,13 @@ Persönliches Portfolio als Junior Fullstack Entwickler (Angular & Python/Django
 - **Frontend/Backend-Umschalter mit `[hidden]` statt `@if`:** Beide Varianten stehen im vorgerenderten HTML, damit auch die Backend-Projekte für Suchmaschinen sichtbar sind. Die inaktive Variante ist versteckt und wird auch von Screenreadern nicht vorgelesen.
 - **Deutsch im Bundle:** Verhindert eine Seite ohne Text, während die Übersetzungsdatei lädt, und ermöglicht deutsches Prerendering ohne HTTP-Request.
 - **Browser-only-Code abgesichert:** `localStorage`, `IntersectionObserver` und AOS laufen nur im Browser (`isPlatformBrowser`, `afterNextRender`), damit das Prerendering im Build funktioniert.
+
+## Styling
+
+- **Design-Tokens** (Farben, Schriftgrößen, Radien, Übergänge, Layout-Maße) liegen in `src/styles/abstracts/_tokens.scss`.
+- **Breakpoints und Mixins** liegen in `_breakpoints.scss` (`@include below(nav)` oder `below(1288px)`) und `_mixins.scss` (`section-title`, `content-width`, `flex-center`).
+- Komponenten binden sie mit `@use 'abstracts' as *;` ein. Der Ladepfad `src/styles` ist in `angular.json` hinterlegt.
+- **Globale Styles** (Schriften, Reset, Fokusrahmen, `.sr-only`) stehen in `src/styles.scss`, alles andere bleibt in der jeweiligen Komponente.
 
 ## Lokal starten
 
