@@ -1,20 +1,21 @@
+@use 'abstracts' as *;
+
 .legal-notice-container {
     display: flex;
     justify-content: center;
 }
 
 .legal-notice-section {
-    max-width: 1920px;
-    width: 100%;
-    padding: 0px 100px;
-    margin-top: 109px;
-    margin-bottom: 32px;
-    color: white;
-    text-align: left;
+    @include content-width;
     display: flex;
     flex-direction: column;
     gap: 16px;
     min-height: calc(100vh - 431px);
+    margin-top: $navbar-height;
+    margin-bottom: 32px;
+    padding: 0px 100px;
+    color: white;
+    text-align: left;
     word-break: break-word;
 
     >div {
@@ -29,14 +30,14 @@ h1 {
 }
 
 h2 {
-    font-size: 32px;
+    font-size: $font-size-xl;
 }
 
 a {
     color: white;
 }
 
-@media (max-width: 1400px) {
+@include below(1400px) {
     h1 {
         font-size: 72px;
     }
@@ -46,23 +47,19 @@ a {
     }
 }
 
-@media (max-width: 1100px) {
+@include below(1100px) {
     .legal-notice-section {
-        gap: 16px;
         padding: 0px 48px;
     }
 }
 
-
-@media (max-width: 1020px) {
-    .legal-notice-section {
-        >div {
-            gap: 0px;
-        }
+@include below(nav) {
+    .legal-notice-section > div {
+        gap: 0px;
     }
 }
 
-@media (max-width: 667px) {
+@include below(667px) {
     h1 {
         font-size: 45px;
     }
@@ -72,15 +69,15 @@ a {
     }
 }
 
-@media (max-width: 450px) {
+@include below(sm) {
     .legal-notice-section {
         padding: 0px 24px;
     }
 }
 
-@media (max-width: 365px) {
+@include below(xxs) {
     .legal-notice-section {
-        padding: 0px 16px;
         margin-top: 80px;
+        padding: 0px 16px;
     }
 }

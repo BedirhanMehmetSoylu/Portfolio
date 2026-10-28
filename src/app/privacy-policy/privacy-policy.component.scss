@@ -1,53 +1,44 @@
+@use 'abstracts' as *;
+
 .privacy-policy-container {
     display: flex;
     justify-content: center;
 }
 
 .privacy-policy-section {
-    max-width: 1920px;
-    width: 100%;
-    padding: 0px 100px;
-    margin-top: 109px;
-    margin-bottom: 32px;
-    color: white;
-    text-align: left;
+    @include content-width;
     display: flex;
     flex-direction: column;
     gap: 16px;
     min-height: calc(100vh - 431px);
+    margin-top: $navbar-height;
+    margin-bottom: 32px;
+    padding: 0px 100px;
+    color: white;
+    text-align: left;
     word-break: break-word;
 }
 
-a {
-    color: white !important;
-}
-
+// ::ng-deep, weil Teile des Textes per [innerHTML] aus den Übersetzungen kommen
 :host ::ng-deep a {
     color: white;
     text-decoration: underline;
     cursor: pointer;
 }
 
-
-@media (max-width: 1100px) {
+@include below(1100px) {
     .privacy-policy-section {
         padding: 0px 54px;
     }
 }
 
-@media (max-width: 668px) {
-    .privacy-policy-section {
-        padding: 0px 54px;
-    }
-}
-
-@media (max-width: 450px) {
+@include below(sm) {
     .privacy-policy-section {
         padding: 0px 28px;
     }
 }
 
-@media (max-width: 365px) {
+@include below(xxs) {
     .privacy-policy-section {
         padding: 0px 16px;
     }
