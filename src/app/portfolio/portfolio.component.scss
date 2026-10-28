@@ -1,6 +1,7 @@
+@use 'abstracts' as *;
+
 .portfolio-section {
-    width: 100%;
-    max-width: 1920px;
+    @include content-width;
     position: relative;
     z-index: 2;
     display: flex;
@@ -19,10 +20,8 @@
 }
 
 h2 {
-    font-weight: 700;
-    font-size: 90px;
-    line-height: 120%;
     color: white;
+    @include section-title;
 }
 
 .section-description {
@@ -33,67 +32,65 @@ h2 {
 }
 
 .purple-line-left {
-    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    width: 100%;
 }
 
 .purple-line-short {
-    border: 2px solid rgb(151, 71, 255);
-    border-bottom-left-radius: 8px;
-    border-top-left-radius: 8px;
     width: 100px;
+    border: 2px solid $purple;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 .purple-line-long {
-    border: 2px solid rgb(151, 71, 255);
     width: 100%;
+    border: 2px solid $purple;
 }
 
 .portfolio-switch-btns {
     position: relative;
     display: flex;
     width: fit-content;
-    padding: 6px;
     margin-top: 40px;
-    border-radius: 100px;
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 6px;
+    border: 1px solid $border-subtle;
+    border-radius: $radius-pill;
+    background-color: $surface-subtle;
 }
 
 .switch-indicator {
     position: absolute;
     top: 6px;
     left: 6px;
+    z-index: 0;
     width: 152px;
     height: calc(100% - 12px);
-    border-radius: 100px;
-    background-color: #9747FF;
-    transition: transform 0.35s cubic-bezier(0.65, 0, 0.35, 1), background-color 0.35s ease;
-    z-index: 0;
+    border-radius: $radius-pill;
+    background-color: $purple;
+    transition: $transition-toggle;
 
     &.backend {
+        background-color: $green;
         transform: translateX(152px);
-        background-color: #70E61C;
     }
 }
 
 .switch-btn {
+    @include flex-center;
     position: relative;
     z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 152px;
-    background-color: transparent;
+    padding: 14px 0;
     border: none;
-    border-radius: 100px;
-    color: rgba(255, 255, 255, 0.6);
+    border-radius: $radius-pill;
+    color: $text-muted;
     font-size: 20px;
     font-weight: 700;
     line-height: 120%;
-    padding: 14px 0;
+    background-color: transparent;
     transition: color 0.3s ease;
 
     &.active {
@@ -101,18 +98,16 @@ h2 {
     }
 
     &:hover {
-        cursor: pointer;
         color: white;
+        cursor: pointer;
     }
 }
 
 .projects-container {
-    max-width: 1920px;
-    width: 100%;
+    @include content-width;
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     align-items: center;
     gap: 48px;
     padding-top: 48px;
@@ -121,8 +116,8 @@ h2 {
 
 .shadow {
     position: absolute;
-    left: -264px;
     top: 30%;
+    left: -264px;
 }
 
 .project {
@@ -134,11 +129,9 @@ h2 {
 }
 
 .laptop-container {
+    @include flex-center;
     width: 620px;
     height: 339px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     >img {
         height: 412px;
@@ -153,24 +146,25 @@ h2 {
     display: flex;
 }
 
-.project-description {
-    max-width: 513px;
-    width: 100%;
+// Projektbeschreibung, links- oder rechtsbündig neben dem Bild
+.project-description,
+.project-description-to-right {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    max-width: 513px;
+    width: 100%;
     color: white;
-    margin-top: 8px;
 
     >h3 {
-        color: #9747FF;
+        color: $purple;
+        font-size: $font-size-xl;
         font-weight: 700;
-        font-size: 32px;
     }
 
     >span {
-        color: #70E61C;
-        font-size: 23px;
+        color: $green;
+        font-size: $font-size-l;
         line-height: 120%;
     }
 
@@ -182,40 +176,22 @@ h2 {
         display: flex;
         flex-direction: row;
         gap: 86px;
+    }
+}
+
+.project-description {
+    margin-top: 8px;
+
+    >div {
         margin-top: 16px;
     }
 }
 
 .project-description-to-right {
-    max-width: 513px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    color: white;
     text-align: end;
 
-    >h3 {
-        color: #9747FF;
-        font-weight: 700;
-        font-size: 32px;
-    }
-
-    >span {
-        color: #70E61C;
-        font-size: 23px;
-        line-height: 120%;
-    }
-
-    >p {
-        line-height: 120%;
-    }
-
     >div {
-        display: flex;
-        flex-direction: row;
         justify-content: flex-end;
-        gap: 86px;
         margin-top: 20px;
     }
 }
@@ -226,24 +202,29 @@ h2 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    width: 152px;
+    height: 58px;
+    border-radius: $radius-btn;
+    color: white;
+    font-size: $font-size-l;
+    line-height: 120%;
     text-decoration: none;
+
+    &:hover {
+        background-color: $green;
+        cursor: pointer;
+    }
 }
 
 .live-test-btn {
     position: relative;
-    background-color: #9747FF;
-    color: white;
-    font-size: 23px;
-    line-height: 120%;
     border: none;
-    border-radius: 10px;
-    width: 152px;
-    height: 58px;
+    background-color: $purple;
+}
 
-    &:hover {
-        cursor: pointer;
-        background-color: #70E61C;
-    }
+.github-btn {
+    border: 1px solid $green;
+    background-color: transparent;
 }
 
 .live-test-btn[data-tooltip] {
@@ -252,35 +233,36 @@ h2 {
         position: absolute;
         bottom: calc(100% + 10px);
         left: 50%;
-        transform: translateX(-50%) translateY(4px);
+        z-index: 10;
         width: 220px;
         padding: 10px 14px;
-        border-radius: 10px;
-        background-color: #141D2F;
+        border-radius: $radius-btn;
         color: white;
-        font-size: 14px;
+        font-size: $font-size-s;
         font-weight: 400;
         line-height: 140%;
         text-align: center;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.2s ease, transform 0.2s ease;
-        z-index: 10;
+        background-color: $bg;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        transform: translateX(-50%) translateY(4px);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        pointer-events: none;
     }
 
+    // Pfeil unter dem Tooltip
     &::before {
         content: "";
         position: absolute;
         bottom: calc(100% + 4px);
         left: 50%;
-        transform: translateX(-50%) translateY(4px);
-        border: 6px solid transparent;
-        border-top-color: #141D2F;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.2s ease, transform 0.2s ease;
         z-index: 10;
+        border: 6px solid transparent;
+        border-top-color: $bg;
+        opacity: 0;
+        transform: translateX(-50%) translateY(4px);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        pointer-events: none;
     }
 
     &:hover::after,
@@ -292,23 +274,7 @@ h2 {
     }
 }
 
-.github-btn {
-    background-color: transparent;
-    color: white;
-    font-size: 23px;
-    line-height: 120%;
-    border: 1px solid #70E61C;
-    border-radius: 10px;
-    width: 152px;
-    height: 58px;
-
-    &:hover {
-        cursor: pointer;
-        background-color: #70E61C;
-    }
-}
-
-@media (max-width: 1288px) {
+@include below(1288px) {
     .laptop-container {
         width: 424px;
 
@@ -318,13 +284,7 @@ h2 {
     }
 }
 
-@media (max-width: 1070px) {
-    h2 {
-        font-size: 72px;
-    }
-}
-
-@media (max-width: 1020px) {
+@include below(nav) {
     .projects-container {
         padding-top: 0px;
     }
@@ -334,11 +294,7 @@ h2 {
         gap: 0;
     }
 
-    .project-description {
-        align-items: center;
-        text-align: center;
-    }
-
+    .project-description,
     .project-description-to-right {
         align-items: center;
         text-align: center;
@@ -362,14 +318,13 @@ h2 {
     }
 }
 
-@media (max-width: 765px) {
+@include below(765px) {
     .section-description {
         padding: 0px 24px;
-        text-align: center;
     }
 }
 
-@media (max-width: 730px) {
+@include below(730px) {
     .portfolio-headline {
         gap: 24px;
     }
@@ -379,7 +334,7 @@ h2 {
     }
 }
 
-@media (max-width: 550px) {
+@include below(550px) {
     .purple-line-short {
         width: 48px;
     }
@@ -392,38 +347,25 @@ h2 {
         }
     }
 
-    .project-description {
-        padding: 0px 24px;
-
-        >div {
-            gap: 10px;
-            width: 100%;
-            justify-content: space-between;
-        }
-    }
-
+    .project-description,
     .project-description-to-right {
         padding: 0px 24px;
 
         >div {
+            justify-content: space-between;
             gap: 10px;
             width: 100%;
-            justify-content: space-between;
         }
     }
 
     .shadow {
-        width: 348px;
-        left: 40px;
         top: 26%;
+        left: 40px;
+        width: 348px;
     }
 }
 
-@media (max-width: 430px) {
-    h2 {
-        font-size: 45px;
-    }
-
+@include below(xs) {
     .portfolio-section {
         padding-top: 72px;
     }
@@ -433,7 +375,7 @@ h2 {
     }
 }
 
-@media (max-width: 373px) {
+@include below(373px) {
     :host {
         scroll-margin-top: 40px;
     }
@@ -442,30 +384,23 @@ h2 {
         margin-top: 24px;
     }
 
-    .laptop-container {
-
-        >img {
-            height: 256px;
-        }
+    .laptop-container > img {
+        height: 256px;
     }
 
     .project-description {
         margin-top: 0px;
     }
 
-    .live-test-btn {
-        width: 128px;
-        font-size: 19px;
-    }
-
+    .live-test-btn,
     .github-btn {
         width: 128px;
         font-size: 19px;
     }
 
     .shadow {
-        width: 302px;
-        left: 28px;
         top: 28%;
+        left: 28px;
+        width: 302px;
     }
 }
