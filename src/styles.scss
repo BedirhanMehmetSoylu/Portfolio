@@ -1,3 +1,5 @@
+@use 'abstracts' as *;
+
 // Nur tatsächlich genutzte Schnitte (300, 400, 700). font-display: swap zeigt Text sofort
 // in der Fallback-Schrift an, statt ihn bis zum Laden der Webfont unsichtbar zu lassen.
 // Absolute Pfade (/assets/...): Angular kopiert die Schriften sonst mit Hash nach media/,
@@ -41,12 +43,17 @@
     scroll-behavior: smooth;
 }
 
+html,
 body {
-    background-color: #141D2F;
-    width: 100%;
+    height: 100%;
+}
+
+body {
     display: flex;
     justify-content: center;
+    width: 100%;
     overflow-x: hidden;
+    background-color: $bg;
 }
 
 app-root {
@@ -61,12 +68,9 @@ img {
     height: auto;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Poppins, "Helvetica Neue", sans-serif; }
-
 // Sichtbarer Fokusrahmen für Tastaturnutzer (Maus-Klicks lösen :focus-visible nicht aus)
 :focus-visible {
-    outline: 2px solid #70E61C;
+    outline: 2px solid $green;
     outline-offset: 3px;
 }
 
