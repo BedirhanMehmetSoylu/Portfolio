@@ -1,6 +1,7 @@
+@use 'abstracts' as *;
+
 .reviews-section {
-    max-width: 1920px;
-    width: 100%;
+    @include content-width;
     display: flex;
     flex-direction: column;
     gap: 48px;
@@ -16,16 +17,16 @@
 }
 
 .review-container {
-    max-width: 850px;
-    width: 100%;
-    height: 272px;
-    border: 4px solid #70E61C;
-    border-radius: 32px;
     position: relative;
-    padding: 48px 96px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    max-width: 850px;
+    width: 100%;
+    height: 272px;
+    padding: 48px 96px;
+    border: 4px solid $green;
+    border-radius: 32px;
 
     >img {
         position: absolute;
@@ -34,10 +35,10 @@
     }
 
     >p {
-        font-size: 20px;
-        line-height: 120%;
         color: white;
         font-family: 'Montserrat';
+        font-size: 20px;
+        line-height: 120%;
     }
 }
 
@@ -78,97 +79,90 @@
 }
 
 .purple-line {
-    border: 1px solid rgb(151, 71, 255);
     flex-grow: 1;
+    border: 1px solid $purple;
 }
 
 .reviewer-container {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: end;
-    position: relative;
 }
 
 .purple-circle {
+    @include flex-center;
+    position: relative;
+    z-index: 1;
     width: 272px;
     height: 272px;
-    border: 4px solid #9747FF;
+    border: 4px solid $purple;
     border-radius: 50%;
     overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
 }
 
 .purple-line-short {
-    border: 2px solid rgb(151, 71, 255);
-    width: 104px;
     z-index: 1;
+    width: 104px;
+    border: 2px solid $purple;
 }
 
 .shadow {
     position: absolute;
-    transform: rotate(80deg);
     top: -560px;
     right: -528px;
+    transform: rotate(80deg);
 }
 
 .reviews-section-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+    @include flex-center;
 
     >div {
+        @include flex-center;
+        flex-direction: row;
+        gap: 20px;
         width: 184px;
         height: 40px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
+    }
+}
 
-        >button {
-            padding: 8px;
-            border: 2px solid transparent;
-            border-radius: 50%;
+.reviews-section-bottom > div > button {
+    padding: 8px;
+    border: 2px solid transparent;
+    border-radius: 50%;
 
-            &:hover {
-                border-color: #70E61C;
-            }
+    &:hover {
+        border-color: $green;
+    }
 
-            >img {
-                display: block;
-            }
-        }
+    >img {
+        display: block;
     }
 }
 
 .purple-point {
     width: 8px;
     height: 8px;
-    background-color: #9747FF;
     border-radius: 50%;
+    background-color: $purple;
 }
 
-@media (max-width: 1380px) {
+@include below(xl) {
     .review-container {
         max-width: 736px;
         padding: 32px 56px;
     }
 }
 
-@media (max-width: 1250px) {
+@include below(1250px) {
     .review-container {
         max-width: 670px;
         padding: 24px 40px;
     }
 }
 
-@media (max-width: 1200px) {
+@include below(1200px) {
     .review-container {
         max-width: 640px;
         padding: 24px;
@@ -179,7 +173,7 @@
     }
 }
 
-@media (max-width: 1170px) {
+@include below(1170px) {
     .reviews-section-top {
         flex-direction: column-reverse;
     }
@@ -190,35 +184,34 @@
     }
 
     .reviewer-container {
-        width: 100%;
         justify-content: center;
+        width: 100%;
     }
 
     .purple-circle {
-        position: relative;
         z-index: 2;
     }
 
     .purple-line-short {
         position: absolute;
-        left: 50%;
         top: 50%;
-        transform: translate(136px, -50%);
-        height: 4px;
-        width: calc(50% - 136px);
-        background-color: rgb(151, 71, 255);
-        border: none;
+        left: 50%;
         z-index: 1;
+        width: calc(50% - 136px);
+        height: 4px;
+        border: none;
+        background-color: $purple;
+        transform: translate(136px, -50%);
     }
 }
 
-@media (max-width: 1070px) {
+@include below(lg) {
     .review-container {
         max-width: 768px;
     }
 }
 
-@media (max-width: 980px) {
+@include below(980px) {
     .review-container {
         max-width: 656px;
 
@@ -230,7 +223,7 @@
     }
 }
 
-@media (max-width: 759px) {
+@include below(759px) {
     .reviews-section {
         gap: 32px;
     }
@@ -245,8 +238,8 @@
     }
 
     .purple-line-short {
-        transform: translate(100px, -50%);
         width: calc(50% - 100px);
+        transform: translate(100px, -50%);
     }
 
     .review-container {
@@ -261,42 +254,39 @@
     }
 
     .shadow {
-        width: 800px;
         top: -488px;
         right: -480px;
+        width: 800px;
     }
 }
 
-@media (max-width: 659px) {
+@include below(659px) {
     .review-container {
         padding: 16px;
     }
-
 }
 
-@media (max-width: 544px) {
+@include below(544px) {
     .review-container {
         margin: 0px 24px;
 
         >p {
-            font-size: 16px;
+            font-size: $font-size-m;
         }
     }
 
-    .reviewer-name {
-        >p {
-            font-size: 16px;
-        }
+    .reviewer-name > p {
+        font-size: $font-size-m;
     }
 
     .shadow {
-        width: 560px;
         top: -295px;
         right: -376px;
+        width: 560px;
     }
 }
 
-@media (max-width: 435px) {
+@include below(435px) {
     .reviewer-name {
         flex-direction: column;
         align-items: flex-start;
@@ -310,20 +300,20 @@
     }
 }
 
-@media (max-width: 410px) {
+@include below(410px) {
     .purple-circle {
         width: 144px;
         height: 144px;
     }
 
     .purple-line-short {
-        transform: translate(72px, -50%);
         width: calc(50% - 72px);
+        transform: translate(72px, -50%);
     }
 
     .shadow {
-        width: 480px;
         top: -264px;
         right: -319px;
+        width: 480px;
     }
 }

@@ -1,5 +1,6 @@
-@media (max-width: 1530px) {
+@use 'abstracts' as *;
 
+@include below(1530px) {
     .i-am {
         font-size: 62px;
     }
@@ -9,7 +10,7 @@
     }
 }
 
-@media (max-width: 1440px) {
+@include below(1440px) {
     .portrait {
         margin-left: 32px;
     }
@@ -19,7 +20,7 @@
     }
 }
 
-@media (max-width: 1340px) {
+@include below(1340px) {
     .hero-top {
         flex-direction: column;
         align-items: flex-start;
@@ -31,6 +32,7 @@
     }
 
     .hero-top-right {
+        gap: 2.5vh;
         width: 100vw;
         margin-top: 16px;
     }
@@ -51,19 +53,15 @@
     .i-am {
         font-size: 4.8vh;
     }
-
-    .hero-top-right {
-        gap: 2.5vh;
-    }
 }
 
-@media (max-width: 1200px) {
+@include below(1200px) {
     .portrait {
         height: 46vh;
     }
 }
 
-@media (max-width: 1000px) {
+@include below(1000px) {
     .bottom-right {
         display: none;
     }
@@ -73,11 +71,7 @@
     }
 }
 
-@media (max-width: 800px) {
-    .hero-top {
-        padding-top: unset;
-    }
-
+@include below(800px) {
     .background {
         height: 76vh;
     }
@@ -91,7 +85,7 @@
     }
 }
 
-@media (max-width: 765px) {
+@include below(765px) {
     .bottom-content {
         padding-right: unset;
     }
@@ -136,7 +130,7 @@
     button {
         width: 133px;
         height: 49px;
-        font-size: 16px;
+        font-size: $font-size-m;
     }
 
     .hero-bottom-name {
@@ -144,7 +138,7 @@
     }
 }
 
-@media (max-width: 665px) {
+@include below(665px) {
     .hero-top-right {
         margin-right: 3vh;
     }
@@ -168,30 +162,16 @@
     }
 }
 
-
+// Hohe, schmale Bildschirme: Hintergrund höher. Breite, Bild und Schatten setzt der 618px-Block danach.
 @media (max-width: 618px) and (min-height: 1000px) {
-    .portrait {
-        >img {
-            width: 90vw;
-        }
-    }
-
-    .shadow {
-        left: -8px;
-        transform: scale(1.4);
-    }
-
     .background {
         height: 90vh;
-        width: 200vw;
     }
 }
 
-@media (max-width: 618px) {
-    .portrait {
-        >img {
-            width: 90vw;
-        }
+@include below(618px) {
+    .portrait > img {
+        width: 90vw;
     }
 
     .shadow {
@@ -222,7 +202,7 @@
     }
 }
 
-@media (max-width: 470px) {
+@include below(470px) {
     .hero-bottom-name {
         padding-right: 24px;
     }
@@ -262,15 +242,15 @@
 
 @media (max-width: 373px) and (max-height: 2000px) {
     .name {
-        font-size: clamp(31px, 3.5vh, 31px) !important;
+        font-size: 31px !important;
     }
 
     .profession {
-        font-size: clamp(22px, 3.25vh, 22px) !important;
+        font-size: 22px !important;
     }
 
     .i-am {
-        font-size: clamp(24px, 3.7vh, 24px) !important;
+        font-size: 24px !important;
     }
 }
 
@@ -305,7 +285,7 @@
     button {
         width: 133px;
         height: 49px;
-        font-size: 16px;
+        font-size: $font-size-m;
     }
 
     .portrait {
@@ -330,6 +310,6 @@
     button {
         width: 165px;
         height: 59px;
-        font-size: 23px;
+        font-size: $font-size-l;
     }
 }

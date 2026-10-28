@@ -1,21 +1,22 @@
+@use 'abstracts' as *;
+
 .about-me-section {
-    max-width: 1920px;
-    width: 100%;
-    color: white;
+    @include content-width;
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-left: 100px;
     padding-top: 88px;
-    position: relative;
+    padding-left: 100px;
+    color: white;
 }
 
 .about-me-info-container {
-    width: 471px;
+    z-index: 3;
     display: flex;
     flex-direction: column;
     gap: 40px;
-    z-index: 3;
+    width: 471px;
 
     >div {
         display: flex;
@@ -32,19 +33,15 @@
 }
 
 .images-container {
+    @include flex-center;
     max-width: 32px;
     width: 100%;
     height: 32px;
     margin-top: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 h2 {
-    font-size: 89px;
-    font-weight: 700;
-    line-height: 120%;
+    @include section-title(89px);
 }
 
 p {
@@ -52,19 +49,19 @@ p {
 }
 
 .selfie-container {
+    z-index: 3;
     display: flex;
     flex-direction: row;
     align-items: center;
-    z-index: 3;
 }
 
 .selfie {
-    background-color: #141D2F;
+    position: relative;
     width: 453px;
     height: 453px;
-    position: relative;
     border-radius: 50%;
     overflow: hidden;
+    background-color: $bg;
 }
 
 .green-circle {
@@ -73,7 +70,7 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    border: 4px solid rgba(112, 230, 28, 1);
+    border: 4px solid $green;
     border-radius: 50%;
 }
 
@@ -82,39 +79,38 @@ p {
     top: -150px;
     left: -15px;
     width: 110%;
-    position: absolute;
     border-radius: 50%;
 }
 
 .green-line {
     width: 267px;
-    border: 2px solid rgba(112, 230, 28, 1)
+    border: 2px solid $green;
 }
 
 .shadow {
     position: absolute;
-    right: -440px;
     top: -256px;
+    right: -440px;
     z-index: 2;
 }
 
 :host {
-  scroll-margin-top: 80px;
+    scroll-margin-top: 80px;
 }
 
-@media (max-width: 1380px) {
+@include below(xl) {
     .green-line {
         width: 112px;
     }
 }
 
-@media (max-width: 1260px) {
+@include below(1260px) {
     .about-me-section {
         padding-left: 48px;
     }
 }
 
-@media (max-width: 1200px) {
+@include below(1200px) {
     .selfie {
         width: 368px;
         height: 368px;
@@ -125,21 +121,17 @@ p {
     }
 }
 
-@media (max-width: 1070px) {
-    h2 {
-        font-size: 72px;
-    }
-
+@include below(lg) {
     .about-me-info-container {
         width: 400px;
     }
-    
+
     .about-me-section {
         padding-top: 48px;
     }
 }
 
-@media (max-width: 980px) {
+@include below(980px) {
     .selfie-container {
         display: none;
     }
@@ -149,23 +141,23 @@ p {
     }
 }
 
-@media (max-width: 700px) {
+@include below(700px) {
     .shadow {
-        width: 572px;
-        right: -365px;
         top: -120px;
+        right: -365px;
+        width: 572px;
     }
 }
 
-@media (max-width: 667px) {
+@include below(667px) {
     .about-me-section {
-        padding-left: 24px;
-        padding-right: 24px;
         justify-content: center;
+        padding-right: 24px;
+        padding-left: 24px;
     }
 }
 
-@media (max-width: 450px) {
+@include below(sm) {
     .about-me-section {
         padding-right: 0px;
     }
@@ -180,6 +172,7 @@ p {
 
         >div {
             padding-right: 24px;
+
             >div {
                 gap: 16px;
             }
@@ -187,28 +180,20 @@ p {
     }
 }
 
-@media (max-width: 430px) {
-    h2 {
-        font-size: 45px;
-    }
-
+@include below(xs) {
     .about-me-section {
         padding-top: 24px;
     }
 
     .shadow {
-        height: 593px;
         top: -150px;
+        height: 593px;
     }
 }
 
-@media (max-width: 390px) {
+@include below(390px) {
     .shadow {
         height: unset;
-    }
-
-    h2 {
-        font-size: 45px;
     }
 
     .about-me-info-container {
@@ -216,21 +201,22 @@ p {
     }
 }
 
-@media (max-width: 350px) {
+@include below(350px) {
     .about-me-section {
         padding-top: 8px;
     }
 
     .about-me-info-container {
         >p {
-            font-size: 14px;
             padding-top: 0px;
+            font-size: $font-size-s;
         }
 
         >div {
             gap: 16px;
+
             >div p {
-                font-size: 14px;
+                font-size: $font-size-s;
             }
         }
     }

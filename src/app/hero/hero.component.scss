@@ -1,35 +1,34 @@
+@use 'abstracts' as *;
+
 .hero-section {
-    margin-top: 109px;
-    height: calc(100vh - 109px);
-    color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    height: calc(100vh - #{$navbar-height});
+    margin-top: $navbar-height;
+    color: white;
 }
 
 .hero-top {
+    @include content-width;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-top: 40px;
-    max-width: 1920px;
-    width: 100%;
 }
 
 .portrait {
-    height: 50vh;
+    @include flex-center;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 50vh;
     margin-left: 56px;
 
     >img {
-        height: 100%;
-        width: auto;
-        object-fit: contain;
         position: absolute;
+        width: auto;
+        height: 100%;
+        object-fit: contain;
     }
 }
 
@@ -49,8 +48,8 @@
     flex-direction: column;
     align-items: center;
     gap: 32px;
-    margin-right: 96px;
     margin-top: -128px;
+    margin-right: 96px;
 }
 
 // <h1> enthält nur <span>s: Browser-Defaults der Überschrift neutralisieren,
@@ -81,38 +80,38 @@
 .name {
     font-size: 90px;
     font-weight: 700;
-    line-height: 120%
+    line-height: 120%;
 }
 
 .profession {
+    color: $purple;
     font-size: 58px;
-    color: #9747FF;
     line-height: 120%;
 }
 
 button {
     width: 165px;
     height: 59px;
-    background-color: #70E61C;
     border: none;
-    border-radius: 10px;
+    border-radius: $radius-btn;
     color: white;
-    font-size: 23px;
-    transition: all 300ms ease-out;
+    font-size: $font-size-l;
+    background-color: $green;
+    transition: $transition-cta;
 
     &:hover {
         transform: scale(1.1);
-        background-color: #9747FF;
+        background-color: $purple;
         cursor: pointer;
     }
 }
 
 .hero-bottom {
-    width: 100vw;
     position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    width: 100vw;
 }
 
 .hero-bottom-name {
@@ -125,41 +124,40 @@ button {
 }
 
 .bottom-content {
-    max-width: 1920px;
-    width: 100%;
+    @include content-width;
+    z-index: 3;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-bottom: 40px;
     padding-right: 100px;
-    z-index: 3;
+    padding-bottom: 40px;
 }
 
 .bottom-left {
     display: flex;
     align-items: center;
     gap: 32px;
-    font-size: 23px;
+    font-size: $font-size-l;
 
     >a {
         display: flex;
         color: inherit;
         text-decoration: none;
+    }
+}
 
-        >img {
-            width: 30px;
+.bottom-left > a > img {
+    width: 30px;
 
-            &:hover {
-                transition: all 250ms ease-out;
-                transform: scale(1.3);
-            }
-        }
+    &:hover {
+        transform: scale(1.3);
+        transition: $transition-icon;
     }
 }
 
 .purple-line {
-    border: 2px solid #9747FF;
     width: 100px;
+    border: 2px solid $purple;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
 }
@@ -168,11 +166,10 @@ button {
     display: flex;
     flex-direction: row;
     align-items: center;
-    font-size: 23px;
     gap: 8px;
+    font-size: $font-size-l;
     transform: rotate(90deg);
     transform-origin: right;
-
 
     >p {
         white-space: nowrap;
@@ -183,11 +180,11 @@ button {
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 65vh;
     width: 100vw;
+    height: 65vh;
 }
 
 .padding-reset {
-    padding-right: 0px !important;
     margin-left: 0px;
+    padding-right: 0px !important;
 }
