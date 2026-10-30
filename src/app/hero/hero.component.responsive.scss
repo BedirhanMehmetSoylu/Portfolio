@@ -170,13 +170,17 @@
 }
 
 @include below(618px) {
-    .portrait > img {
+    // Bilder sind hier 90vw breit (Inhalt per object-fit mittig), daher auch der Rahmen
+    .portrait {
         width: 90vw;
+
+        >img {
+            width: 100%;
+        }
     }
 
     .shadow {
-        left: -8px;
-        transform: scale(1.4);
+        transform: translateX(-50%) scale(1.4);
     }
 
     .background {
@@ -260,7 +264,30 @@
     }
 }
 
+// Querformat (Laptop, Monitor, Ultrawide). Vorher: Bild 50vh hoch, Bogen 70vh, beide nur von der
+// Fensterhöhe abhängig. Nur bei ca. 1080px Höhe lag der Bogen am Hemdsaum; bei niedrigen Fenstern
+// (Windows-Skalierung, Browserleisten) verdeckte er bis zu ein Drittel des Bildes.
+// Jetzt: Bildhöhe aus Höhe UND Breite, der Bogen wird daraus berechnet und sitzt immer am Hemdsaum.
+$portrait-visible: 0.88; // Hemdsaum im Bild: alles darunter verdeckt der Bogen
+$curve-depth: 0.6; // linker Bogenrand liegt bei 40 % der Hintergrundhöhe, 60 % darunter
+$portrait-body-inset: 0.111; // transparenter Rand links in der Personendatei: 120px bei 1080px Höhe
+
 @media (min-aspect-ratio: 1/1) {
+    .hero-section {
+        // Bezugsrahmen für cqh/cqw: 1cqh = 1 % der Section-Höhe (ohne Navbar). Damit zählt der Inhalt
+        // nicht mehr für die Breite, daher fest 100vw (vorher ergab sie sich aus .hero-bottom).
+        container-type: size;
+        flex-shrink: 0;
+        width: 100vw;
+        --hero-pad-top: clamp(16px, 4cqh, 40px);
+        // Breitenanteil wie bei 1920x1080 (28,1 % der Inhaltsbreite), aber mindestens 58 % und
+        // höchstens 70 % der Section-Höhe, damit unter dem Bogen Platz für die Icons bleibt.
+        // 800px als Obergrenze für sehr große Bildschirme (Bilddatei ist 1080px hoch).
+        --portrait-height: min(clamp(58cqh, min(28.1cqw, #{0.281 * $content-max-width}), 70cqh), 800px);
+        // Seitenrand wie Navbar-Logo und Abschnitte: 100px ab 1380px Breite, darunter fließend kleiner
+        --hero-gutter: clamp(#{$page-gutter-min}, 7.25cqw, #{$page-gutter});
+    }
+
     .hero-bottom-name {
         display: none;
     }
@@ -280,6 +307,7 @@
     .hero-top {
         flex-direction: row;
         align-items: center;
+        padding-top: var(--hero-pad-top);
     }
 
     button {
@@ -288,21 +316,32 @@
         font-size: $font-size-m;
     }
 
+    // width: auto hebt die 90vw aus dem 618px-Block auf, die Breite kommt aus aspect-ratio.
+    // Der Abstand verschiebt Rahmen samt Person und Schatten; der transparente Rand der Datei wird
+    // abgezogen, damit der sichtbare Körper auf der Linie des Seitenrands beginnt.
     .portrait {
-        margin-left: 0px;
+        width: auto;
+        height: var(--portrait-height);
+        margin-left: calc(var(--hero-gutter) - #{$portrait-body-inset} * var(--portrait-height));
 
         >img {
             width: auto;
         }
     }
 
+    // 16 % der Bildhöhe entsprechen den früheren 8vh bei 50vh Bildhöhe
+    .shadow {
+        top: 16%;
+    }
+
+    // Höhe so gewählt, dass der Bogen genau am Hemdsaum liegt, egal wie groß das Bild ist
+    .background {
+        height: calc((100cqh - var(--hero-pad-top) - #{$portrait-visible} * var(--portrait-height)) / #{$curve-depth});
+    }
+
     .hero-top-right {
         display: flex;
         width: unset;
-    }
-
-    .background {
-        height: 70vh;
     }
 }
 

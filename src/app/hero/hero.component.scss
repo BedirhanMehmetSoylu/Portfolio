@@ -18,14 +18,19 @@
     padding-top: 40px;
 }
 
+// Der Rahmen ist so breit wie die Person (Seitenverhältnis der Datei) und gibt die gemeinsame
+// Mittelachse vor; Person und Schatten werden darin zentriert. Beide Dateien sind in sich mittig (±1px).
 .portrait {
     @include flex-center;
     position: relative;
+    flex-shrink: 0;
+    aspect-ratio: 866 / 1080;
     height: 50vh;
     margin-left: 56px;
 
     >img {
         position: absolute;
+        left: 50%;
         width: auto;
         height: 100%;
         object-fit: contain;
@@ -34,12 +39,11 @@
 
 .shadow {
     top: 8vh;
-    left: -24px;
-    transform: scale(1.2);
+    transform: translateX(-50%) scale(1.2);
 }
 
 .person {
-    left: 0;
+    transform: translateX(-50%);
 }
 
 .hero-top-right {
