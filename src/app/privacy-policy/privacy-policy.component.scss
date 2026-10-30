@@ -20,6 +20,11 @@
     word-break: break-word;
 }
 
+// Einzug der Listen (Browser-Standard 40px) wächst auf großen Bildschirmen mit
+ul {
+    padding-left: s(40px);
+}
+
 // ::ng-deep, weil Teile des Textes per [innerHTML] aus den Übersetzungen kommen
 :host ::ng-deep a {
     color: white;
