@@ -27,6 +27,25 @@
     cursor: pointer;
 }
 
+// Ab 1921px: Zeilenhöhe fest und proportional. Ohne eigene line-height (normal) rundet der Browser
+// die Schriftmetrik, die Zeilen wachsen dann nicht linear mit (bei 2560px 31px statt 33,3px).
+// Werte = bei 1920px gemessene Zeilenhöhe; bis 1920px bleibt es bei normal.
+@include above($content-max-width) {
+    h2 {
+        line-height: s(35px);
+    }
+
+    h3 {
+        line-height: s(29px);
+    }
+
+    h4,
+    p,
+    li {
+        line-height: s(25px);
+    }
+}
+
 @include below(1100px) {
     .privacy-policy-section {
         padding: 0px 54px;

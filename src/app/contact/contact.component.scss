@@ -114,6 +114,11 @@ form {
         opacity: 1;
     }
 
+    // Ab 1921px feste, proportionale Zeilenhöhe (bei 1920px gemessen: 25px), siehe Impressum
+    @include above($content-max-width) {
+        line-height: s(25px);
+    }
+
     &:hover {
         border-color: $green;
     }
@@ -198,6 +203,11 @@ form {
         gap: s(4px);
         color: white;
         font-size: s($font-size-s);
+
+        // Ab 1921px feste, proportionale Zeilenhöhe (bei 1920px gemessen: 21px), siehe Impressum
+        @include above($content-max-width) {
+            line-height: s(21px);
+        }
 
         >label {
             cursor: pointer;

@@ -55,6 +55,11 @@ footer {
         color: white;
         font-weight: 300;
         text-decoration: none;
+
+        // Ab 1921px feste, proportionale Zeilenhöhe (bei 1920px gemessen: 25px), siehe Impressum
+        @include above($content-max-width) {
+            line-height: s(25px);
+        }
     }
 
     >div {
