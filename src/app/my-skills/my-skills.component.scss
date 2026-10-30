@@ -277,6 +277,7 @@ h2 {
 }
 
 .purple-line {
+    @include line-bleed(right, $purple);
     width: 68px;
     border: 2px solid $purple;
     border-top-left-radius: 8px;

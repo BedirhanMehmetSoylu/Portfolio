@@ -7,6 +7,26 @@
     width: 100%;
 }
 
+// Verlängert eine Linie, die am Rand des Inhaltsbereichs endet, bis zum Fensterrand.
+// Wirkt erst, wenn das Fenster breiter als $content-max-width ist (sonst 0 px breit).
+// Die Linie selbst behält Größe und Position, angehängte Elemente verschieben sich nicht.
+// $side: Seite, an der die Linie den Inhaltsrand berührt (left oder right)
+// $thickness: Rahmenbreite der Linie (die Linien sind 0 px hohe Elemente mit Rahmen)
+@mixin line-bleed($side, $color, $thickness: 2px) {
+    $start: if($side == right, left, right);
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: -$thickness;
+        bottom: -$thickness;
+        #{$start}: calc(100% + #{$thickness});
+        width: max(0px, calc((100vw - #{$content-max-width}) / 2));
+        background-color: $color;
+    }
+}
+
 @mixin flex-center {
     display: flex;
     align-items: center;

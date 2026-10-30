@@ -24,6 +24,7 @@
 }
 
 .purple-line {
+    @include line-bleed(left, $purple);
     width: 100%;
     border: 2px solid $purple;
     border-top-right-radius: 2px;

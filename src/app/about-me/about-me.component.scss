@@ -83,6 +83,7 @@ p {
 }
 
 .green-line {
+    @include line-bleed(right, $green);
     width: 267px;
     border: 2px solid $green;
 }

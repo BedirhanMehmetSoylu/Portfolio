@@ -46,6 +46,7 @@ h2 {
 }
 
 .purple-line-long {
+    @include line-bleed(right, $purple);
     width: 100%;
     border: 2px solid $purple;
 }

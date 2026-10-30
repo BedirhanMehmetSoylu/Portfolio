@@ -103,6 +103,7 @@
 }
 
 .purple-line-short {
+    @include line-bleed(right, $purple);
     z-index: 1;
     width: 104px;
     border: 2px solid $purple;
