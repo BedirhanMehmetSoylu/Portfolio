@@ -9,11 +9,12 @@
     @include content-width;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    min-height: calc(100vh - 431px);
-    margin-top: $navbar-height;
-    margin-bottom: 32px;
-    padding: 0px 100px;
+    gap: s(16px);
+    // 431px = Navbar (109px) + Footer (290px) + Abstand unten (32px), wachsen alle mit
+    min-height: calc(100vh - #{s(431px)});
+    margin-top: s($navbar-height);
+    margin-bottom: s(32px);
+    padding: 0 s(100px);
     color: white;
     text-align: left;
     word-break: break-word;
@@ -21,16 +22,16 @@
     >div {
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: s(16px);
     }
 }
 
 h1 {
-    font-size: 90px;
+    font-size: s(90px);
 }
 
 h2 {
-    font-size: $font-size-xl;
+    font-size: s($font-size-xl);
 }
 
 a {

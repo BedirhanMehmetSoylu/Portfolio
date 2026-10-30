@@ -6,7 +6,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding-bottom: 88px;
+    padding-bottom: s(88px);
     overflow: hidden;
 }
 
@@ -14,8 +14,8 @@
     @include content-width;
     display: flex;
     align-items: center;
-    gap: 32px;
-    padding-bottom: 48px;
+    gap: s(32px);
+    padding-bottom: s(48px);
 
     >h2 {
         color: white;
@@ -43,15 +43,15 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 48px;
-    padding: 0 88px;
+    gap: s(48px);
+    padding: 0 s(88px);
 }
 
 .contact-description {
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    max-width: 474px;
+    gap: s(24px);
+    max-width: s(474px);
     width: 100%;
 
     >p {
@@ -65,7 +65,7 @@
 }
 
 .description-top-line {
-    font-size: $font-size-xl;
+    font-size: s($font-size-xl);
     font-weight: 700;
 }
 
@@ -74,25 +74,25 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-    max-width: 617px;
+    gap: s(8px);
+    max-width: s(617px);
     width: 100%;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: s(8px);
     width: 100%;
-    min-height: 88px;
+    min-height: s(88px);
 }
 
 .form-group-textarea {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: s(2px);
     width: 100%;
-    min-height: 228px;
+    min-height: s(228px);
 }
 
 .input-wrapper {
@@ -102,15 +102,15 @@ form {
 // Gemeinsames Aussehen von Eingabefeld und Textfeld
 .input-wrapper > input,
 .textarea-container > textarea {
-    padding: 15px 25px;
+    padding: s(15px) s(25px);
     border: 1px solid $purple;
-    border-radius: $radius-btn;
+    border-radius: s($radius-btn);
     color: white;
-    font-size: $font-size-m;
+    font-size: s($font-size-m);
 
     &::placeholder {
         color: white;
-        font-size: $font-size-m;
+        font-size: s($font-size-m);
         opacity: 1;
     }
 
@@ -133,9 +133,9 @@ form {
 .validation-icon,
 .validation-icon-message {
     position: absolute;
-    right: 25px;
-    width: 25px;
-    height: 25px;
+    right: s(25px);
+    width: s(25px);
+    height: s(25px);
     transform: translateY(-50%);
     pointer-events: none;
 }
@@ -145,7 +145,7 @@ form {
 }
 
 .validation-icon-message {
-    top: 26px;
+    top: s(26px);
 }
 
 .textarea-container {
@@ -155,7 +155,7 @@ form {
     >textarea {
         position: relative;
         width: 100%;
-        height: 202px;
+        height: s(202px);
         background-color: transparent;
         resize: vertical;
         overflow: auto;
@@ -166,6 +166,7 @@ form {
     }
 
     >img {
+        @include scale-natural-size;
         position: absolute;
         right: 8px;
         bottom: 16px;
@@ -179,24 +180,24 @@ form {
 .privacy {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: s(12px);
     width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: s(40px);
 }
 
 .privacy-policy-checking {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: s(8px);
     width: 100%;
 
     >div {
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 4px;
+        gap: s(4px);
         color: white;
-        font-size: $font-size-s;
+        font-size: s($font-size-s);
 
         >label {
             cursor: pointer;
@@ -213,10 +214,10 @@ form {
 .privacy-policy-checking input[type="checkbox"] {
     position: relative;
     width: 100%;
-    max-width: 18px;
-    height: 18px;
+    max-width: s(18px);
+    height: s(18px);
     border: 2px solid $green;
-    border-radius: 3px;
+    border-radius: s(3px);
     appearance: none;
     cursor: pointer;
 }
@@ -224,31 +225,31 @@ form {
 .privacy-policy-checking input[type="checkbox"]:checked::after {
     content: '✔';
     position: absolute;
-    top: -2px;
-    left: 2px;
+    top: s(-2px);
+    left: s(2px);
     color: $green;
-    font-size: 13px;
+    font-size: s(13px);
 }
 
 .scroll-up-section {
     display: flex;
     justify-content: flex-end;
     width: 100%;
-    margin-top: 16px;
+    margin-top: s(16px);
 
     >a {
         display: flex;
-        margin-right: 8px;
-        border-radius: 41px;
+        margin-right: s(8px);
+        border-radius: s(41px);
     }
 }
 
 .scroll-up-section > a > img {
-    width: 39px;
-    height: 39px;
-    padding: 3px;
+    width: s(39px);
+    height: s(39px);
+    padding: s(3px);
     border: 2px solid #FFFFFF;
-    border-radius: 41px;
+    border-radius: s(41px);
     transition: filter 0.15s;
 
     &:hover {
@@ -260,6 +261,7 @@ form {
     position: absolute;
     bottom: -480px;
     left: -496px;
+    @include scale-natural-size;
 }
 
 input.invalid,
@@ -274,7 +276,7 @@ textarea.valid {
 
 .error {
     color: $error-text;
-    font-size: $font-size-s;
+    font-size: s($font-size-s);
     line-height: 120%;
 }
 
@@ -282,19 +284,19 @@ textarea.valid {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
+    gap: s(4px);
     // min-height statt height: die Fehlermeldung kann zweizeilig werden
-    min-height: 91px;
+    min-height: s(91px);
     text-align: center;
 
     >button {
-        padding: 15px 30px;
+        padding: s(15px) s(30px);
         border: none;
-        border-radius: $radius-btn;
+        border-radius: s($radius-btn);
         color: white;
-        font-size: $font-size-l;
+        font-size: s($font-size-l);
         background-color: #B6B6B6;
-        box-shadow: 4px 4px 4px 0px #00000040;
+        box-shadow: s(4px) s(4px) s(4px) 0 #00000040;
     }
 
     button.ready {
@@ -311,7 +313,7 @@ textarea.valid {
 
 .success-message {
     color: $green;
-    font-size: 15px;
+    font-size: s(15px);
 }
 
 input:-webkit-autofill,
