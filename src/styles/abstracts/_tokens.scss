@@ -23,6 +23,10 @@ $font-size-xl: 32px;
 
 // Layout
 $content-max-width: 1920px;
+// Große Bildschirme: Bis $content-max-width Fensterbreite ist alles 1:1. Darüber wächst die Seite
+// proportional mit, bis die Fensterbreite $scale-max-width erreicht (Faktor 2560 / 1920 = 1,33).
+// Breitere Fenster: Inhalt bleibt so groß und wird zentriert. Siehe s() und --u.
+$scale-max-width: 2560px;
 $navbar-height: 109px;
 // Linker/rechter Seitenrand innerhalb von $content-max-width (Navbar, Über mich, Footer: 100px;
 // auf schmalen Bildschirmen stufenweise bis 48px)

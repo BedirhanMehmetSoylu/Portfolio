@@ -1,3 +1,4 @@
+@use 'sass:math';
 @use 'abstracts' as *;
 
 // Nur tatsächlich genutzte Schnitte (300, 400, 700). font-display: swap zeigt Text sofort
@@ -48,6 +49,16 @@ body {
     height: 100%;
 }
 
+// Skalierung für große Bildschirme. --u ist ein "skaliertes Pixel" (Verwendung über s() aus abstracts):
+// bis $content-max-width Fensterbreite genau 1px, darüber wächst es linear bis $scale-max-width
+// und bleibt dann konstant. Als <length> registriert, damit es einmal berechnet und als fester
+// px-Wert vererbt wird; sonst würde 100cqw in inneren Containern (Hero) anders aufgelöst.
+@property --u {
+    syntax: '<length>';
+    inherits: true;
+    initial-value: 1px;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -56,9 +67,18 @@ body {
     background-color: $bg;
 }
 
+// Bezugsbreite für --u: 100cqw ist die Breite ohne Scrollbalken (100vw enthält ihn, der Inhalt wäre
+// unter Windows sonst breiter als das Fenster). Der Container sitzt bewusst auf app-root, nicht auf body:
+// Containment auf body verhindert, dass dessen overflow ans Fenster weitergegeben wird, dann scrollt
+// der body statt des Dokuments (window.scrollY bleibt 0, AOS und Navbar reagieren nicht mehr).
 app-root {
     width: 100%;
     overflow-x: clip;
+    container-type: inline-size;
+
+    >* {
+        --u: clamp(1px, 100cqw / #{math.div($content-max-width, 1px)}, #{$scale-max-width} / #{math.div($content-max-width, 1px)});
+    }
 }
 
 // width/height-Attribute an <img> liefern nur das Seitenverhältnis (verhindert Layout-Sprünge

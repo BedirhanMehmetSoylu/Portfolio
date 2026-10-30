@@ -1,9 +1,10 @@
 @use 'tokens' as *;
 @use 'breakpoints' as *;
+@use 'scale' as *;
 
-// Volle Breite, aber nie breiter als der Inhaltsbereich
+// Volle Breite, aber nie breiter als der Inhaltsbereich (wächst auf großen Bildschirmen mit)
 @mixin content-width {
-    max-width: $content-max-width;
+    max-width: s($content-max-width);
     width: 100%;
 }
 
@@ -11,9 +12,15 @@
 // Wirkt erst, wenn das Fenster breiter als $content-max-width ist (sonst 0 px breit).
 // Die Linie selbst behält Größe und Position, angehängte Elemente verschieben sich nicht.
 // $side: Seite, an der die Linie den Inhaltsrand berührt (left oder right)
-// $thickness: Rahmenbreite der Linie (die Linien sind 0 px hohe Elemente mit Rahmen)
+// $thickness: Rahmenbreite der Linie (die Linien sind 0 px hohe Elemente mit Rahmen). Bleibt bewusst
+// unskaliert: Browser runden Rahmen auf ganze Pixel, eine skalierte Verlängerung hätte sonst eine Lücke.
 @mixin line-bleed($side, $color, $thickness: 2px) {
-    $start: if($side == right, left, right);
+    $start: right;
+
+    @if $side == right {
+        $start: left;
+    }
+
     position: relative;
 
     &::after {
@@ -22,7 +29,7 @@
         top: -$thickness;
         bottom: -$thickness;
         #{$start}: calc(100% + #{$thickness});
-        width: max(0px, calc((100vw - #{$content-max-width}) / 2));
+        width: max(0px, calc((100vw - #{s($content-max-width)}) / 2));
         background-color: $color;
     }
 }
@@ -35,7 +42,7 @@
 
 // Große Abschnittsüberschrift (Über mich, Fähigkeiten, Portfolio, Kontakt)
 @mixin section-title($size: 90px) {
-    font-size: $size;
+    font-size: s($size);
     font-weight: 700;
     line-height: 120%;
 
