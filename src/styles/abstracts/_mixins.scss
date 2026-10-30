@@ -34,6 +34,15 @@
     }
 }
 
+// Für Bilder ohne CSS-Breite (angezeigt in Dateigröße, z. B. Icons und Schatten): wächst über zoom
+// mit dem Faktor --k mit. zoom skaliert auch eigene px-Werte des Elements (top, left, transform),
+// diese bleiben deshalb in px. Wirkt erst ab 1921px, darunter bleibt alles unverändert.
+@mixin scale-natural-size {
+    @include above($content-max-width) {
+        zoom: var(--k);
+    }
+}
+
 @mixin flex-center {
     display: flex;
     align-items: center;

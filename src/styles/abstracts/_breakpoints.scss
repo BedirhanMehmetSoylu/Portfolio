@@ -22,3 +22,15 @@ $breakpoints: (
         @content;
     }
 }
+
+// Gegenstück zu below(): @media (min-width: $bp + 1px). Für Regeln, die nur auf großen Bildschirmen
+// gelten sollen, z. B. above($content-max-width) = erst ab 1921px.
+@mixin above($bp) {
+    @if map.has-key($breakpoints, $bp) {
+        $bp: map.get($breakpoints, $bp);
+    }
+
+    @media (min-width: $bp + 1px) {
+        @content;
+    }
+}

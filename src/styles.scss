@@ -59,6 +59,14 @@ body {
     initial-value: 1px;
 }
 
+// Derselbe Faktor als reine Zahl (1 bis 1,33), für zoom (siehe Mixin scale-natural-size).
+// tan(atan2(a, b)) ergibt a / b als Zahl, CSS kann Längen sonst nicht durcheinander teilen.
+@property --k {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 1;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -78,6 +86,10 @@ app-root {
 
     >* {
         --u: clamp(1px, 100cqw / #{math.div($content-max-width, 1px)}, #{$scale-max-width} / #{math.div($content-max-width, 1px)});
+        --k: tan(atan2(var(--u), 1px));
+        // Text ohne eigene Schriftgröße (Browser-Standard 16px) wächst mit. Bis 1920px ist der
+        // Zusatz 0, es bleibt exakt 1em, eine im Browser eingestellte Schriftgröße bleibt also erhalten.
+        font-size: calc(1em + (var(--u) - 1px) * 16);
     }
 }
 

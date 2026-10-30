@@ -6,8 +6,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-top: 88px;
-    padding-left: 100px;
+    padding-top: s(88px);
+    padding-left: s(100px);
     color: white;
 }
 
@@ -15,29 +15,33 @@
     z-index: 3;
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    width: 471px;
+    gap: s(40px);
+    width: s(471px);
 
     >div {
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: s(24px);
 
         >div {
             display: flex;
             flex-direction: row;
             align-items: flex-start;
-            gap: 24px;
+            gap: s(24px);
         }
     }
 }
 
 .images-container {
     @include flex-center;
-    max-width: 32px;
+    max-width: s(32px);
     width: 100%;
-    height: 32px;
-    margin-top: 4px;
+    height: s(32px);
+    margin-top: s(4px);
+
+    >img {
+        @include scale-natural-size;
+    }
 }
 
 h2 {
@@ -57,8 +61,8 @@ p {
 
 .selfie {
     position: relative;
-    width: 453px;
-    height: 453px;
+    width: s(453px);
+    height: s(453px);
     border-radius: 50%;
     overflow: hidden;
     background-color: $bg;
@@ -76,15 +80,15 @@ p {
 
 .selfie-img {
     position: absolute;
-    top: -150px;
-    left: -15px;
+    top: s(-150px);
+    left: s(-15px);
     width: 110%;
     border-radius: 50%;
 }
 
 .green-line {
     @include line-bleed(right, $green);
-    width: 267px;
+    width: s(267px);
     border: 2px solid $green;
 }
 
@@ -93,6 +97,7 @@ p {
     top: -256px;
     right: -440px;
     z-index: 2;
+    @include scale-natural-size;
 }
 
 :host {
