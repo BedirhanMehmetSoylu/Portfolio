@@ -4,7 +4,8 @@
 // --u ist bis 1920px Fensterbreite genau 1px, das Ergebnis also exakt 24px (pixelgleich).
 // Darüber wächst --u bis zum Faktor 1,33 (siehe $scale-max-width und styles.scss).
 // Nur für Werte, die über 1920px wirken; Werte in max-width-Media-Queries bleiben in px.
-@function s($value) {
+// $unit: anderer Faktor statt --u, z. B. s(59px, hero-u) im Hero (dort zusätzlich durch die Höhe begrenzt).
+@function s($value, $unit: u) {
     @if math.unit($value) != 'px' {
         @error 's() erwartet einen px-Wert, bekommen: #{$value}';
     }
@@ -13,5 +14,5 @@
         @return 0;
     }
 
-    @return calc(#{math.div($value, 1px)} * var(--u));
+    @return calc(#{math.div($value, 1px)} * var(--#{$unit}));
 }

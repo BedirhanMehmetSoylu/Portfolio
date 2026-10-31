@@ -279,13 +279,15 @@ $portrait-body-inset: 0.111; // transparenter Rand links in der Personendatei: 1
         container-type: size;
         flex-shrink: 0;
         width: 100vw;
-        --hero-pad-top: clamp(16px, 4cqh, 40px);
+        --hero-pad-top: clamp(#{s(16px, hero-u)}, 4cqh, #{s(40px, hero-u)});
         // Breitenanteil wie bei 1920x1080 (28,1 % der Inhaltsbreite), aber mindestens 58 % und
         // höchstens 70 % der Section-Höhe, damit unter dem Bogen Platz für die Icons bleibt.
         // 800px als Obergrenze für sehr große Bildschirme (Bilddatei ist 1080px hoch).
-        --portrait-height: min(clamp(58cqh, min(28.1cqw, #{0.281 * $content-max-width}), 70cqh), 800px);
-        // Seitenrand wie Navbar-Logo und Abschnitte: 100px ab 1380px Breite, darunter fließend kleiner
-        --hero-gutter: clamp(#{$page-gutter-min}, 7.25cqw, #{$page-gutter});
+        // Beide px-Grenzen wachsen über 1920px mit --hero-u, also nie stärker, als die Höhe zulässt.
+        --portrait-height: min(clamp(58cqh, min(28.1cqw, #{s(0.281 * $content-max-width, hero-u)}), 70cqh), #{s(800px, hero-u)});
+        // Seitenrand wie Navbar-Logo und Abschnitte: 100px ab 1380px Breite, darunter fließend kleiner.
+        // Über 1920px wächst er mit --u wie das Navbar-Logo.
+        --hero-gutter: clamp(#{s($page-gutter-min)}, 7.25cqw, #{s($page-gutter)});
     }
 
     .hero-bottom-name {
@@ -311,9 +313,9 @@ $portrait-body-inset: 0.111; // transparenter Rand links in der Personendatei: 1
     }
 
     button {
-        width: 133px;
-        height: 49px;
-        font-size: $font-size-m;
+        width: s(133px, hero-u);
+        height: s(49px, hero-u);
+        font-size: s($font-size-m, hero-u);
     }
 
     // width: auto hebt die 90vw aus dem 618px-Block auf, die Breite kommt aus aspect-ratio.
@@ -347,8 +349,8 @@ $portrait-body-inset: 0.111; // transparenter Rand links in der Personendatei: 1
 
 @media (min-width: 765px) {
     button {
-        width: 165px;
-        height: 59px;
-        font-size: $font-size-l;
+        width: s(165px, hero-u);
+        height: s(59px, hero-u);
+        font-size: s($font-size-l, hero-u);
     }
 }
