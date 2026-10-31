@@ -101,7 +101,7 @@ p {
 }
 
 :host {
-    scroll-margin-top: 80px;
+    scroll-margin-top: s(80px);
 }
 
 @include below(xl) {

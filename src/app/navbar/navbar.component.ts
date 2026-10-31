@@ -17,6 +17,7 @@ export class NavbarComponent implements OnDestroy {
   private readonly translate = inject(TranslateService);
   private readonly cdr = inject(ChangeDetectorRef);
   private readonly document = inject(DOCUMENT);
+  private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
   private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   currentLang: string = 'de';
@@ -36,7 +37,8 @@ export class NavbarComponent implements OnDestroy {
   private sectionObserver: IntersectionObserver | null = null;
 
   private readonly observedSections = ['about', 'skills', 'portfolio', 'contact'];
-  // Eine Sektion gilt als aktiv, sobald sie diese Linie (px von oben) kreuzt
+  // Eine Sektion gilt als aktiv, sobald sie diese Linie (px von oben) kreuzt. Wächst auf großen
+  // Bildschirmen mit der Navbar mit (siehe lineOffset).
   private readonly activeLineOffset = 150;
 
   get currentBurgerImage(): string {
@@ -70,19 +72,29 @@ export class NavbarComponent implements OnDestroy {
    */
   private observeSections(): void {
     this.sectionObserver?.disconnect();
-    const bottomMargin = window.innerHeight - this.activeLineOffset - 1;
+    const lineOffset = this.lineOffset();
+    const bottomMargin = window.innerHeight - lineOffset - 1;
     this.sectionObserver = new IntersectionObserver(entries => {
       const active = entries.find(entry => entry.isIntersecting);
       if (active) {
         this.activeSection = active.target.id;
         this.cdr.markForCheck();
       }
-    }, { rootMargin: `-${this.activeLineOffset}px 0px -${bottomMargin}px 0px` });
+    }, { rootMargin: `-${lineOffset}px 0px -${bottomMargin}px 0px` });
 
     for (const id of this.observedSections) {
       const el = document.getElementById(id);
       if (el) this.sectionObserver.observe(el);
     }
+  }
+
+  /**
+   * activeLineOffset mal dem Skalierungsfaktor aus dem CSS (--u, siehe styles.scss): bis 1920px
+   * Fensterbreite genau 150px, darüber wächst die Linie wie die Navbar bis zum Faktor 1,33.
+   */
+  private lineOffset(): number {
+    const unit = parseFloat(getComputedStyle(this.host.nativeElement).getPropertyValue('--u')) || 1;
+    return Math.round(this.activeLineOffset * unit);
   }
 
   private clearAnimationInterval(): void {
