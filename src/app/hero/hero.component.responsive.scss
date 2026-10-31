@@ -230,8 +230,9 @@
     }
 }
 
-// Bis 600px hängt die Schriftgröße von .i-am von der Fensterhöhe ab (siehe oben), der Ausgleich auch
-@media (min-width: 471px) and (max-width: 600px) and (max-height: 2000px) {
+// Bis 600px hängt die Schriftgröße von .i-am von der Fensterhöhe ab (siehe oben), der Ausgleich auch.
+// Ab 429px gilt dieselbe Schriftgröße, die festen 24px aus dem 470px-Block wären hier zu klein.
+@media (min-width: 429px) and (max-width: 600px) and (max-height: 2000px) {
     .hero-bottom-name {
         padding-right: calc(1.05 * clamp(20px, 3.7vh, 36.63px));
 
@@ -241,21 +242,38 @@
     }
 }
 
+// Zwischen 397 und 428px: Schriftgröße von .i-am aus dem 428px-Block (siehe unten). Darunter passen
+// die festen 24px (höchstens 2px Abweichung), dort bleibt alles unverändert.
+@media (min-width: 397px) and (max-width: 428px) and (max-height: 2000px) {
+    .hero-bottom-name {
+        padding-right: calc(1.05 * clamp(25px, 3.7vh, 31px));
+
+        >button:not(.padding-reset) {
+            margin-left: calc(1.05 * clamp(25px, 3.7vh, 31px));
+        }
+    }
+}
+
 // Tablet im Hochformat: .hero-top-right ist hier 100vw breit, sein margin-right (48/64px) macht den Hero
-// breiter als das Fenster und schiebt alles um die Hälfte nach links. Auf Englisch gleicht das breite
-// "I am" das für den Text zufällig aus, auf Deutsch fehlt es. Ein gleich großes padding-left setzt den
-// Inhalt (Text, Button) dort genau auf die Fenstermitte; margin-right bleibt, damit Porträt und Rest
-// unverändert stehen. Querformat und Desktop (min-aspect-ratio: 1/1) bleiben unverändert, unter 766px
-// ist .hero-top-right ausgeblendet.
+// breiter als das Fenster und schiebt alles um die Hälfte nach links. translate um die halbe Breite setzt
+// den Inhalt (Text, Button) wieder auf die Fenstermitte; margin-right bleibt, damit Porträt und Rest
+// unverändert stehen. Auf Englisch verschiebt sich der Text zusätzlich um das gedrehte "I am" zurück
+// (wie unter 765px, die Hälfte von 1,05 x Schriftgröße von .i-am), auf Deutsch ist es leer.
+// translate statt padding: Das Layout bleibt gleich, der Name bricht bei hohen Fenstern nicht früher um.
+// Querformat und Desktop (min-aspect-ratio: 1/1) bleiben unverändert, unter 766px ist .hero-top-right ausgeblendet.
 @media (min-width: 766px) and (max-width: 1340px) and (not (min-aspect-ratio: 1/1)) {
-    .hero-top-right.padding-reset {
-        padding-left: 64px;
+    .hero-top-right {
+        translate: 32px;
+
+        &:not(.padding-reset)>.name-section {
+            translate: calc(-0.525 * 4.8vh);
+        }
     }
 }
 
 @media (min-width: 766px) and (max-width: 800px) and (not (min-aspect-ratio: 1/1)) {
-    .hero-top-right.padding-reset {
-        padding-left: 48px;
+    .hero-top-right {
+        translate: 24px;
     }
 }
 
