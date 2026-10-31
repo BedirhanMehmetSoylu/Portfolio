@@ -29,10 +29,18 @@
     border-radius: s(32px);
 
     >img {
-        @include scale-natural-size;
         position: absolute;
         top: -36px;
         left: -67px;
+
+        // Ab 1921px SVG statt PNG (scharf bei jeder Größe), Größe und Lage wachsen mit s()
+        @include above($content-max-width) {
+            content: url('/assets/img/reviews/quotation_marks.svg');
+            width: s(97px);
+            height: s(69px);
+            top: s(-36px);
+            left: s(-67px);
+        }
     }
 
     >p {
@@ -140,8 +148,22 @@
     }
 
     >img {
-        @include scale-natural-size;
         display: block;
+    }
+
+    // Ab 1921px SVG statt PNG (scharf bei jeder Größe), Größe wächst mit s()
+    @include above($content-max-width) {
+        &:first-child > img {
+            content: url('/assets/img/reviews/arrow_back.svg');
+            width: s(22px);
+            height: s(22px);
+        }
+
+        &:last-child > img {
+            content: url('/assets/img/reviews/arrow_forward.svg');
+            width: s(21px);
+            height: s(22px);
+        }
     }
 }
 

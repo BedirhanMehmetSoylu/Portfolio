@@ -262,6 +262,11 @@ form {
     border-radius: s(41px);
     transition: filter 0.15s;
 
+    // Ab 1921px SVG statt PNG (scharf bei jeder Größe); die Größe kommt schon aus width/height oben
+    @include above($content-max-width) {
+        content: url('/assets/img/contacts/arrow_up.svg');
+    }
+
     &:hover {
         filter: brightness(0) saturate(100%) invert(72%) sepia(93%) saturate(374%) hue-rotate(54deg) brightness(93%) contrast(89%);
     }
