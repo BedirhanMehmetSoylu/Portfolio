@@ -7,7 +7,7 @@
 
     <!-- Desktop-Variante; die Mobile-Variante unten ist per display:none ausgeblendet,
          daher liest ein Screenreader den Namen nur einmal vor -->
-    <div class="hero-top-right">
+    <div class="hero-top-right" [class.padding-reset]="translate.currentLang() === 'de'">
       <h1 class="name-section">
         <span class="i-am">{{ 'HERO.IAM' | translate}}</span>
         <span class="name-container">
